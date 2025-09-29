@@ -166,7 +166,7 @@ li {
 .sidebar > div {
   background-color: #161b22;
   border-radius: 6px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -204,5 +204,3 @@ li {
     gap: 0.5rem;
   }
 }
-
-/*test2*/
