@@ -1,255 +1,275 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Francisco Airam Hernández Crosa - Perfil</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="profile-header">
-        <div class="profile-info">
-          <div class="profile-details">
-            <h1>Francisco Airam Hernández Crosa</h1>
-            <p class="headline">Backend developer</p>
-            <p class="location">📍 38206, La Laguna, Santa Cruz de Tenerife</p>
-            <div class="social-links">
-              <a
-                href="https://github.com/FranwDev"
-                target="_blank"
-                class="social-link"
-              >
-                <svg
-                  class="octicon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-                  ></path>
-                </svg>
-                <span>FranWDev</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/franciscohdezcrosa/"
-                target="_blank"
-                class="social-link"
-              >
-                <svg
-                  class="octicon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  width="16"
-                  height="16"
-                >
-                  <path
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                  />
-                </svg>
-                <span>franciscohdezcrosa</span>
-              </a>
-            </div>
-          </div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Francisco Airam Hernández Crosa - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <!-- Barra de progreso -->
+  <div class="scroll-progress"></div>
+
+  <!-- Navegación por puntos -->
+  <div class="nav-dots">
+    <div class="nav-dot active" data-section="hero" data-title="Inicio"></div>
+    <div class="nav-dot" data-section="about" data-title="Sobre mí"></div>
+    <div class="nav-dot" data-section="experience" data-title="Experiencia"></div>
+    <div class="nav-dot" data-section="projects" data-title="Proyectos"></div>
+    <div class="nav-dot" data-section="skills" data-title="Habilidades"></div>
+    <div class="nav-dot" data-section="contact" data-title="Contacto"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="section">
+
+
+    <div class="hero-content">
+      <h1 class="hero-title">Francisco Airam Hernández Crosa</h1>
+      <p class="hero-subtitle">Junior Backend Developer</p>
+      <p class="hero-description">
+        Desarrollador especializado en Spring Boot.
+        Apasionado por la optimización de rendimiento y la construcción de sistemas modulares y mantenibles.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/FranwDev" target="_blank" class="social-link">
+          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20">
+            <path
+              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+            </path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/franciscohdezcrosa/" target="_blank" class="social-link">
+          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20">
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span style="font-size: 0.875rem;">Scroll</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About me</h2>
+        <p>
+          Desarrollador backend enfocado en Spring Boot y código limpio y escalable.
+          Actualmente colaboro como <strong>Coordinador Digital</strong> de
+          <strong>Proyecto Dubini</strong>, una organización juvenil centrada en el cambio climático
+          y la sostenibilidad, donde gestiono la plataforma digital y los problemas relacionados con TI.
+        </p>
+        <p>
+          Me apasiona el desarrollo backend, la optimización del rendimiento y la construcción
+          de sistemas modulares y mantenibles. Siempre curioso, siempre aprendiendo.
+        </p>
+        <p style="color: #c9d1d9; margin-top: 1rem;">
+          📍 La Laguna, Santa Cruz de Tenerife<br>
+        </p>
       </div>
 
-      <div class="content">
-        <div class="main-content">
-          <div class="about-section">
-            <h2>About me</h2>
-            <p>
-              Backend developer focused on Spring Boot and clean, scalable code.
-              Currently serving as the <em>Digital Coordinator</em> of
-              <strong>Proyecto Dubini</strong>, a youth-led environmental
-              organization focused on climate change and sustainability, where I
-              manage the digital platform and handle IT-related issues.
-            </p>
-            <p>
-              I'm passionate about backend development, performance
-              optimization, and building modular, maintainable systems. Always
-              curious, always learning.
-            </p>
-          </div>
-
-          <div class="experience-section">
-            <h2>Work Experience</h2>
-            <div class="experience-item">
-              <h3>Full-Stack developer as internship (Prestashop modules)</h3>
-              <div class="experience-meta">
-                <span class="company">Sagrera Canarias</span>
-                <span class="date">April 2025 - June 2025</span>
-                <span class="location">La Laguna</span>
-              </div>
-              <ul>
-                <li>
-                  Fully designed, developed and deployed production features
-                  with <strong>complete autonomy</strong>.
-                </li>
-                <li>
-                  Optimized critical processes with <strong>CTEs</strong>,
-                  reducing <strong>+5000 SQL queries → 5</strong>.
-                </li>
-                <li>
-                  Improved performance of heavy tasks (<strong>1h → 15s</strong
-                  >).
-                </li>
-                <li>
-                  Enhanced usability and mobile performance with
-                  <strong>20+ UX/UI improvements</strong>.
-                </li>
-                <li>
-                  Collaborated with
-                  non-technical teams.
-                </li>
-              </ul>
-              <div class="key-features">
-                <h4>Most important features:</h4>
-                <ul>
-                  <li>
-                    <strong>Review System</strong>: implemented a post-purchase
-                    feedback flow that automatically sent customers an email
-                    after receiving their order. Each email included a unique,
-                    single-use token to prevent spam. Submitted reviews were
-                    manually moderated in the backoffice before being published
-                    in a slider on the website.
-                  </li>
-                  <li>
-                    <strong>Partner Program</strong>: implemented a
-                    loyalty/affiliation system with cross-registration.
-                    Customers could sign up either in the physical store or
-                    online, and their discount benefits were synchronized to
-                    work seamlessly in both channels, in the back office,
-                    temporary discounts could be added, which were automatically
-                    activated and deactivated as configured.
-                  </li>
-                  <li>
-                    <strong>Abandoned Cart Recovery Module</strong>: backoffice
-                    tool that allowed sending personalized discount links to
-                    users who abandoned their carts. The link redirected them to
-                    a checkout page with all data prefilled and the discount
-                    applied, maximizing convenience and significantly increasing
-                    conversion.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="projects-section">
-            <h2>Projects</h2>
-            <div class="project-item">
-              <h3>
-                <a
-                  href="https://github.com/FranWDev/backend-chat-system"
-                  target="_blank"
-                >
-                  Private chat with user/admin panel
-                </a>
-              </h3>
-              <p>
-                Small project completed in a week just to learn the basics of
-                backend development and security.
-              </p>
-              <div class="project-tags">
-                <span>JavaScript</span>
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>JWT</span>
-                <span>Socket.io</span>
-              </div>
-            </div>
-            <div class="project-item">
-              <h3>Blog Platform (Proyecto Dubini)</h3>
-              <p>
-                Currently in the initial development phase, building a
-                full-stack blog platform with Spring Boot. Focused on efficient
-                resource usage, secure content handling, and lightweight backend
-                processing. Frontend caching and JSON-based storage optimize
-                performance.
-              </p>
-              <div class="project-tags">
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>Spring Security</span>
-                <span>JWT</span>
-                <span>JSON</span>
-                <span>GitHub Actions</span>
-                <span>Git</span>
-                <span>Docker</span>
-                <span>Optimization</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="education-section">
-            <h2>Education</h2>
-            <div class="education-item">
-              <h3>Web Application Development (DAW)</h3>
-              <div class="education-meta">
-                <span class="institution">IES Domingo Pérez Minik</span>
-                <span class="date">September 2024 - Present</span>
-              </div>
-            </div>
-            <div class="education-item">
-              <h3>Scientific-technological Bachillerato</h3>
-              <div class="education-meta">
-                <span class="institution">IES San Benito</span>
-                <span class="date">September 2022 - May 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="background-section">
-            <h2>Personal Background</h2>
-            <p>
-              I started programming at 13 using Minecraft framework plugins.
-              Through deploying cloud-based servers with significant concurrent
-              users, I learned important programming concepts such as
-              object-oriented design, error debugging in Java, resource
-              management, and how to administer and maintain a service
-              professionally, even in a gaming environment.
-            </p>
-          </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">99%</div>
+          <div class="stat-label">Queries SQL reducidas con CTEs</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Mejora de rendimiento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Modulos (Prestashop) en producción</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Autonomía en desarrollo</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="sidebar">
-          <div class="skills-section">
-            <h2>Technologies & Tools</h2>
-            <ul class="skills-list">
-              <li>Java (Spring Boot, Data & Security)</li>
-              <li>JavaScript (Node.js, Express.js)</li>
-              <li>PHP (Prestashop modules)</li>
-              <li>HTML5 & CSS3</li>
-              <li>MySQL</li>
-              <li>Git & GitHub</li>
-              <li>Docker</li>
-            </ul>
-          </div>
+  <!-- Experience Section -->
+  <section id="experience" class="section">
 
-          <div class="personal-skills-section">
-            <h2>Personal Skills</h2>
-            <ul class="skills-list">
-              <li>Autonomy / Proactivity</li>
-              <li>Curiosity & Continuous Learning</li>
-              <li>Technical Communication</li>
-              <li>Organization & Planning</li>
-              <li>Adaptability</li>
-              <li>Teamwork</li>
-            </ul>
-          </div>
+    <div class="experience-container">
+      <h2 class="section-title">Work Experience</h2>
 
-          <div class="languages-section">
-            <h2>Languages</h2>
-            <ul class="languages-list">
-              <li>Spanish - Native</li>
-              <li>English - B2 certification</li>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Desarrollador Fullstack en Prestashop</h3>
+            <div class="timeline-meta">
+              <span>Sagrera Canarias</span>
+              <span>Abril 2025 - Junio 2025</span>
+              <span>La Laguna</span>
+            </div>
+            <ul>
+              <li>Diseñé, desarrollé e implementé funcionalidades en producción con <strong>completa autonomía</strong>
+              </li>
+              <li>Optimicé procesos críticos con <strong>CTEs</strong>, reduciendo <strong>+5000 queries SQL →
+                  5</strong></li>
+              <li>Mejoré el rendimiento de tareas pesadas (<strong>1h → 15s</strong>)</li>
+              <li>Implementé <strong>20+ mejoras UX/UI</strong> aumentando usabilidad y rendimiento móvil</li>
+              <li>Colaboré con equipos no técnicos</li>
             </ul>
+
+            <div
+              style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
+              <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
+              <ul>
+                <li><strong>Sistema de Reseñas</strong>: flujo de feedback post-compra con emails automáticos y tokens
+                  únicos</li>
+                <li><strong>Programa de Socios</strong>: sistema de fidelización con registro cruzado tienda
+                  física/online</li>
+                <li><strong>Recuperación de Carritos Abandonados</strong>: herramienta de backoffice con links
+                  personalizados</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+
+    <div class="projects-container">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3><a href="https://github.com/FranWDev/backend-chat-system" target="_blank">Private Chat System</a></h3>
+          <p>
+            Proyecto completado en una semana para aprender los fundamentos del desarrollo backend y seguridad.
+            Incluye panel de usuario y administrador con autenticación JWT y comunicación en tiempo real.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Express.js</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">Socket.io</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Blog Platform (Proyecto Dubini)</h3>
+          <p>
+            En fase inicial de desarrollo, construyendo una plataforma de blog full-stack con Spring Boot.
+            Enfocado en uso eficiente de recursos, manejo seguro de contenido y procesamiento backend ligero.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">Spring Security</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">JSON</span>
+            <span class="project-tag">GitHub Actions</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Optimization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+
+    <div class="skills-container">
+      <h2 class="section-title">Skills & Technologies</h2>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Tecnologías</h3>
+          <ul class="skill-list">
+            <li>Java (Spring Boot, Data & Security)</li>
+            <li>JavaScript (Node.js, Express.js)</li>
+            <li>PHP (Prestashop modules)</li>
+            <li>HTML5 & CSS3</li>
+            <li>MySQL</li>
+            <li>Git & GitHub</li>
+            <li>Docker</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Habilidades Personales</h3>
+          <ul class="skill-list">
+            <li>Autonomia / Proactividad</li>
+            <li>Curiosidad y aprendizaje continuo</li>
+            <li>Comunicación técnica</li>
+            <li>Organización y planificación</li>
+            <li>Adaptabilidad</li>
+            <li>Trabajo en equipo</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3>Educación e Idiomas</h3>
+          <ul class="skill-list">
+            <li>Desarrollo de Aplicaciones Web (DAW)</li>
+            <li>Bachillerato Científico-tecnológico</li>
+            <li style="margin-top: 1rem; border-top: 1px solid rgba(88, 166, 255, 0.2); padding-top: 1rem;">Español -
+              Nativo</li>
+            <li>Inglés - Certifiación B2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+
+    <div class="contact-container">
+      <h2>Let's Connect!</h2>
+      <p>
+        No dudes en contactarme a través de mis redes sociales.
+      </p>
+
+      <div class="contact-links">
+        <a href="https://github.com/FranwDev" target="_blank" class="contact-link">
+          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24">
+            <path
+              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+            </path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/franciscohdezcrosa/" target="_blank" class="contact-link">
+          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24">
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  <noscript>
+    <style>
+      .floating-code { display: none; }
+    </style>
+  </noscript>
+</body>
+
 </html>
