@@ -1,29 +1,11 @@
-// Parallax scrolling
 window.addEventListener("scroll", () => {
   const scrolled = window.pageYOffset;
 
-  // Actualizar barra de progreso
   const scrollHeight =
     document.documentElement.scrollHeight - window.innerHeight;
   const progress = (scrolled / scrollHeight) * 100;
   document.querySelector(".scroll-progress").style.width = progress + "%";
 
-  // Efecto parallax en backgrounds
-  document.querySelectorAll(".parallax-bg").forEach((bg) => {
-    const speed = bg.dataset.speed || 0.5;
-    const yPos = -(scrolled * speed);
-    bg.style.transform = `translate3d(0, ${yPos}px, 0)`;
-  });
-
-  // Efecto parallax en elementos flotantes
-  document.querySelectorAll(".floating-code").forEach((code) => {
-    const speed = code.dataset.speed || 0.3;
-    const rect = code.getBoundingClientRect();
-    const yPos = scrolled * speed;
-    code.style.transform = `translate3d(0, ${yPos}px, 0)`;
-  });
-
-  // Actualizar navegación por puntos
   const sections = document.querySelectorAll(".section");
   const navDots = document.querySelectorAll(".nav-dot");
 
@@ -39,7 +21,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Click en navegación por puntos
 document.querySelectorAll(".nav-dot").forEach((dot) => {
   dot.addEventListener("click", () => {
     const sectionId = dot.dataset.section;
@@ -48,7 +29,6 @@ document.querySelectorAll(".nav-dot").forEach((dot) => {
   });
 });
 
-// Intersection Observer para animaciones
 const observerOptions = {
   threshold: 0.2,
   rootMargin: "0px",
@@ -63,7 +43,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Animar elementos al entrar en viewport
 document
   .querySelectorAll(
     ".timeline-content, .project-card, .skill-category, .stat-card"
@@ -75,7 +54,6 @@ document
     observer.observe(el);
   });
 
-// Efecto de mouse en elementos interactivos
 document
   .querySelectorAll(".project-card, .stat-card, .skill-category")
   .forEach((card) => {
