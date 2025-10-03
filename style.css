@@ -168,6 +168,27 @@ body {
   letter-spacing: -2px;
 }
 
+/* Typing / reveal helpers for hero */
+.typing::after {
+  content: '|';
+  margin-left: 6px;
+  color: #58a6ff;
+  animation: blink 1s steps(2) infinite;
+}
+
+.hero-subtitle,
+.hero-description,
+.social-links a {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
 @keyframes titleGlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -207,6 +228,7 @@ body {
 }
 
 .social-links {
+  opacity: 1;
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -214,6 +236,7 @@ body {
 }
 
 .social-link {
+  opacity: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -243,15 +266,15 @@ body {
 }
 
 .social-link:hover::before {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 .social-link:hover {
   color: #58a6ff;
   border-color: #58a6ff;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(88, 166, 255, 0.4);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(88, 166, 255, 0.5);
 }
 
 .social-link span {
@@ -456,13 +479,15 @@ body {
 }
 
 .timeline-content {
-  background: rgba(22, 27, 34, 0.8);
+  background: rgba(22, 27, 34, 0.6);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid rgba(88, 166, 255, 0.3);
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
@@ -473,9 +498,27 @@ body {
   grid-column: 1;
 }
 
+.timeline-content::before {
+  content: '</>';
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 3.5rem;
+  color: rgba(88, 166, 255, 0.05);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.timeline-content:hover::before {
+  color: rgba(88, 166, 255, 0.22);
+  transform: rotate(360deg) scale(1.2);
+}
+
 .timeline-content:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(88, 166, 255, 0.3);
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(88, 166, 255, 0.4);
   border-color: #58a6ff;
 }
 
@@ -483,6 +526,17 @@ body {
   font-size: 1.5rem;
   color: #58a6ff;
   margin-bottom: 1rem;
+}
+
+.timeline-content h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.timeline-content h3 a:hover,
+.timeline-content h3:hover {
+  text-shadow: 0 0 20px rgba(88, 166, 255, 0.8);
 }
 
 .timeline-meta {
@@ -521,7 +575,19 @@ body {
   font-weight: bold;
 }
 
-/* Projects Section */
+.timeline-content li {
+  transition: all 0.3s ease;
+}
+
+.timeline-content li:hover {
+  color: #58a6ff;
+  padding-left: 2rem;
+}
+
+.timeline-content li:hover::before {
+  content: '►';
+}
+
 #projects {
   background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
 }
@@ -821,6 +887,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
   .hero-title {
     font-size: 2.5rem;
   }

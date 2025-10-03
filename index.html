@@ -10,10 +10,11 @@
 </head>
 
 <body>
-  <!-- Barra de progreso -->
+  
+  <!-- Progress bar -->
   <div class="scroll-progress"></div>
 
-  <!-- Navegación por puntos -->
+ <!--Nav -->
   <div class="nav-dots">
     <div class="nav-dot active" data-section="hero" data-title="Inicio"></div>
     <div class="nav-dot" data-section="about" data-title="Sobre mí"></div>
@@ -22,7 +23,6 @@
     <div class="nav-dot" data-section="skills" data-title="Habilidades"></div>
     <div class="nav-dot" data-section="contact" data-title="Contacto"></div>
   </div>
-
   <!-- Hero Section -->
   <section id="hero" class="section">
 
@@ -85,6 +85,12 @@
           Me apasiona el desarrollo backend, la optimización del rendimiento y la construcción
           de sistemas modulares y mantenibles. Siempre curioso, siempre aprendiendo.
         </p>
+        <p>
+          Empecé a programar a los 13 años utilizando plugins-frameworks de Minecraft.
+          Mediante el despliegue de servidores basados en la nube con un número significativo de usuarios simultáneos,
+          aprendí conceptos importantes como la depuración de errores, la gestión de recursos
+          y cómo administrar y mantener un servicio de forma profesional, aunque es en un entorno de juegos.
+        </p>
         <p style="color: #c9d1d9; margin-top: 1rem;">
           📍 La Laguna, Santa Cruz de Tenerife<br>
         </p>
@@ -115,9 +121,35 @@
   <section id="experience" class="section">
 
     <div class="experience-container">
-      <h2 class="section-title">Work Experience</h2>
+      <h2 class="section-title">Experience</h2>
 
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Coordinador Digital</h3>
+            <div class="timeline-meta">
+              <span>Asociación Juvenil Proyecto dubini</span>
+              <span>Septiembre 2025 - Actualidad</span>
+            </div>
+            <ul>
+              <li>Gestiono la plataforma digital y los problemas relacionados con TI</li>
+              <li>Desarrollo y mantengo la infraestructura web de backend y frontend</li>
+              <li>Colaboro con equipos multidisciplinarios para implementar soluciones tecnológicas</li>
+              <li>Implemento mejoras continuas para optimizar el rendimiento y la seguridad del sistema</li>
+
+            </ul>
+
+            <div
+              style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
+              <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
+              <ul>
+                <li><strong>Plataforma de Blog</strong>: desarrollo de una plataforma de blog full-stack con Spring Boot,
+                  enfocada en eficiencia y seguridad, desplegada en su propio dominio.</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="timeline-item">
           <div class="timeline-content">
             <h3>Desarrollador Fullstack en Prestashop</h3>
@@ -162,21 +194,6 @@
 
       <div class="projects-grid">
         <div class="project-card">
-          <h3><a href="https://github.com/FranWDev/backend-chat-system" target="_blank">Private Chat System</a></h3>
-          <p>
-            Proyecto completado en una semana para aprender los fundamentos del desarrollo backend y seguridad.
-            Incluye panel de usuario y administrador con autenticación JWT y comunicación en tiempo real.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">Express.js</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Socket.io</span>
-          </div>
-        </div>
-
-        <div class="project-card">
           <h3>Blog Platform (Proyecto Dubini)</h3>
           <p>
             En fase inicial de desarrollo, construyendo una plataforma de blog full-stack con Spring Boot.
@@ -195,6 +212,22 @@
             <span class="project-tag">Optimization</span>
           </div>
         </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/FranWDev/backend-chat-system" target="_blank">Private Chat System</a></h3>
+          <p>
+            Proyecto completado en una semana para aprender los fundamentos del desarrollo backend y seguridad.
+            Incluye panel de usuario y administrador con autenticación JWT y comunicación en tiempo real.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Express.js</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">Socket.io</span>
+          </div>
+        </div>
+
+        
       </div>
     </div>
   </section>
@@ -277,7 +310,7 @@
               d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
           </svg>
           <span>Mail</span>
-          </a>
+        </a>
       </div>
     </div>
   </section>
