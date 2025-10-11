@@ -1,0 +1,80 @@
+#contact {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+}
+
+.contact-container {
+  max-width: 800px;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+}
+
+.contact-container h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-family: 'Courier New', monospace;
+}
+
+.contact-container p {
+  font-size: 1.25rem;
+  color: #8b949e;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(88, 166, 255, 0.1);
+  border: 2px solid #58a6ff;
+  border-radius: 10px;
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(88, 166, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.contact-link:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.contact-link:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(88, 166, 255, 0.5);
+}
+
+.contact-link span {
+  position: relative;
+  z-index: 1;
+}
+
+.octicon {
+  fill: currentColor;
+  position: relative;
+  z-index: 1;
+}

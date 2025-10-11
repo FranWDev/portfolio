@@ -1,0 +1,31 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.section::before,
+.section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.section::before {
+  top: 0;
+  background: linear-gradient(to bottom, #0d1117 0%, transparent 100%);
+}
+
+.section::after {
+  bottom: 0;
+  background: linear-gradient(to top, #0d1117 0%, transparent 100%);
+}
