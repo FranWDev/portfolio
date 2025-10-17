@@ -29,13 +29,13 @@
 }
 
 .project-card::before {
-  content: '</>';
+  content: "</>";
   position: absolute;
   right: 1rem;
   bottom: 1rem;
   font-size: 4rem;
   color: rgba(88, 166, 255, 0.05);
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-weight: bold;
   transition: all 0.4s ease;
 }
@@ -86,7 +86,11 @@
 }
 
 .project-tag {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.2), rgba(138, 180, 248, 0.2));
+  background: linear-gradient(
+    135deg,
+    rgba(88, 166, 255, 0.2),
+    rgba(138, 180, 248, 0.2)
+  );
   color: #58a6ff;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
@@ -96,11 +100,15 @@
 }
 
 .project-tag:hover {
-  background: linear-gradient(135deg, rgba(88, 166, 255, 0.4), rgba(138, 180, 248, 0.4));
+  background: linear-gradient(
+    135deg,
+    rgba(88, 166, 255, 0.4),
+    rgba(138, 180, 248, 0.4)
+  );
   transform: scale(1.1);
 }
 
 .project-tag::before {
-  content: '#';
+  content: "#";
   margin-right: 0.2rem;
 }

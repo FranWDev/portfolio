@@ -35,7 +35,7 @@
   font-size: 1.5rem;
   color: #58a6ff;
   margin-bottom: 1.5rem;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .skill-list {
@@ -56,7 +56,7 @@
 }
 
 .skill-list li::before {
-  content: '▹';
+  content: "▹";
   position: absolute;
   left: 0;
   color: #58a6ff;
@@ -69,5 +69,5 @@
 }
 
 .skill-list li:hover::before {
-  content: '►';
+  content: "►";
 }
