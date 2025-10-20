@@ -15,7 +15,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".timeline-content, .project-card, .skill-category, .stat-card"
+    ".timeline-content, .skill-category, .stat-card"
   )
   .forEach((el) => {
     el.style.opacity = "0";
@@ -25,7 +25,7 @@ document
   });
 
 document
-  .querySelectorAll(".project-card, .stat-card, .skill-category")
+  .querySelectorAll(".stat-card, .skill-category")
   .forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();

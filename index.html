@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Francisco Airam Hernández Crosa - Portfolio</title>
-  
+
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/components/nav.css" />
   <link rel="stylesheet" href="styles/components/scroll.css" />
@@ -16,15 +16,15 @@
   <link rel="stylesheet" href="styles/section/contact.css" />
   <link rel="stylesheet" href="styles/section/hero.css" />
   <link rel="stylesheet" href="styles/section/base.css" />
-   <link rel="stylesheet" href="styles/responsive.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
 </head>
 
 <body>
-  
+
   <!-- Progress bar -->
   <div class="scroll-progress"></div>
 
- <!--Nav -->
+  <!--Nav -->
   <div class="nav-dots">
     <div class="nav-dot active" data-section="hero" data-title="Inicio"></div>
     <div class="nav-dot" data-section="about" data-title="Sobre mí"></div>
@@ -101,6 +101,11 @@
           aprendí conceptos importantes como la depuración de errores, la gestión de recursos
           y cómo administrar y mantener un servicio de forma profesional, aunque es en un entorno de juegos.
         </p>
+        <p>
+          En mis tiempos libres, doy clases particulares de programación a estudiantes de
+          desarrollo de aplicaciones web (DAW) que abarcan desde programación lógica con Java
+          hasta los fundamentos del desarrollo web.
+        </p>
         <p style="color: #c9d1d9; margin-top: 1rem;">
           📍 La Laguna, Santa Cruz de Tenerife<br>
         </p>
@@ -153,7 +158,8 @@
               style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
               <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
               <ul>
-                <li><strong>Plataforma de Blog</strong>: desarrollo de una plataforma de blog full-stack con Spring Boot,
+                <li><strong>Plataforma de Blog</strong>: desarrollo de una plataforma de blog full-stack con Spring
+                  Boot,
                   enfocada en eficiencia y seguridad, desplegada en su propio dominio.</li>
 
               </ul>
@@ -204,42 +210,108 @@
 
       <div class="projects-grid">
         <div class="project-card">
-          <h3>Blog Platform (Proyecto Dubini)</h3>
+          <h3>Blog Platform (Asociación Juvenil)</h3>
           <p>
-            En fase inicial de desarrollo, construyendo una plataforma de blog full-stack con Spring Boot.
-            Enfocado en uso eficiente de recursos, manejo seguro de contenido y procesamiento backend ligero.
-            Dispone de una arquitectura moderna de microservicios, con una comunicacion entre servicios segura usando
-            JWT y Spring Security.
+            Desarrollo fullstack de un sistema de publicaciones ligero con Spring Boot. Backend distribuido para
+            optimizar carga y ancho de banda, frontend moderno con cacheo de noticias e imágenes.
+          </p>
+          <p>
+            Arquitectura de microservicios: frontendAPI para archivos estáticos y backoffice para gestión de noticias e
+            imágenes. Comunicación asincrónica con Spring Cloud y Kafka, protegida con JWT y whitelist de IP.
+          </p>
+          <p>
+            Backoffice con CRUD y vista previa en tiempo real. Seguridad stateless con Spring Security, JWT,
+            auto-refresh y blacklist. Cache de frontend y microservicio con fallback basado en eventos para resiliencia
+            y mínima carga de red.
+          </p>
+          <p>
+            Despliegue y testing automatizado unitario e integración profunda. Documentación con Swagger/OpenAPI y
+            aplicación de buenas prácticas de Spring Boot.
           </p>
           <div class="project-tags">
             <span class="project-tag">Java</span>
             <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">Spring Security</span>
             <span class="project-tag">Spring Cloud</span>
+            <span class="project-tag">Kafka</span>
+            <span class="project-tag">Spring Security</span>
             <span class="project-tag">JWT</span>
-            <span class="project-tag">JSON</span>
-            <span class="project-tag">GitHub Actions</span>
-            <span class="project-tag">Docker</span>
-            <span class="project-tag">Optimization</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3><a href="https://github.com/FranWDev/backend-chat-system" target="_blank">Private Chat System</a></h3>
-          <p>
-            Proyecto completado en una semana para aprender los fundamentos del desarrollo backend y seguridad.
-            Incluye panel de usuario y administrador con autenticación JWT y comunicación en tiempo real.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">Express.js</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Socket.io</span>
+            <span class="project-tag">OpenAPI</span>
+            <span class="project-tag">Swagger</span>
+            <span class="project-tag">Caching</span>
+            <span class="project-tag">Microservicios</span>
+            <span class="project-tag">Testing / Junit5 & Mockito</span>
+            <span class="project-tag">Optimización</span>
           </div>
         </div>
 
-        
+        <div class="project-card">
+          <h3>Gestión de Inventario (Proyecto Final FP)</h3>
+          <p>
+            Desarrollo del backend de una aplicación de gestión de inventario con Spring Boot, usando arquitectura en
+            capas (controlador → servicio → repositorio → base de datos) y DTOs con validaciones de Jakarta.
+          </p>
+          <p>
+            Optimización de consultas con joins, paginación, cacheo y solución de N+1, generación asíncrona de PDFs con
+            OpenPDF y manejo de Excel con Apache POI.
+          </p>
+          <p>
+            Seguridad avanzada mediante roles jerárquicos, JWT con refresh tokens y blacklist, auditoría con JPA y
+            Kafka, manejo global de errores y validaciones de negocio.
+          </p>
+          <p>
+            Documentación automática con Swagger/OpenAPI y dockerización completa para desarrollo y producción.
+          </p>
+          <p>
+            Testeo automatizado de +60 endpoints REST, incluyendo pruebas unitarias e integradas.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Java</span>
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">Kafka</span>
+            <span class="project-tag">OpenPDF</span>
+            <span class="project-tag">Apache POI</span>
+            <span class="project-tag">Swagger/OpenAPI</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">Testing / Junit5 & Mockito</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Optimización</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <h3>Chat Seguro con Node.js</h3>
+          <p>
+            Proyecto de aprendizaje: plataforma de mensajería en tiempo real desarrollada con Node.js, con autenticación
+            JWT, roles Admin/Usuario, hash de contraseñas con bcryptjs y rutas protegidas mediante middleware. Endpoints
+            RESTful en Express.js y conexión a MySQL mediante connection pooling.
+          </p>
+          <p>
+            Comunicación en tiempo real con WebSockets usando Socket.io, con persistencia básica de mensajes y
+            seguimiento del estado en línea. Se aplicaron buenas prácticas de seguridad como validación de entradas con
+            express-validator y manejo de errores asincrónico.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">Express.js</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">JWT</span>
+            <span class="project-tag">Bcryptjs</span>
+            <span class="project-tag">Crypto</span>
+            <span class="project-tag">Socket.io</span>
+            <span class="project-tag">Express-validator</span>
+            <span class="project-tag">EJS</span>
+            <span class="project-tag">Dotenv</span>
+            <span class="project-tag">Nodemon</span>
+          </div>
+        </div>
+
+
       </div>
+
+
+
+    </div>
     </div>
   </section>
 
@@ -260,6 +332,8 @@
             <li>MySQL, PostgreSQL & MongoDB</li>
             <li>Git & GitHub</li>
             <li>Docker</li>
+            <li>OpenAPI/Swagger</li>
+            <li>Junit5 & Mockito</li>
           </ul>
         </div>
 
@@ -272,14 +346,20 @@
             <li>Organización y planificación</li>
             <li>Adaptabilidad</li>
             <li>Trabajo en equipo</li>
+            <li>Resolución de problemas</li>
           </ul>
         </div>
 
         <div class="skill-category">
           <h3>Educación e Idiomas</h3>
           <ul class="skill-list">
-            <li>Desarrollo de Aplicaciones Web (DAW)</li>
-            <li>Bachillerato Científico-tecnológico</li>
+            <li>Desarrollo de Aplicaciones Web (DAW)</br>
+              IES Domingo Pérez Minik (2024-2026)
+            </li>
+            <li>Bachillerato Científico-tecnológico
+              IES San Benito (2022-2024)
+            </li>
+            
             <li style="margin-top: 1rem; border-top: 1px solid rgba(88, 166, 255, 0.2); padding-top: 1rem;">Español -
               Nativo</li>
             <li>Inglés - Certifiación B2</li>
