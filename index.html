@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles/section/contact.css" />
   <link rel="stylesheet" href="styles/section/hero.css" />
   <link rel="stylesheet" href="styles/section/base.css" />
+  <link rel="stylesheet" href="styles/section/optimizations.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
 </head>
 
@@ -31,6 +32,7 @@
     <div class="nav-dot" data-section="experience" data-title="Experiencia"></div>
     <div class="nav-dot" data-section="projects" data-title="Proyectos"></div>
     <div class="nav-dot" data-section="skills" data-title="Habilidades"></div>
+    <div class="nav-dot" data-section="optimizations" data-title="Optimizaciones"></div>
     <div class="nav-dot" data-section="contact" data-title="Contacto"></div>
   </div>
   <!-- Hero Section -->
@@ -212,27 +214,37 @@
         <div class="project-card">
           <h3>Plataforma de Blog (Asociación Juvenil) - En desarrollo</h3>
           <p>
-            Desarrollo fullstack de un sistema de publicaciones ligero con Spring Boot. Backend distribuido para
-            optimizar carga y ancho de banda, frontend moderno con cacheo de noticias e imágenes.
+            Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida.
+            El sistema cuenta con un proovedor frontend que sirve archivos estáticos y cachea noticias e imágenes,
+            y un Backoffice para edición y administración de contenido con vista previa en tiempo real.
           </p>
+
           <p>
-            Arquitectura de microservicios: frontendAPI para archivos estáticos y backoffice para gestión de noticias e
-            imágenes. Comunicación asincrónica con Spring Cloud y Kafka, protegida con JWT y whitelist de IP.
+            La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT,
+            CORS e IP whitelisting. Seguridad stateless con auto-refresh de tokens y blacklist al cerrar sesión.
           </p>
+
           <p>
-            Backoffice con CRUD y vista previa en tiempo real. Seguridad stateless con Spring Security, JWT,
-            auto-refresh y blacklist. Cache de frontend y microservicio con fallback basado en eventos para resiliencia
-            y mínima carga de red.
+            Implementación de un sistema de cacheo inteligente con Caffeine (memoria + persistente en disco),
+            circuit breaker e invalidación granular por eventos. El servicio proveedor de frontend sirve contenido directamente desde cache
+            y continúa operativo incluso si el servicio backoffice cae temporalmente.
           </p>
+
           <p>
-            Despliegue y testing automatizado unitario e integración profunda. Documentación con Swagger/OpenAPI y
-            aplicación de buenas prácticas de Spring Boot.
+            Gracias a este cacheo de doble capa y al refresco selectivo sólo de los elementos modificados,
+            se redujo el consumo de ancho de banda una cantidad considerable, permitiendo operar dentro del plan
+            gratuito del proveedor
+            sin comprometer la disponibilidad.
+          </p>
+
+          <p>
+            Incluye despliegue real en dominio propio, testing end-to-end, documentación completa con
+            OpenAPI/Swagger, siguiendo buenas prácticas de arquitectura y DevOps.
           </p>
           <div class="project-tags">
             <span class="project-tag">Java</span>
             <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">Spring Cloud</span>
-            <span class="project-tag">Kafka</span>
+            <span class="project-tag">WebFlux</span>
             <span class="project-tag">Spring Security</span>
             <span class="project-tag">JWT</span>
             <span class="project-tag">OpenAPI</span>
@@ -262,7 +274,7 @@
             Documentación automática con Swagger/OpenAPI y dockerización completa para desarrollo y producción.
           </p>
           <p>
-            Testeo automatizado de +60 endpoints REST, incluyendo pruebas unitarias e integradas.
+            Testeo automatizado de +60 endpoints REST, incluyendo pruebas end-to-end.
           </p>
           <div class="project-tags">
             <span class="project-tag">Java</span>
@@ -359,10 +371,42 @@
             <li>Bachillerato Científico-tecnológico
               IES San Benito (2022-2024)
             </li>
-            
+
             <li style="margin-top: 1rem; border-top: 1px solid rgba(88, 166, 255, 0.2); padding-top: 1rem;">Español -
               Nativo</li>
             <li>Inglés - Certifiación B2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optimizations Section -->
+  <section id="optimizations" class="section">
+    <div class="optimizations-container">
+      <h2 class="section-title">Optimizations & Architecture</h2>
+      <div class="optimizations-grid">
+        <div class="optimization-card">
+          <h3>Sección en construcción</h3>
+          <p>
+            Esta sección está actualmente en desarrollo. Aquí encontrarás próximamente información detallada sobre:
+          </p>
+          <ul style="list-style: none; padding-left: 1.5rem;">
+            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
+              • Optimizaciones de rendimiento en mis aplicaciones
+            </li>
+            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
+              • Patrones de arquitectura y diseño de mis aplicaciones
+            </li>
+            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
+              • Metricas de mejora y resultados obtenidos con mis optimizaciones
+            </li>
+            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
+              • Buenas prácticas y lecciones aprendidas en el proceso
+            </li>
+            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
+              • Documentación completa y demos interactivas para comprender las optimizaciones implementadas
+            </li>
           </ul>
         </div>
       </div>

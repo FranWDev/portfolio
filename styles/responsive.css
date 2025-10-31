@@ -25,6 +25,10 @@
   .skills-grid {
     grid-template-columns: 1fr;
   }
+
+  .optimizations-grid {
+    grid-template-columns: 1fr;
+  }
   
   .nav-dots {
     display: none;
