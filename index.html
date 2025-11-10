@@ -215,44 +215,42 @@
           <h3>Plataforma de Blog (Asociación Juvenil) - En desarrollo</h3>
           <p>
             Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida.
-            El sistema cuenta con un proovedor frontend que sirve archivos estáticos y cachea noticias e imágenes,
-            y un Backoffice para edición y administración de contenido con vista previa en tiempo real.
+            El sistema cuenta con un proovedor frontend que sirve archivos estáticos y cachea los contenidos,
+            y un Backoffice para edición y administración de contenido.
           </p>
 
           <p>
-            La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT,
-            CORS e IP whitelisting. Seguridad stateless con auto-refresh de tokens y blacklist al cerrar sesión.
+            La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT.
           </p>
 
           <p>
             Implementación de un sistema de cacheo inteligente con Caffeine (memoria + persistente en disco),
-            circuit breaker e invalidación granular por eventos. El servicio proveedor de frontend sirve contenido directamente desde cache
+            circuit breaker e invalidación granular. El servicio proveedor de frontend sirve contenido directamente desde cache
             y continúa operativo incluso si el servicio backoffice cae temporalmente.
           </p>
 
           <p>
             Gracias a este cacheo de doble capa y al refresco selectivo sólo de los elementos modificados,
             se redujo el consumo de ancho de banda una cantidad considerable, permitiendo operar dentro del plan
-            gratuito del proveedor
-            sin comprometer la disponibilidad.
+            gratuito del proveedor sin comprometer la disponibilidad.
           </p>
 
           <p>
-            Incluye despliegue real en dominio propio, testing end-to-end, documentación completa con
-            OpenAPI/Swagger, siguiendo buenas prácticas de arquitectura y DevOps.
+            Incluye despliegue real en dominio propio, siguiendo buenas prácticas de arquitectura y DevOps.
           </p>
           <div class="project-tags">
             <span class="project-tag">Java</span>
             <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">WebFlux</span>
             <span class="project-tag">Spring Security</span>
+            <span class="project-tag">WebFlux</span>
+            <span class="project-tag">Spring Data</span>
             <span class="project-tag">JWT</span>
-            <span class="project-tag">OpenAPI</span>
-            <span class="project-tag">Swagger</span>
+            <span class="project-tag">PostgreSQL</span>
+            <span class="project-tag">Render</span>
             <span class="project-tag">Caching</span>
             <span class="project-tag">Microservicios</span>
-            <span class="project-tag">Testing / Junit5 & Mockito</span>
             <span class="project-tag">Optimización</span>
+            <span class="project-tag">Service Workers</span>
           </div>
         </div>
 
