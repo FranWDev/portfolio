@@ -98,10 +98,10 @@
           de sistemas modulares y mantenibles. Siempre curioso, siempre aprendiendo.
         </p>
         <p>
-          Empecé a programar a los 13 años utilizando plugins-frameworks de Minecraft.
+          Empecé a programar a los 13 años utilizando plugins-frameworks de Minecraft Java.
           Mediante el despliegue de servidores basados en la nube con un número significativo de usuarios simultáneos,
           aprendí conceptos importantes como la depuración de errores, la gestión de recursos
-          y cómo administrar y mantener un servicio de forma profesional, aunque es en un entorno de juegos.
+          y cómo administrar y mantener un servicio de forma profesional.
         </p>
         <p>
           En mis tiempos libres, doy clases particulares de programación a estudiantes de
@@ -121,6 +121,10 @@
         <div class="stat-card">
           <div class="stat-number">98%</div>
           <div class="stat-label">Mejora de rendimiento</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">89.7%</div>
+          <div class="stat-label">Reducción de ancho de banda</div>
         </div>
         <div class="stat-card">
           <div class="stat-number">5+</div>
@@ -152,25 +156,21 @@
               <li>Gestiono la plataforma digital y los problemas relacionados con TI</li>
               <li>Desarrollo y mantengo la infraestructura web de backend y frontend</li>
               <li>Colaboro con equipos multidisciplinarios para implementar soluciones tecnológicas</li>
-              <li>Implemento mejoras continuas para optimizar el rendimiento y la seguridad del sistema</li>
-
             </ul>
 
             <div
               style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
               <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
               <ul>
-                <li><strong>Plataforma de Blog</strong>: desarrollo de una plataforma de blog full-stack con Spring
-                  Boot,
-                  enfocada en eficiencia y seguridad, desplegada en su propio dominio.</li>
-
+                <li><strong>Plataforma de Blog</strong>: Desarrollo de una plataforma de blog end-to-end con Spring
+                  Boot, enfocada en eficiencia y sostenibilidad, desplegada en su propio dominio próximamente.</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-content">
-            <h3>Desarrollador Fullstack en Prestashop</h3>
+            <h3>Desarrollador Fullstack en Prestashop Legacy - Formación Profesional Dual</h3>
             <div class="timeline-meta">
               <span>Sagrera Canarias</span>
               <span>Abril 2025 - Junio 2025</span>
@@ -212,7 +212,7 @@
 
       <div class="projects-grid">
         <div class="project-card">
-          <h3>Plataforma de Blog (Asociación Juvenil) - En desarrollo</h3>
+          <h3>Plataforma de Blog (Proyecto Dubini) - En desarrollo</h3>
           <p>
             Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida.
             El sistema cuenta con un proovedor frontend que sirve archivos estáticos y cachea los contenidos,
@@ -224,20 +224,22 @@
           </p>
 
           <p>
-            Implementación de un sistema de cacheo inteligente con Caffeine (memoria + persistente en disco),
-            circuit breaker e invalidación granular. El servicio proveedor de frontend sirve contenido directamente desde cache
+            Implementación de un sistema de caché inteligente con Caffeine (memoria + persistente en disco),
+            circuit breaker e invalidación por evento. El servicio proveedor de frontend sirve contenido directamente
+            desde caché
             y continúa operativo incluso si el servicio backoffice cae temporalmente.
           </p>
 
           <p>
-            Gracias a este cacheo de doble capa y al refresco selectivo sólo de los elementos modificados,
+            Gracias a este caché de doble capa
             se redujo el consumo de ancho de banda una cantidad considerable, permitiendo operar dentro del plan
-            gratuito del proveedor sin comprometer la disponibilidad.
+            gratuito del host sin comprometer la disponibilidad.
           </p>
 
           <p>
             Incluye despliegue real en dominio propio, siguiendo buenas prácticas de arquitectura y DevOps.
           </p>
+          <p><a target="_blank" href="https://github.com/FranWDev/AJPD-BlogApp">Repositorio aquí</a></p>
           <div class="project-tags">
             <span class="project-tag">Java</span>
             <span class="project-tag">Spring Boot</span>
@@ -255,13 +257,14 @@
         </div>
 
         <div class="project-card">
-          <h3>Gestión de Inventario (Proyecto Final FP)</h3>
+          <h3>Gestión de Inventario (Proyecto Final FP) - En desarrollo</h3>
+
           <p>
             Desarrollo del backend de una aplicación de gestión de inventario con Spring Boot, usando arquitectura en
             capas (controlador → servicio → repositorio → base de datos) y DTOs con validaciones de Jakarta.
           </p>
           <p>
-            Optimización de consultas con joins, paginación, cacheo y solución de N+1, generación asíncrona de PDFs con
+            Optimización de consultas con joins, paginación, caché y solución de N+1, generación asíncrona de PDFs con
             OpenPDF y manejo de Excel con Apache POI.
           </p>
           <p>
@@ -274,6 +277,8 @@
           <p>
             Testeo automatizado de +60 endpoints REST, incluyendo pruebas end-to-end.
           </p>
+          <p><a target="_blank" href="https://github.com/FranWDev/proyecto-turing">Repositorio aquí</a></p>
+
           <div class="project-tags">
             <span class="project-tag">Java</span>
             <span class="project-tag">Spring Boot</span>
@@ -287,6 +292,7 @@
             <span class="project-tag">PostgreSQL</span>
             <span class="project-tag">Optimización</span>
           </div>
+
         </div>
 
         <div class="project-card">
@@ -301,6 +307,7 @@
             seguimiento del estado en línea. Se aplicaron buenas prácticas de seguridad como validación de entradas con
             express-validator y manejo de errores asincrónico.
           </p>
+          <p><a target="_blank" href="https://github.com/FranWDev/backend-chat-system">Repositorio aquí</a></p>
           <div class="project-tags">
             <span class="project-tag">Node.js</span>
             <span class="project-tag">Express.js</span>
@@ -315,46 +322,183 @@
             <span class="project-tag">Nodemon</span>
           </div>
         </div>
-
-
       </div>
-
-
-
     </div>
     </div>
   </section>
+
   <!-- Optimizations Section -->
   <section id="optimizations" class="section">
     <div class="optimizations-container">
       <h2 class="section-title">Optimizations & Architecture</h2>
+
       <div class="optimizations-grid">
         <div class="optimization-card">
-          <h3>Sección en construcción</h3>
-          <p>
-            Esta sección está actualmente en desarrollo. Aquí encontrarás próximamente información detallada sobre:
-          </p>
-          <ul style="list-style: none; padding-left: 1.5rem;">
-            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
-              • Optimizaciones de rendimiento en mis aplicaciones
-            </li>
-            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
-              • Patrones de arquitectura y diseño de mis aplicaciones
-            </li>
-            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
-              • Metricas de mejora y resultados obtenidos con mis optimizaciones
-            </li>
-            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
-              • Buenas prácticas y lecciones aprendidas en el proceso
-            </li>
-            <li style="color: #8b949e; margin-bottom: 0.75rem; position: relative;">
-              • Documentación completa y demos interactivas para comprender las optimizaciones implementadas
-            </li>
-          </ul>
+          <h3>Sistema de caché Inteligente</h3>
+
+          <div class="optimization-intro">
+            <p>
+              Sistema de caché multicapa diseñado para minimizar peticiones al backend, reducir
+              ancho de banda y mantener la experiencia del usuario durante caídas o mantenimiento del backoffice.
+              Pensado para Proyecto Dubini (Asociación medioambiental juvenil): menor tráfico → menor consumo
+              energético.
+            </p>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Arquitectura del Sistema</h4>
+            <p>
+              Doble capa de caché: <strong>Caffeine</strong> en memoria para acceso inmediato y una
+              <strong>caché persistente en disco</strong> como respaldo. El frontend provider precarga
+              contenido crítico al arranque para operar de forma autónoma si el backoffice no está disponible.
+            </p>
+            <ul class="optimization-features">
+              <li><strong>Arranque inteligente:</strong> precarga inicial de noticias en memoria desde el backoffice.
+              </li>
+              <li><strong>Circuit Breaker:</strong> evita bloqueos y activa fallbacks.</li>
+              <li><strong>Reintentos automáticos:</strong> para asegurar consistencia eventual tras fallos.</li>
+            </ul>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Flujo de Resolución de Datos</h4>
+            <div class="optimization-flow">
+              <div class="flow-step">
+                <span class="flow-number">1</span>
+                <div class="flow-content">
+                  <strong>Caché en Memoria</strong>
+                  <p>Primera consulta a Caffeine para acceso inmediato.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">2</span>
+                <div class="flow-content">
+                  <strong>Backoffice (si necesario)</strong>
+                  <p>Solicitud al backoffice y almacenamiento en caché cuando no existe el dato en memoria.</p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">3</span>
+                <div class="flow-content">
+                  <strong>Caché Persistente</strong>
+                  <p>Fallback desde disco si la memoria y el backoffice no responden.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Verificación Ligera con ETag (200 bytes)</h4>
+            <p>
+              El endpoint <code>api/news/last</code> compara ETags precalculadas para indicar si hay cambios.
+              Respuestas mínimas: <strong>304 Not Modified</strong> (sin transferencia) o <strong>200 OK</strong>
+              si hay contenido nuevo. Las ETags se almacenan localmente para evitar latencia de cálculo.
+            </p>
+          </div>
+          <div class="optimization-section">
+            <h4>Capa de caché del Navegador</h4>
+            <p>
+              Service Worker que cachea recursos estáticos (HTML, CSS, JS) y datos esenciales, habilitando
+              funcionamiento offline y reduciendo peticiones repetidas.
+            </p>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Caso de Uso: 30k usuarios × 10 visitas</h4>
+            <p>
+              El sistema reduce drásticamente el consumo de ancho de banda gracias a que el contenido se sirve
+              casi siempre desde caché. El cálculo es el siguiente:
+            </p>
+            <p>
+              Peso primera carga: <strong>60 KB</strong>.<br>
+              Peso cargas posteriores: <strong>200 B</strong>.
+            </p>
+            <p>
+              Para 30 000 usuarios, cada uno realizando 10 visitas:
+            </p>
+
+            <ul class="optimization-features">
+              <li><strong>Primera visita:</strong> 30 000 × 60 KB = 1 800 000 KB ≈ <strong>1.8 GB</strong></li>
+              <li><strong>Visitas restantes (9 × 200 B):</strong> 30 000 × 9 × 200 B = 54 000 000 B ≈ <strong>51.5
+                  MB</strong></li>
+            </ul>
+
+            <p>
+              Consumo total ≈ <strong>1.85 GB</strong>.
+            </p>
+            <p>
+              En un sistema sin caché inteligente, cada visita costaría 60 KB:
+            </p>
+
+            <ul class="optimization-features">
+              <li>30 000 × 10 × 60 KB = 18 000 000 KB ≈ <strong>18 GB</strong></li>
+            </ul>
+
+            <p>
+              Reducción: <strong>18 GB → 1.85 GB</strong> (≈ −89.7%).
+            </p>
+            <p>
+              Esto justifica matemáticamente la mejora reportada en las métricas.
+            </p>
+          </div>
+
+          <div class="optimization-tech">
+            <h4>Stack Técnico</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Spring WebFlux (reactivo)</span>
+              <span class="tech-tag">Caffeine Cache</span>
+              <span class="tech-tag">Circuit Breaker</span>
+              <span class="tech-tag">ETag</span>
+              <span class="tech-tag">Service Workers</span>
+              <span class="tech-tag">Persistencia en Disco</span>
+            </div>
+          </div>
+
+          <div class="optimization-metrics">
+            <h4>Resultados y Métricas</h4>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <div class="metric-value">−89.7%</div>
+                <div class="metric-label">Reducción de ancho de banda</div>
+                <div class="metric-detail">En el caso de uso de 30k usuarios</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">−99.99%</div>
+                <div class="metric-label">Comunicaciones <br>Backoffice↔Frontend Provider</div>
+                <div class="metric-detail">Canal libre para admin y métricas</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">100-150ms</div>
+                <div class="metric-label">Tiempo de carga web</div>
+                <div class="metric-detail">Primera carga optimizada</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">−99%</div>
+                <div class="metric-label">Peso requests posteriores</div>
+                <div class="metric-detail">60 KB → 500 B</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">&lt;30ms</div>
+                <div class="metric-label">Carga desde caché</div>
+                <div class="metric-detail">Respuesta prácticamente instantánea</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Conclusión</h4>
+            <p>
+              Arquitectura diseñada para <strong>desacoplamiento</strong> y eficiencia: el frontend puede funcionar
+              con contenido cargado previamente y el frontend provider opera independientemente del backoffice.
+              Prioriza resiliencia, simplicidad y reducción de huella energética.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+
   <!-- Skills Section -->
   <section id="skills" class="section">
 
