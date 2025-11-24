@@ -330,3 +330,15 @@ code {
 .optimization-section ul li:hover::before {
   content: '►';
 }
+.optimization-section a {
+  color: #58a6ff;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.optimization-section a:hover {
+  color: #8ab4f8;
+  text-decoration: none;
+  transform: scale(1.05);
+}

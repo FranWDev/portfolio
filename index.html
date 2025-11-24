@@ -1,599 +1,930 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Francisco Airam Hernández Crosa - Portfolio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Francisco Airam Hernández Crosa - Portfolio</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components/nav.css" />
+    <link rel="stylesheet" href="styles/components/scroll.css" />
+    <link rel="stylesheet" href="styles/section/about.css" />
+    <link rel="stylesheet" href="styles/section/experience.css" />
+    <link rel="stylesheet" href="styles/section/projects.css" />
+    <link rel="stylesheet" href="styles/section/skills.css" />
+    <link rel="stylesheet" href="styles/section/contact.css" />
+    <link rel="stylesheet" href="styles/section/hero.css" />
+    <link rel="stylesheet" href="styles/section/base.css" />
+    <link rel="stylesheet" href="styles/section/optimizations.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
 
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/components/nav.css" />
-  <link rel="stylesheet" href="styles/components/scroll.css" />
-  <link rel="stylesheet" href="styles/section/about.css" />
-  <link rel="stylesheet" href="styles/section/experience.css" />
-  <link rel="stylesheet" href="styles/section/projects.css" />
-  <link rel="stylesheet" href="styles/section/skills.css" />
-  <link rel="stylesheet" href="styles/section/contact.css" />
-  <link rel="stylesheet" href="styles/section/hero.css" />
-  <link rel="stylesheet" href="styles/section/base.css" />
-  <link rel="stylesheet" href="styles/section/optimizations.css" />
-  <link rel="stylesheet" href="styles/responsive.css" />
-</head>
+  <body>
+    <!-- Progress bar -->
+    <div class="scroll-progress"></div>
 
-<body>
+    <!--Nav -->
+    <div class="nav-dots">
+      <div class="nav-dot active" data-section="hero" data-title="Inicio"></div>
+      <div class="nav-dot" data-section="about" data-title="Sobre mí"></div>
+      <div
+        class="nav-dot"
+        data-section="experience"
+        data-title="Experiencia"
+      ></div>
+      <div class="nav-dot" data-section="projects" data-title="Proyectos"></div>
+      <div
+        class="nav-dot"
+        data-section="optimizations"
+        data-title="Optimizaciones"
+      ></div>
+      <div class="nav-dot" data-section="skills" data-title="Habilidades"></div>
 
-  <!-- Progress bar -->
-  <div class="scroll-progress"></div>
-
-  <!--Nav -->
-  <div class="nav-dots">
-    <div class="nav-dot active" data-section="hero" data-title="Inicio"></div>
-    <div class="nav-dot" data-section="about" data-title="Sobre mí"></div>
-    <div class="nav-dot" data-section="experience" data-title="Experiencia"></div>
-    <div class="nav-dot" data-section="projects" data-title="Proyectos"></div>
-    <div class="nav-dot" data-section="skills" data-title="Habilidades"></div>
-    <div class="nav-dot" data-section="optimizations" data-title="Optimizaciones"></div>
-    <div class="nav-dot" data-section="contact" data-title="Contacto"></div>
-  </div>
-  <!-- Hero Section -->
-  <section id="hero" class="section">
-
-
-    <div class="hero-content">
-      <h1 class="hero-title">Francisco Airam Hernández Crosa</h1>
-      <p class="hero-subtitle">Junior Backend Developer</p>
-      <p class="hero-description">
-        Desarrollador enfocado en Spring Boot.
-        Apasionado por la optimización de rendimiento y la construcción de sistemas modulares y mantenibles.
-      </p>
-      <div class="social-links">
-        <a href="https://github.com/FranwDev" target="_blank" class="social-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20">
-            <path
-              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-            </path>
-          </svg>
-          <span>GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/franciscohdezcrosa/" target="_blank" class="social-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20">
-            <path
-              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-          </svg>
-          <span>LinkedIn</span>
-        </a>
-        <a href="mailto:hernandezcrosafrancisco@gmail.com" target="_blank" class="social-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path
-              d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-          </svg>
-
-          <span>Mail</span>
-        </a>
-      </div>
+      <div class="nav-dot" data-section="contact" data-title="Contacto"></div>
     </div>
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+      <div class="hero-content">
+        <h1 class="hero-title">Francisco Airam Hernández Crosa</h1>
+        <p class="hero-subtitle">Junior Backend Developer</p>
+        <p class="hero-description">
+          Desarrollador enfocado en Spring Boot. Apasionado por la optimización
+          de rendimiento y la construcción de sistemas modulares y mantenibles.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://github.com/FranwDev"
+            target="_blank"
+            class="social-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="20"
+              height="20"
+            >
+              <path
+                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
+              ></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/franciscohdezcrosa/"
+            target="_blank"
+            class="social-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="20"
+              height="20"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="mailto:hernandezcrosafrancisco@gmail.com"
+            target="_blank"
+            class="social-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
 
-    <div class="scroll-indicator">
-      <span style="font-size: 0.875rem;">Scroll</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-      </svg>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section">
-
-    <div class="about-container">
-      <div class="about-text">
-        <h2>About me</h2>
-        <p>
-          Desarrollador backend enfocado en Spring Boot y código limpio y escalable.
-          Actualmente colaboro como <strong>Coordinador Digital</strong> de
-          <strong>Proyecto Dubini</strong>, una organización juvenil centrada en el cambio climático
-          y la sostenibilidad, donde gestiono la plataforma digital y los problemas relacionados con TI.
-        </p>
-        <p>
-          Me apasiona el desarrollo backend, la optimización del rendimiento y la construcción
-          de sistemas modulares y mantenibles. Siempre curioso, siempre aprendiendo.
-        </p>
-        <p>
-          Empecé a programar a los 13 años utilizando plugins-frameworks de Minecraft Java.
-          Mediante el despliegue de servidores basados en la nube con un número significativo de usuarios simultáneos,
-          aprendí conceptos importantes como la depuración de errores, la gestión de recursos
-          y cómo administrar y mantener un servicio de forma profesional.
-        </p>
-        <p>
-          En mis tiempos libres, doy clases particulares de programación a estudiantes de
-          desarrollo de aplicaciones web (DAW) que abarcan desde programación lógica con Java
-          hasta los fundamentos del desarrollo web.
-        </p>
-        <p style="color: #c9d1d9; margin-top: 1rem;">
-          📍 La Laguna, Santa Cruz de Tenerife<br>
-        </p>
+            <span>Mail</span>
+          </a>
+        </div>
       </div>
 
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-number">99%</div>
-          <div class="stat-label">Queries SQL reducidas con CTEs</div>
+      <div class="scroll-indicator">
+        <span style="font-size: 0.875rem">Scroll</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About me</h2>
+          <p>
+            Desarrollador backend enfocado en Spring Boot y código limpio y
+            escalable. Actualmente colaboro como
+            <strong>Coordinador Digital</strong> de
+            <strong>Proyecto Dubini</strong>, una organización juvenil centrada
+            en el cambio climático y la sostenibilidad, donde gestiono la
+            plataforma digital y los problemas relacionados con TI.
+          </p>
+          <p>
+            Me apasiona el desarrollo backend, la optimización del rendimiento y
+            la construcción de sistemas modulares y mantenibles. Siempre
+            curioso, siempre aprendiendo.
+          </p>
+          <p>
+            Empecé a programar a los 13 años utilizando plugins-frameworks de
+            Minecraft Java. Mediante el despliegue de servidores basados en la
+            nube con un número significativo de usuarios simultáneos, aprendí
+            conceptos importantes como la depuración de errores, la gestión de
+            recursos y cómo administrar y mantener un servicio de forma
+            profesional.
+          </p>
+          <p>
+            En mis tiempos libres, doy clases particulares de programación a
+            estudiantes de desarrollo de aplicaciones web (DAW) que abarcan
+            desde programación lógica con Java hasta los fundamentos del
+            desarrollo web.
+          </p>
+          <p style="color: #c9d1d9; margin-top: 1rem">
+            📍 La Laguna, Santa Cruz de Tenerife<br />
+          </p>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Mejora de rendimiento</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">89.7%</div>
-          <div class="stat-label">Reducción de ancho de banda</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Modulos (Prestashop) en producción</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Autonomía en desarrollo</div>
+
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Mejora de rendimiento de tareas pesadas</div>
+          </div>
+            <div class="stat-card">
+            <div class="stat-number">-98%</div>
+            <div class="stat-label">Reducción de tiempo de despliege</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">-89.7%</div>
+            <div class="stat-label">Reducción de ancho de banda</div>
+          </div>
+            <div class="stat-card">
+            <div class="stat-number">-78%</div>
+            <div class="stat-label">Reducción de tiempo de carga en cold-start</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Autonomía en desarrollo</div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section">
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="experience-container">
+        <h2 class="section-title">Experience</h2>
 
-    <div class="experience-container">
-      <h2 class="section-title">Experience</h2>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <h3>Coordinador Digital</h3>
-            <div class="timeline-meta">
-              <span>Asociación Juvenil Proyecto dubini</span>
-              <span>Septiembre 2025 - Actualidad</span>
-            </div>
-            <ul>
-              <li>Gestiono la plataforma digital y los problemas relacionados con TI</li>
-              <li>Desarrollo y mantengo la infraestructura web de backend y frontend</li>
-              <li>Colaboro con equipos multidisciplinarios para implementar soluciones tecnológicas</li>
-            </ul>
-
-            <div
-              style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
-              <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Coordinador Digital</h3>
+              <div class="timeline-meta">
+                <span>Asociación Juvenil Proyecto dubini</span>
+                <span>Septiembre 2025 - Actualidad</span>
+              </div>
               <ul>
-                <li><strong>Plataforma de Blog</strong>: Desarrollo de una plataforma de blog end-to-end con Spring
-                  Boot, enfocada en eficiencia y sostenibilidad, desplegada en su propio dominio próximamente.</li>
+                <li>
+                  Gestiono la plataforma digital y los problemas relacionados
+                  con TI
+                </li>
+                <li>
+                  Desarrollo y mantengo la infraestructura web de backend y
+                  frontend
+                </li>
+                <li>
+                  Colaboro con equipos multidisciplinarios para implementar
+                  soluciones tecnológicas
+                </li>
+              </ul>
+
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  padding: 1.5rem;
+                  background: rgba(88, 166, 255, 0.05);
+                  border-left: 3px solid #58a6ff;
+                  border-radius: 6px;
+                "
+              >
+                <h4 style="color: #8ab4f8; margin-bottom: 1rem">
+                  Características destacadas:
+                </h4>
+                <ul>
+                  <li>
+                    <strong>Plataforma de Blog</strong>: Desarrollo de una
+                    plataforma de blog end-to-end con Spring Boot, enfocada en
+                    eficiencia y sostenibilidad, desplegada en su propio dominio
+                    próximamente.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>
+                Desarrollador Fullstack en Prestashop Legacy - Formación
+                Profesional Dual
+              </h3>
+              <div class="timeline-meta">
+                <span>Sagrera Canarias</span>
+                <span>Abril 2025 - Junio 2025</span>
+                <span>La Laguna</span>
+              </div>
+              <ul>
+                <li>
+                  Diseñé, desarrollé e implementé funcionalidades en producción
+                  con <strong>completa autonomía</strong>
+                </li>
+                <li>
+                  Optimicé procesos críticos con <strong>CTEs</strong>,
+                  reduciendo <strong>+5000 queries SQL → 5</strong>
+                </li>
+                <li>
+                  Mejoré el rendimiento de tareas pesadas (<strong
+                    >1h → 15s</strong
+                  >)
+                </li>
+                <li>
+                  Implementé <strong>20+ mejoras UX/UI</strong> aumentando
+                  usabilidad y rendimiento móvil
+                </li>
+                <li>Colaboré con equipos no técnicos</li>
+              </ul>
+
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  padding: 1.5rem;
+                  background: rgba(88, 166, 255, 0.05);
+                  border-left: 3px solid #58a6ff;
+                  border-radius: 6px;
+                "
+              >
+                <h4 style="color: #8ab4f8; margin-bottom: 1rem">
+                  Características destacadas:
+                </h4>
+                <ul>
+                  <li>
+                    <strong>Sistema de Reseñas</strong>: flujo de feedback
+                    post-compra con emails automáticos y tokens únicos
+                  </li>
+                  <li>
+                    <strong>Programa de Socios</strong>: sistema de fidelización
+                    con registro cruzado tienda física/online
+                  </li>
+                  <li>
+                    <strong>Recuperación de Carritos Abandonados</strong>:
+                    herramienta de backoffice con links personalizados
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="projects-container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Plataforma de Blog (Proyecto Dubini)</h3>
+            <h3>Plataforma de Blog (Proyecto Dubini)</h3>
+            <p>
+              Desarrollo end-to-end de una plataforma de publicaciones con
+              arquitectura distribuida. El sistema cuenta con un proveedor
+              frontend que sirve archivos estáticos y cachea los contenidos, y
+              un Backoffice para edición y administración de contenido.
+            </p>
+
+            <p>
+              La comunicación entre servicios es asincrónica mediante WebFlux y
+              está protegida con JWT.
+            </p>
+
+            <p>
+              Implementación de un sistema de caché inteligente con Caffeine
+              (memoria + persistente en disco), circuit breaker e invalidación
+              por evento. El servicio proveedor de frontend sirve contenido
+              directamente desde caché y continúa operativo incluso si el
+              servicio backoffice cae temporalmente.
+            </p>
+
+            <p>
+              Gracias a este caché de doble capa se redujo el consumo de ancho
+              de banda una cantidad considerable, permitiendo operar dentro del
+              plan gratuito del host sin comprometer la disponibilidad.
+            </p>
+
+            <p>
+              Despliegue automatizado mediante pipeline CI/CD, con compilación
+              nativa de servicios, construcción de imágenes Docker optimizadas y
+              despliegue en segundos, garantizando rapidez y eficiencia.
+            </p>
+
+            <p>
+              Incluye despliegue real en dominio propio, siguiendo buenas
+              prácticas de arquitectura y DevOps.
+            </p>
+
+            <p>
+              <a target="_blank" href="https://proyectodubini.onrender.com/"
+                >Visita la web</a
+              >
+            </p>
+            <p>
+              <a
+                target="_blank"
+                href="https://github.com/FranWDev/AJPD-FrontendAPI"
+                >Repositorio frontend provider</a
+              >
+              //
+              <a
+                target="_blank"
+                href="https://github.com/FranWDev/AJPD-BackofficeAPI"
+                >Repositorio backoffice</a
+              >
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">Spring Security</span>
+              <span class="project-tag">WebFlux</span>
+              <span class="project-tag">Spring Data</span>
+              <span class="project-tag">JWT</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Render</span>
+              <span class="project-tag">Caching</span>
+              <span class="project-tag">Microservicios</span>
+              <span class="project-tag">Optimización</span>
+              <span class="project-tag">Service Workers</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Gestión de Inventario (Proyecto Final FP) - En desarrollo</h3>
+
+            <p>
+              Desarrollo del backend de una aplicación de gestión de inventario
+              con Spring Boot, usando arquitectura en capas (controlador →
+              servicio → repositorio → base de datos) y DTOs con validaciones de
+              Jakarta.
+            </p>
+            <p>
+              Optimización de consultas con joins, paginación, caché y solución
+              de N+1, generación asíncrona de PDFs con OpenPDF y manejo de Excel
+              con Apache POI.
+            </p>
+            <p>
+              Seguridad avanzada mediante roles jerárquicos, JWT con refresh
+              tokens y blacklist, auditoría con JPA y Kafka, manejo global de
+              errores y validaciones de negocio.
+            </p>
+            <p>
+              Documentación automática con Swagger/OpenAPI y dockerización
+              completa para desarrollo y producción.
+            </p>
+            <p>
+              Testeo automatizado de +60 endpoints REST, incluyendo pruebas
+              end-to-end.
+            </p>
+            <p>
+              <a
+                target="_blank"
+                href="https://github.com/FranWDev/proyecto-turing"
+                >Repositorio aquí</a
+              >
+            </p>
+
+            <div class="project-tags">
+              <span class="project-tag">Java</span>
+              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">JWT</span>
+              <span class="project-tag">Kafka</span>
+              <span class="project-tag">OpenPDF</span>
+              <span class="project-tag">Apache POI</span>
+              <span class="project-tag">Swagger/OpenAPI</span>
+              <span class="project-tag">Docker</span>
+              <span class="project-tag">Testing / Junit5 & Mockito</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Optimización</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Chat Seguro con Node.js</h3>
+            <p>
+              Proyecto de aprendizaje: plataforma de mensajería en tiempo real
+              desarrollada con Node.js, con autenticación JWT, roles
+              Admin/Usuario, hash de contraseñas con bcryptjs y rutas protegidas
+              mediante middleware. Endpoints RESTful en Express.js y conexión a
+              MySQL mediante connection pooling.
+            </p>
+            <p>
+              Comunicación en tiempo real con WebSockets usando Socket.io, con
+              persistencia básica de mensajes y seguimiento del estado en línea.
+              Se aplicaron buenas prácticas de seguridad como validación de
+              entradas con express-validator y manejo de errores asincrónico.
+            </p>
+            <p>
+              <a
+                target="_blank"
+                href="https://github.com/FranWDev/backend-chat-system"
+                >Repositorio aquí</a
+              >
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">MySQL</span>
+              <span class="project-tag">JWT</span>
+              <span class="project-tag">Bcryptjs</span>
+              <span class="project-tag">Crypto</span>
+              <span class="project-tag">Socket.io</span>
+              <span class="project-tag">Express-validator</span>
+              <span class="project-tag">EJS</span>
+              <span class="project-tag">Dotenv</span>
+              <span class="project-tag">Nodemon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optimizations Section -->
+    <section id="optimizations" class="section">
+      <div class="optimizations-container">
+        <h2 class="section-title">Optimizations & Architecture</h2>
+
+        <div class="optimizations-grid">
+          <div class="optimization-card">
+            <h3>Sistema de caché Inteligente</h3>
+
+            <div class="optimization-intro">
+              <p>
+                Sistema de caché multicapa diseñado para minimizar peticiones al
+                backend, reducir ancho de banda y mantener la experiencia del
+                usuario durante caídas o mantenimiento del backoffice. Pensado
+                para Proyecto Dubini (Asociación medioambiental juvenil): menor
+                tráfico → menor consumo energético.
+              </p>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Arquitectura del Sistema</h4>
+              <p>
+                Doble capa de caché: <strong>Caffeine</strong> en memoria para
+                acceso inmediato y una
+                <strong>caché persistente en disco</strong> como respaldo. El
+                frontend provider precarga contenido crítico al arranque para
+                operar de forma autónoma si el backoffice no está disponible.
+              </p>
+              <ul class="optimization-features">
+                <li>
+                  <strong>Arranque inteligente:</strong> precarga inicial de
+                  noticias en memoria desde el backoffice.
+                </li>
+                <li>
+                  <strong>Circuit Breaker:</strong> evita bloqueos y activa
+                  fallbacks.
+                </li>
+                <li>
+                  <strong>Reintentos automáticos:</strong> para asegurar
+                  consistencia eventual tras fallos.
+                </li>
               </ul>
             </div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <h3>Desarrollador Fullstack en Prestashop Legacy - Formación Profesional Dual</h3>
-            <div class="timeline-meta">
-              <span>Sagrera Canarias</span>
-              <span>Abril 2025 - Junio 2025</span>
-              <span>La Laguna</span>
-            </div>
-            <ul>
-              <li>Diseñé, desarrollé e implementé funcionalidades en producción con <strong>completa autonomía</strong>
-              </li>
-              <li>Optimicé procesos críticos con <strong>CTEs</strong>, reduciendo <strong>+5000 queries SQL →
-                  5</strong></li>
-              <li>Mejoré el rendimiento de tareas pesadas (<strong>1h → 15s</strong>)</li>
-              <li>Implementé <strong>20+ mejoras UX/UI</strong> aumentando usabilidad y rendimiento móvil</li>
-              <li>Colaboré con equipos no técnicos</li>
-            </ul>
 
-            <div
-              style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(88, 166, 255, 0.05); border-left: 3px solid #58a6ff; border-radius: 6px;">
-              <h4 style="color: #8ab4f8; margin-bottom: 1rem;">Características destacadas:</h4>
-              <ul>
-                <li><strong>Sistema de Reseñas</strong>: flujo de feedback post-compra con emails automáticos y tokens
-                  únicos</li>
-                <li><strong>Programa de Socios</strong>: sistema de fidelización con registro cruzado tienda
-                  física/online</li>
-                <li><strong>Recuperación de Carritos Abandonados</strong>: herramienta de backoffice con links
-                  personalizados</li>
+            <div class="optimization-section">
+              <h4>Flujo de Resolución de Datos</h4>
+              <div class="optimization-flow">
+                <div class="flow-step">
+                  <span class="flow-number">1</span>
+                  <div class="flow-content">
+                    <strong>Caché en Memoria</strong>
+                    <p>Primera consulta a Caffeine para acceso inmediato.</p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="flow-number">2</span>
+                  <div class="flow-content">
+                    <strong>Backoffice (si necesario)</strong>
+                    <p>
+                      Solicitud al backoffice y almacenamiento en caché cuando
+                      no existe el dato en memoria.
+                    </p>
+                  </div>
+                </div>
+                <div class="flow-step">
+                  <span class="flow-number">3</span>
+                  <div class="flow-content">
+                    <strong>Caché Persistente</strong>
+                    <p>
+                      Fallback desde disco si la memoria y el backoffice no
+                      responden.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Verificación Ligera con ETag (200 bytes)</h4>
+              <p>
+                El endpoint <code>api/news/last</code> compara ETags
+                precalculadas para indicar si hay cambios. Respuestas mínimas:
+                <strong>304 Not Modified</strong> (sin transferencia) o
+                <strong>200 OK</strong>
+                si hay contenido nuevo. Las ETags se almacenan localmente para
+                evitar latencia de cálculo.
+              </p>
+            </div>
+            <div class="optimization-section">
+              <h4>Capa de caché del Navegador</h4>
+              <p>
+                Service Worker que cachea recursos estáticos (HTML, CSS, JS) y
+                datos esenciales, habilitando funcionamiento offline y
+                reduciendo peticiones repetidas.
+              </p>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Caso de Uso: 30k usuarios × 10 visitas</h4>
+              <p>
+                El sistema reduce drásticamente el consumo de ancho de banda
+                gracias a que el contenido se sirve casi siempre desde caché. El
+                cálculo es el siguiente:
+              </p>
+              <p>
+                Peso primera carga: <strong>60 KB</strong>.<br />
+                Peso cargas posteriores: <strong>200 B</strong>.
+              </p>
+              <p>Para 30 000 usuarios, cada uno realizando 10 visitas:</p>
+
+              <ul class="optimization-features">
+                <li>
+                  <strong>Primera visita:</strong> 30 000 × 60 KB = 1 800 000 KB
+                  ≈ <strong>1.8 GB</strong>
+                </li>
+                <li>
+                  <strong>Visitas restantes (9 × 200 B):</strong> 30 000 × 9 ×
+                  200 B = 54 000 000 B ≈ <strong>51.5 MB</strong>
+                </li>
+              </ul>
+
+              <p>Consumo total ≈ <strong>1.85 GB</strong>.</p>
+              <p>
+                En un sistema sin caché inteligente, cada visita costaría 60 KB:
+              </p>
+
+              <ul class="optimization-features">
+                <li>
+                  30 000 × 10 × 60 KB = 18 000 000 KB ≈ <strong>18 GB</strong>
+                </li>
+              </ul>
+
+              <p>Reducción: <strong>18 GB → 1.85 GB</strong> (≈ −89.7%).</p>
+              <p>
+                Esto justifica matemáticamente la mejora reportada en las
+                métricas.
+              </p>
+            </div>
+
+            <div class="optimization-tech">
+              <h4>Stack Técnico</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Spring WebFlux (reactivo)</span>
+                <span class="tech-tag">Caffeine Cache</span>
+                <span class="tech-tag">Circuit Breaker</span>
+                <span class="tech-tag">ETag</span>
+                <span class="tech-tag">Service Workers</span>
+                <span class="tech-tag">Persistencia en Disco</span>
+              </div>
+            </div>
+
+            <div class="optimization-metrics">
+              <h4>Resultados y Métricas</h4>
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <div class="metric-value">−89.7%</div>
+                  <div class="metric-label">Reducción de ancho de banda</div>
+                  <div class="metric-detail">
+                    En el caso de uso de 30k usuarios
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">−99.99%</div>
+                  <div class="metric-label">
+                    Comunicaciones <br />Backoffice↔Frontend Provider
+                  </div>
+                  <div class="metric-detail">
+                    Canal libre para admin y métricas
+                  </div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">100-150ms</div>
+                  <div class="metric-label">Tiempo de carga web</div>
+                  <div class="metric-detail">Primera carga optimizada</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">−99%</div>
+                  <div class="metric-label">Peso requests posteriores</div>
+                  <div class="metric-detail">60 KB → 500 B</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">&lt;30ms</div>
+                  <div class="metric-label">Carga desde caché</div>
+                  <div class="metric-detail">
+                    Respuesta prácticamente instantánea
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Conclusión</h4>
+              <p>
+                Arquitectura diseñada para <strong>desacoplamiento</strong> y
+                eficiencia: el frontend puede funcionar con contenido cargado
+                previamente y el frontend provider opera independientemente del
+                backoffice. Prioriza resiliencia, simplicidad y reducción de
+                huella energética.
+              </p>
+            </div>
+          </div>
+          <div class="optimization-card">
+            <h3>Optimización de Deploy y Cold-Start</h3>
+
+            <div class="optimization-intro">
+              <p>
+                Mejoré significativamente los tiempos de despliegue y arranque
+                en frío de un servicio Spring Boot mediante técnicas avanzadas
+                de compilación nativa y automatización de pipelines.
+              </p>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Desafío Técnico</h4>
+              <p>
+                Inicialmente, el proyecto tenía tiempos de deploy de 5 minutos y
+                cold-start de 1,5 minutos, causando errores por timeout y una
+                experiencia de despliegue poco eficiente.
+              </p>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Solución Implementada</h4>
+              <ul class="optimization-features">
+                <li>
+                  <strong>Compilación Nativa con GraalVM:</strong> Redujo el
+                  tiempo de inicio a milisegundos, optimizando el servicio para
+                  producción.
+                </li>
+                <li>
+                  <strong>Compatibilidad Spring Boot:</strong> Identifiqué y
+                  resolví conflictos con Hibernate/ByteBuddy y procesamiento de
+                  imágenes, delegando tareas al frontend cuando era necesario.
+                </li>
+                <li>
+                  <strong>Pipeline CI/CD:</strong> Construcción y despliegue
+                  automático mediante GitHub Actions, creando imágenes Docker
+                  optimizadas y publicándolas en Docker Hub.
+                </li>
               </ul>
             </div>
+
+            <div class="optimization-metrics">
+              <h4>Resultados y Métricas</h4>
+              <div class="metrics-grid">
+                <div class="metric-item">
+                  <div class="metric-value">−98%</div>
+                  <div class="metric-label">Tiempo de Deploy</div>
+                  <div class="metric-detail">5 min → 5 s</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">−78%</div>
+                  <div class="metric-label">Cold-Start</div>
+                  <div class="metric-detail">1,5 min → 20 s</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="optimization-tech">
+              <h4>Stack Técnico</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Spring Boot Native</span>
+                <span class="tech-tag">GraalVM</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">GitHub Actions</span>
+                <span class="tech-tag">CI/CD</span>
+              </div>
+            </div>
+
+            <div class="optimization-section">
+              <h4>Referencias</h4>
+              <p>
+                Workflow de CI/CD:
+                <a
+                  href="https://github.com/FranWDev/AJPD-FrontendAPI/blob/master/.github/workflows/build-native.yml"
+                  target="_blank"
+                >
+                  GitHub Actions </a
+                >.
+              </p>
+              <p>
+                Imagen Docker optimizada:
+                <a
+                  href="https://hub.docker.com/repository/docker/fran2407/backoffice-native/general"
+                  target="_blank"
+                >
+                  Docker Hub </a
+                >.
+              </p>
+              <p>
+                Dockerfile utilizado:
+                <a
+                  href="https://github.com/FranWDev/AJPD-FrontendAPI/blob/master/Dockerfile.native-simple"
+                  target="_blank"
+                >
+                  Dockerfile.native-simple </a
+                >.
+              </p>
+              <p>
+                (Este es uno de los servicios optimizados; ambos tienen
+                configuraciones idénticas.)
+              </p>
+            </div>
+
+            <div class="optimization-conclusion">
+              <h4>Conclusión</h4>
+              <p>
+                La combinación de compilación nativa, ajustes de compatibilidad
+                y pipeline automatizado permitió despliegues en segundos y
+                cold-starts prácticamente instantáneos. Esta optimización
+                demuestra capacidad para diseñar soluciones que integran
+                rendimiento, DevOps y arquitectura de servicios de manera
+                eficiente.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="skills-container">
+        <h2 class="section-title">Skills & Technologies</h2>
 
-    <div class="projects-container">
-      <h2 class="section-title">Projects</h2>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Plataforma de Blog (Proyecto Dubini)</h3>
-          <p>
-            Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida.
-            El sistema cuenta con un proovedor frontend que sirve archivos estáticos y cachea los contenidos,
-            y un Backoffice para edición y administración de contenido.
-          </p>
-
-          <p>
-            La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT.
-          </p>
-
-          <p>
-            Implementación de un sistema de caché inteligente con Caffeine (memoria + persistente en disco),
-            circuit breaker e invalidación por evento. El servicio proveedor de frontend sirve contenido directamente
-            desde caché
-            y continúa operativo incluso si el servicio backoffice cae temporalmente.
-          </p>
-
-          <p>
-            Gracias a este caché de doble capa
-            se redujo el consumo de ancho de banda una cantidad considerable, permitiendo operar dentro del plan
-            gratuito del host sin comprometer la disponibilidad.
-          </p>
-
-          <p>
-            Incluye despliegue real en dominio propio, siguiendo buenas prácticas de arquitectura y DevOps.
-          </p>
-          <p><a target="_blank" href="https://proyectodubini.onrender.com/">Visita la web</a> </p>
-          <p><a target="_blank" href="https://github.com/FranWDev/AJPD-FrontendAPI">Repositorio frontend provider</a> // <a target="_blank" href="https://github.com/FranWDev/AJPD-BackofficeAPI">Repositorio backoffice</a></p>
-          <div class="project-tags">
-            <span class="project-tag">Java</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">Spring Security</span>
-            <span class="project-tag">WebFlux</span>
-            <span class="project-tag">Spring Data</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Render</span>
-            <span class="project-tag">Caching</span>
-            <span class="project-tag">Microservicios</span>
-            <span class="project-tag">Optimización</span>
-            <span class="project-tag">Service Workers</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Gestión de Inventario (Proyecto Final FP) - En desarrollo</h3>
-
-          <p>
-            Desarrollo del backend de una aplicación de gestión de inventario con Spring Boot, usando arquitectura en
-            capas (controlador → servicio → repositorio → base de datos) y DTOs con validaciones de Jakarta.
-          </p>
-          <p>
-            Optimización de consultas con joins, paginación, caché y solución de N+1, generación asíncrona de PDFs con
-            OpenPDF y manejo de Excel con Apache POI.
-          </p>
-          <p>
-            Seguridad avanzada mediante roles jerárquicos, JWT con refresh tokens y blacklist, auditoría con JPA y
-            Kafka, manejo global de errores y validaciones de negocio.
-          </p>
-          <p>
-            Documentación automática con Swagger/OpenAPI y dockerización completa para desarrollo y producción.
-          </p>
-          <p>
-            Testeo automatizado de +60 endpoints REST, incluyendo pruebas end-to-end.
-          </p>
-          <p><a target="_blank" href="https://github.com/FranWDev/proyecto-turing">Repositorio aquí</a></p>
-
-          <div class="project-tags">
-            <span class="project-tag">Java</span>
-            <span class="project-tag">Spring Boot</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Kafka</span>
-            <span class="project-tag">OpenPDF</span>
-            <span class="project-tag">Apache POI</span>
-            <span class="project-tag">Swagger/OpenAPI</span>
-            <span class="project-tag">Docker</span>
-            <span class="project-tag">Testing / Junit5 & Mockito</span>
-            <span class="project-tag">PostgreSQL</span>
-            <span class="project-tag">Optimización</span>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Tecnologías</h3>
+            <ul class="skill-list">
+              <li>Java (Spring Boot, Data, Security & Cloud)</li>
+              <li>JavaScript (Node.js, Express.js)</li>
+              <li>PHP (Prestashop modules)</li>
+              <li>HTML5 & CSS3</li>
+              <li>MySQL, PostgreSQL & MongoDB</li>
+              <li>Git & GitHub</li>
+              <li>Docker</li>
+              <li>OpenAPI/Swagger</li>
+              <li>Junit5 & Mockito</li>
+            </ul>
           </div>
 
-        </div>
-
-        <div class="project-card">
-          <h3>Chat Seguro con Node.js</h3>
-          <p>
-            Proyecto de aprendizaje: plataforma de mensajería en tiempo real desarrollada con Node.js, con autenticación
-            JWT, roles Admin/Usuario, hash de contraseñas con bcryptjs y rutas protegidas mediante middleware. Endpoints
-            RESTful en Express.js y conexión a MySQL mediante connection pooling.
-          </p>
-          <p>
-            Comunicación en tiempo real con WebSockets usando Socket.io, con persistencia básica de mensajes y
-            seguimiento del estado en línea. Se aplicaron buenas prácticas de seguridad como validación de entradas con
-            express-validator y manejo de errores asincrónico.
-          </p>
-          <p><a target="_blank" href="https://github.com/FranWDev/backend-chat-system">Repositorio aquí</a></p>
-          <div class="project-tags">
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">Express.js</span>
-            <span class="project-tag">MySQL</span>
-            <span class="project-tag">JWT</span>
-            <span class="project-tag">Bcryptjs</span>
-            <span class="project-tag">Crypto</span>
-            <span class="project-tag">Socket.io</span>
-            <span class="project-tag">Express-validator</span>
-            <span class="project-tag">EJS</span>
-            <span class="project-tag">Dotenv</span>
-            <span class="project-tag">Nodemon</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <!-- Optimizations Section -->
-  <section id="optimizations" class="section">
-    <div class="optimizations-container">
-      <h2 class="section-title">Optimizations & Architecture</h2>
-
-      <div class="optimizations-grid">
-        <div class="optimization-card">
-          <h3>Sistema de caché Inteligente</h3>
-
-          <div class="optimization-intro">
-            <p>
-              Sistema de caché multicapa diseñado para minimizar peticiones al backend, reducir
-              ancho de banda y mantener la experiencia del usuario durante caídas o mantenimiento del backoffice.
-              Pensado para Proyecto Dubini (Asociación medioambiental juvenil): menor tráfico → menor consumo
-              energético.
-            </p>
+          <div class="skill-category">
+            <h3>Habilidades Personales</h3>
+            <ul class="skill-list">
+              <li>Autonomia / Proactividad</li>
+              <li>Curiosidad y aprendizaje continuo</li>
+              <li>Comunicación técnica</li>
+              <li>Organización y planificación</li>
+              <li>Adaptabilidad</li>
+              <li>Trabajo en equipo</li>
+              <li>Resolución de problemas</li>
+            </ul>
           </div>
 
-          <div class="optimization-section">
-            <h4>Arquitectura del Sistema</h4>
-            <p>
-              Doble capa de caché: <strong>Caffeine</strong> en memoria para acceso inmediato y una
-              <strong>caché persistente en disco</strong> como respaldo. El frontend provider precarga
-              contenido crítico al arranque para operar de forma autónoma si el backoffice no está disponible.
-            </p>
-            <ul class="optimization-features">
-              <li><strong>Arranque inteligente:</strong> precarga inicial de noticias en memoria desde el backoffice.
+          <div class="skill-category">
+            <h3>Educación e Idiomas</h3>
+            <ul class="skill-list">
+              <li>
+                Desarrollo de Aplicaciones Web (DAW)<br />
+                IES Domingo Pérez Minik (2024-2026)
               </li>
-              <li><strong>Circuit Breaker:</strong> evita bloqueos y activa fallbacks.</li>
-              <li><strong>Reintentos automáticos:</strong> para asegurar consistencia eventual tras fallos.</li>
+              <li>
+                Bachillerato Científico-tecnológico IES San Benito (2022-2024)
+              </li>
+
+              <li
+                style="
+                  margin-top: 1rem;
+                  border-top: 1px solid rgba(88, 166, 255, 0.2);
+                  padding-top: 1rem;
+                "
+              >
+                Español - Nativo
+              </li>
+              <li>Inglés - Certifiación B2</li>
             </ul>
-          </div>
-
-          <div class="optimization-section">
-            <h4>Flujo de Resolución de Datos</h4>
-            <div class="optimization-flow">
-              <div class="flow-step">
-                <span class="flow-number">1</span>
-                <div class="flow-content">
-                  <strong>Caché en Memoria</strong>
-                  <p>Primera consulta a Caffeine para acceso inmediato.</p>
-                </div>
-              </div>
-              <div class="flow-step">
-                <span class="flow-number">2</span>
-                <div class="flow-content">
-                  <strong>Backoffice (si necesario)</strong>
-                  <p>Solicitud al backoffice y almacenamiento en caché cuando no existe el dato en memoria.</p>
-                </div>
-              </div>
-              <div class="flow-step">
-                <span class="flow-number">3</span>
-                <div class="flow-content">
-                  <strong>Caché Persistente</strong>
-                  <p>Fallback desde disco si la memoria y el backoffice no responden.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="optimization-section">
-            <h4>Verificación Ligera con ETag (200 bytes)</h4>
-            <p>
-              El endpoint <code>api/news/last</code> compara ETags precalculadas para indicar si hay cambios.
-              Respuestas mínimas: <strong>304 Not Modified</strong> (sin transferencia) o <strong>200 OK</strong>
-              si hay contenido nuevo. Las ETags se almacenan localmente para evitar latencia de cálculo.
-            </p>
-          </div>
-          <div class="optimization-section">
-            <h4>Capa de caché del Navegador</h4>
-            <p>
-              Service Worker que cachea recursos estáticos (HTML, CSS, JS) y datos esenciales, habilitando
-              funcionamiento offline y reduciendo peticiones repetidas.
-            </p>
-          </div>
-
-          <div class="optimization-section">
-            <h4>Caso de Uso: 30k usuarios × 10 visitas</h4>
-            <p>
-              El sistema reduce drásticamente el consumo de ancho de banda gracias a que el contenido se sirve
-              casi siempre desde caché. El cálculo es el siguiente:
-            </p>
-            <p>
-              Peso primera carga: <strong>60 KB</strong>.<br>
-              Peso cargas posteriores: <strong>200 B</strong>.
-            </p>
-            <p>
-              Para 30 000 usuarios, cada uno realizando 10 visitas:
-            </p>
-
-            <ul class="optimization-features">
-              <li><strong>Primera visita:</strong> 30 000 × 60 KB = 1 800 000 KB ≈ <strong>1.8 GB</strong></li>
-              <li><strong>Visitas restantes (9 × 200 B):</strong> 30 000 × 9 × 200 B = 54 000 000 B ≈ <strong>51.5
-                  MB</strong></li>
-            </ul>
-
-            <p>
-              Consumo total ≈ <strong>1.85 GB</strong>.
-            </p>
-            <p>
-              En un sistema sin caché inteligente, cada visita costaría 60 KB:
-            </p>
-
-            <ul class="optimization-features">
-              <li>30 000 × 10 × 60 KB = 18 000 000 KB ≈ <strong>18 GB</strong></li>
-            </ul>
-
-            <p>
-              Reducción: <strong>18 GB → 1.85 GB</strong> (≈ −89.7%).
-            </p>
-            <p>
-              Esto justifica matemáticamente la mejora reportada en las métricas.
-            </p>
-          </div>
-
-          <div class="optimization-tech">
-            <h4>Stack Técnico</h4>
-            <div class="tech-tags">
-              <span class="tech-tag">Spring WebFlux (reactivo)</span>
-              <span class="tech-tag">Caffeine Cache</span>
-              <span class="tech-tag">Circuit Breaker</span>
-              <span class="tech-tag">ETag</span>
-              <span class="tech-tag">Service Workers</span>
-              <span class="tech-tag">Persistencia en Disco</span>
-            </div>
-          </div>
-
-          <div class="optimization-metrics">
-            <h4>Resultados y Métricas</h4>
-            <div class="metrics-grid">
-              <div class="metric-item">
-                <div class="metric-value">−89.7%</div>
-                <div class="metric-label">Reducción de ancho de banda</div>
-                <div class="metric-detail">En el caso de uso de 30k usuarios</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-value">−99.99%</div>
-                <div class="metric-label">Comunicaciones <br>Backoffice↔Frontend Provider</div>
-                <div class="metric-detail">Canal libre para admin y métricas</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-value">100-150ms</div>
-                <div class="metric-label">Tiempo de carga web</div>
-                <div class="metric-detail">Primera carga optimizada</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-value">−99%</div>
-                <div class="metric-label">Peso requests posteriores</div>
-                <div class="metric-detail">60 KB → 500 B</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-value">&lt;30ms</div>
-                <div class="metric-label">Carga desde caché</div>
-                <div class="metric-detail">Respuesta prácticamente instantánea</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="optimization-section">
-            <h4>Conclusión</h4>
-            <p>
-              Arquitectura diseñada para <strong>desacoplamiento</strong> y eficiencia: el frontend puede funcionar
-              con contenido cargado previamente y el frontend provider opera independientemente del backoffice.
-              Prioriza resiliencia, simplicidad y reducción de huella energética.
-            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="contact-container">
+        <h2>Let's Connect!</h2>
+        <p>No dudes en contactarme a través de mis redes sociales.</p>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
+        <div class="contact-links">
+          <a
+            href="https://github.com/FranwDev"
+            target="_blank"
+            class="contact-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
+              ></path>
+            </svg>
+            <span>GitHub</span>
+          </a>
 
-    <div class="skills-container">
-      <h2 class="section-title">Skills & Technologies</h2>
-
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Tecnologías</h3>
-          <ul class="skill-list">
-            <li>Java (Spring Boot, Data, Security & Cloud)</li>
-            <li>JavaScript (Node.js, Express.js)</li>
-            <li>PHP (Prestashop modules)</li>
-            <li>HTML5 & CSS3</li>
-            <li>MySQL, PostgreSQL & MongoDB</li>
-            <li>Git & GitHub</li>
-            <li>Docker</li>
-            <li>OpenAPI/Swagger</li>
-            <li>Junit5 & Mockito</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3>Habilidades Personales</h3>
-          <ul class="skill-list">
-            <li>Autonomia / Proactividad</li>
-            <li>Curiosidad y aprendizaje continuo</li>
-            <li>Comunicación técnica</li>
-            <li>Organización y planificación</li>
-            <li>Adaptabilidad</li>
-            <li>Trabajo en equipo</li>
-            <li>Resolución de problemas</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3>Educación e Idiomas</h3>
-          <ul class="skill-list">
-            <li>Desarrollo de Aplicaciones Web (DAW)</br>
-              IES Domingo Pérez Minik (2024-2026)
-            </li>
-            <li>Bachillerato Científico-tecnológico
-              IES San Benito (2022-2024)
-            </li>
-
-            <li style="margin-top: 1rem; border-top: 1px solid rgba(88, 166, 255, 0.2); padding-top: 1rem;">Español -
-              Nativo</li>
-            <li>Inglés - Certifiación B2</li>
-          </ul>
+          <a
+            href="https://www.linkedin.com/in/franciscohdezcrosa/"
+            target="_blank"
+            class="contact-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="mailto:hernandezcrosafrancisco@gmail.com"
+            target="_blank"
+            class="contact-link"
+          >
+            <svg
+              class="octicon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            <span>Mail</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-
-    <div class="contact-container">
-      <h2>Let's Connect!</h2>
-      <p>
-        No dudes en contactarme a través de mis redes sociales.
-      </p>
-
-      <div class="contact-links">
-        <a href="https://github.com/FranwDev" target="_blank" class="contact-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24">
-            <path
-              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
-            </path>
-          </svg>
-          <span>GitHub</span>
-        </a>
-
-        <a href="https://www.linkedin.com/in/franciscohdezcrosa/" target="_blank" class="contact-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24">
-            <path
-              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-          </svg>
-          <span>LinkedIn</span>
-        </a>
-        <a href="mailto:hernandezcrosafrancisco@gmail.com" target="_blank" class="contact-link">
-          <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path
-              d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-          </svg>
-          <span>Mail</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <script src="scripts/components/nav.dots.js"></script>
-  <script src="scripts/components/scroll.js"></script>
-  <script src="scripts/animation/tilt.js"></script>
-  <script src="scripts/animation/typing.js"></script>
-</body>
-
+    </section>
+    <script src="scripts/components/nav.dots.js"></script>
+    <script src="scripts/components/scroll.js"></script>
+    <script src="scripts/animation/tilt.js"></script>
+    <script src="scripts/animation/typing.js"></script>
+  </body>
 </html>
