@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -168,9 +168,11 @@
         <div class="about-stats">
           <div class="stat-card">
             <div class="stat-number">99%</div>
-            <div class="stat-label">Mejora de rendimiento de tareas pesadas</div>
+            <div class="stat-label">
+              Mejora de rendimiento de tareas pesadas
+            </div>
           </div>
-            <div class="stat-card">
+          <div class="stat-card">
             <div class="stat-number">-98%</div>
             <div class="stat-label">Reducción de tiempo de despliege</div>
           </div>
@@ -178,14 +180,16 @@
             <div class="stat-number">-89.7%</div>
             <div class="stat-label">Reducción de ancho de banda</div>
           </div>
-            <div class="stat-card">
+          <div class="stat-card">
             <div class="stat-number">-78%</div>
-            <div class="stat-label">Reducción de tiempo de carga en cold-start</div>
+            <div class="stat-label">
+              Reducción de tiempo de carga en cold-start
+            </div>
           </div>
           <div class="stat-card">
             <div class="stat-number">100%</div>
             <div class="stat-label">Autonomía en desarrollo</div>
-
+          </div>
         </div>
       </div>
     </section>
@@ -196,6 +200,41 @@
         <h2 class="section-title">Experience</h2>
 
         <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3>Becario - Desarrollador backend (Java)</h3>
+              <div class="timeline-meta">
+                <span>Atlantis Technology · Formación Profesional Dual</span>
+                <span>Enero 2026 - Actualidad</span>
+                <span>Híbrido</span>
+              </div>
+              <ul>
+                <li>
+                  Modernización de la capa de persistencia en arquitectura
+                  monolítica en proyecto gubernamental legacy
+                </li>
+                <li>
+                  Implementación de <strong>Criteria API</strong>,
+                  <strong>Batch Fetching</strong> y
+                  <strong>caché distribuida/L2</strong> para optimizar el
+                  throughput
+                </li>
+                <li>
+                  Refactorización avanzada de <strong>JPA/Hibernate</strong> y
+                  resolución de problemas <strong>N+1</strong>
+                </li>
+                <li>
+                  Reducción de la complejidad de consultas de
+                  <strong>O(N) a O(1)</strong>, eliminando cuellos de botella en
+                  base de datos
+                </li>
+                <li>
+                  Disminución del <strong>98%</strong> en la latencia de
+                  endpoints críticos (<strong>2.2s → 35ms</strong>)
+                </li>
+              </ul>
+            </div>
+          </div>
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>Coordinador Digital</h3>
@@ -215,6 +254,9 @@
                 <li>
                   Colaboro con equipos multidisciplinarios para implementar
                   soluciones tecnológicas
+                </li>
+                <li>
+                  Colaboro con centros educativos para la implementación de soluciones tecnológicas, como un museo virtual con sistema de reservas.
                 </li>
               </ul>
 
@@ -386,52 +428,73 @@
           </div>
 
           <div class="project-card">
-            <h3>Gestión de Inventario (Proyecto Final FP) - En desarrollo</h3>
+            <h3>Smart Economato API (Proyecto Final FP)</h3>
 
             <p>
-              Desarrollo del backend de una aplicación de gestión de inventario
-              con Spring Boot, usando arquitectura en capas (controlador →
-              servicio → repositorio → base de datos) y DTOs con validaciones de
-              Jakarta.
+              Backend de gestión de inventario para economatos educativos,
+              construido con Spring Boot 4.0 y Java 25 (virtual threads, ZGC,
+              ScopedValue). Arquitectura en capas con CQRS: segregación
+              lectura/escritura mediante PostgreSQL Primary + Replica con
+              enrutamiento automático por AOP.
             </p>
             <p>
-              Optimización de consultas con joins, paginación, caché y solución
-              de N+1, generación asíncrona de PDFs con OpenPDF y manejo de Excel
-              con Apache POI.
+              Lideré el desarrollo del equipo de 4 personas encargado del frontend en Angular, coordinando la implementación de funcionalidades clave y la integración con el backend.
             </p>
             <p>
-              Seguridad avanzada mediante roles jerárquicos, JWT con refresh
-              tokens y blacklist, auditoría con JPA y Kafka, manejo global de
-              errores y validaciones de negocio.
+              Registro de stock inmutable con cadena de hashes SHA-256 (estilo
+              blockchain) para trazabilidad a prueba de manipulaciones, y
+              analítica predictiva de consumo con Holt-Winters Triple
+              Exponential Smoothing (forecasting a 14 días).
             </p>
             <p>
-              Documentación automática con Swagger/OpenAPI y dockerización
-              completa para desarrollo y producción.
+              Arquitectura event-driven con patrón Transactional Outbox y Kafka
+              (modo KRaft) para entrega garantizada de eventos de auditoría.
+              Caché multicapa (Redis + Caffeine) con degradación elegante y
+              circuit breakers (Resilience4j) para PostgreSQL, Replica, Redis y
+              Kafka, con alertas en tiempo real al frontend vía WebSocket.
             </p>
             <p>
-              Testeo automatizado de +60 endpoints REST, incluyendo pruebas
-              end-to-end.
+              Seguridad con JWT (HMAC SHA-512), blacklist con fallback Redis→DB,
+              escalado temporal de roles y autorización a nivel de método.
+              Generación de PDFs con iText 7, exportación Excel con Apache POI,
+              internacionalización (i18n) y documentación interactiva con
+              Swagger/OpenAPI y Scalar.
+            </p>
+            <p>
+              Observabilidad completa con Prometheus, Grafana y Micrometer.
+              Dockerización de 7 servicios (PostgreSQL Primary/Replica, Redis,
+              Kafka KRaft, Spring Boot, Prometheus, Grafana). Suite de +540
+              tests: unitarios, integración con Testcontainers, concurrencia,
+              resiliencia end-to-end y circuit breaker.
             </p>
             <p>
               <a
                 target="_blank"
-                href="https://github.com/FranWDev/proyecto-turing"
+                href="https://github.com/FranWDev/smart-economato-API"
                 >Repositorio aquí</a
               >
             </p>
 
             <div class="project-tags">
-              <span class="project-tag">Java</span>
-              <span class="project-tag">Spring Boot</span>
+              <span class="project-tag">Java 25</span>
+              <span class="project-tag">Spring Boot 4</span>
+              <span class="project-tag">CQRS</span>
+              <span class="project-tag">PostgreSQL (Primary/Replica)</span>
+              <span class="project-tag">Redis</span>
+              <span class="project-tag">Kafka (KRaft)</span>
+              <span class="project-tag">Resilience4j</span>
               <span class="project-tag">JWT</span>
-              <span class="project-tag">Kafka</span>
-              <span class="project-tag">OpenPDF</span>
-              <span class="project-tag">Apache POI</span>
-              <span class="project-tag">Swagger/OpenAPI</span>
+              <span class="project-tag">WebSocket</span>
+              <span class="project-tag">Holt-Winters Forecasting</span>
+              <span class="project-tag">Transactional Outbox</span>
+              <span class="project-tag">iText 7 / Apache POI</span>
+              <span class="project-tag">Prometheus / Grafana</span>
+              <span class="project-tag">Swagger / Scalar</span>
               <span class="project-tag">Docker</span>
-              <span class="project-tag">Testing / Junit5 & Mockito</span>
-              <span class="project-tag">PostgreSQL</span>
-              <span class="project-tag">Optimización</span>
+              <span class="project-tag"
+                >Testcontainers / JUnit 5 / Mockito</span
+              >
+              <span class="project-tag">MapStruct</span>
             </div>
           </div>
 
@@ -479,7 +542,191 @@
     <section id="optimizations" class="section">
       <div class="optimizations-container">
         <h2 class="section-title">Optimizations & Architecture</h2>
+        <div class="optimization-card">
+          <h3>Arquitectura de Resiliencia Auto-Reparable</h3>
 
+          <div class="optimization-intro">
+            <p>
+              Sistema de tolerancia a fallos para un backend con 4 servicios de
+              infraestructura (PostgreSQL Primary, PostgreSQL Replica, Redis,
+              Kafka). Diseñado para que la aplicación siga operativa aunque uno
+              o varios servicios caigan, con detección proactiva, degradación
+              elegante y notificación en tiempo real al frontend.
+            </p>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Desafío Técnico</h4>
+            <p>
+              Un backend con CQRS (escritura en Primary, lecturas en Replica),
+              caché distribuida en Redis y eventos de auditoría via Kafka tiene
+              múltiples puntos de fallo. Un timeout de Redis o una caída de la
+              réplica no deberían provocar errores 500 al usuario.
+            </p>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Arquitectura del Sistema</h4>
+            <p>
+              4 Circuit Breakers independientes (Resilience4j) monitorizan cada
+              servicio. Un <strong>HealthChecker proactivo</strong> testea las
+              conexiones cada 3-5 segundos y abre el circuit breaker
+              <em>antes</em> de que una petición real falle. Al detectar caída o
+              recuperación, se publica un <strong>Spring Event</strong> que un
+              <strong>WebSocketNotificationService</strong> traduce a alertas
+              STOMP al frontend.
+            </p>
+
+            <ul class="optimization-features">
+              <li>
+                <strong>CQRS con fallback automático:</strong> si la réplica
+                cae, un AOP Aspect redirige las lecturas al Primary vía
+                <code>ScopedValue</code> (Java 25), sin cambiar una línea de
+                código de negocio.
+              </li>
+              <li>
+                <strong>Caché circuit-breaker-aware:</strong> un
+                <code>CircuitBreakerAwareCacheManager</code> envuelve cada
+                operación Redis. Con el CB abierto, toda operación de caché se
+                convierte en cache-miss: la app sigue funcionando sin caché.
+              </li>
+              <li>
+                <strong>Outbox resiliente:</strong> el procesador de Kafka
+                comprueba el estado del CB antes de cada batch. Si Kafka está
+                caído, los eventos quedan en la tabla Outbox (PostgreSQL) hasta
+                la recuperación, con Gauge de Prometheus para monitorizar el
+                lag.
+              </li>
+              <li>
+                <strong>JWT Blacklist con failover:</strong> Redis → DB
+                automático. Si Redis cae, la verificación de tokens revocados se
+                hace contra PostgreSQL sin interrupción.
+              </li>
+            </ul>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Flujo de Detección y Recuperación</h4>
+            <div class="optimization-flow">
+              <div class="flow-step">
+                <span class="flow-number">1</span>
+                <div class="flow-content">
+                  <strong>Health Check Proactivo</strong>
+                  <p>
+                    Cada 3-5s se testean DB, Replica, Redis y Kafka. Si falla,
+                    se abre el Circuit Breaker inmediatamente.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">2</span>
+                <div class="flow-content">
+                  <strong>Transición de Estado → Spring Event</strong>
+                  <p>
+                    Resilience4j emite un evento de transición (CLOSED→OPEN). Un
+                    listener lo traduce a <code>CircuitBreakerOpenEvent</code>.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">3</span>
+                <div class="flow-content">
+                  <strong>WebSocket → Frontend</strong>
+                  <p>
+                    El servicio de notificaciones envía un código de alerta
+                    (<code>DB_FAILURE</code>, <code>REDIS_FAILURE</code>...) vía
+                    STOMP a <code>/topic/alerts</code>. Al reconectar, el
+                    frontend recibe el estado actual de todos los CBs.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">4</span>
+                <div class="flow-content">
+                  <strong>Recuperación Automática</strong>
+                  <p>
+                    Cada 10-15s se testea la recuperación del servicio caído. Si
+                    responde, se cierra el CB y se envía
+                    <code>*_RECOVERED</code> al frontend.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Degradación por Servicio</h4>
+            <ul class="optimization-features">
+              <li>
+                <strong>Replica caída:</strong> lecturas redirigidas al Primary.
+                Impacto: mayor carga en Primary, 0 errores visibles.
+              </li>
+              <li>
+                <strong>Redis caído:</strong> cache-miss universal, consultas
+                van directo a DB. Blacklist JWT cae a PostgreSQL.
+              </li>
+              <li>
+                <strong>Kafka caído:</strong> eventos de auditoría acumulados en
+                tabla Outbox. Se envían cuando Kafka vuelve (entrega
+                garantizada).
+              </li>
+              <li>
+                <strong>Primary caído:</strong> operaciones de escritura fallan
+                con error controlado. Lecturas siguen via Replica si está sana.
+              </li>
+            </ul>
+          </div>
+
+          <div class="optimization-tech">
+            <h4>Stack Técnico</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Resilience4j (4 CBs)</span>
+              <span class="tech-tag">WebSocket STOMP</span>
+              <span class="tech-tag">Spring AOP</span>
+              <span class="tech-tag">ScopedValue (Java 25)</span>
+              <span class="tech-tag">CQRS</span>
+              <span class="tech-tag">PostgreSQL Primary/Replica</span>
+              <span class="tech-tag">Redis + Caffeine</span>
+              <span class="tech-tag">Kafka (Transactional Outbox)</span>
+              <span class="tech-tag">Prometheus / Micrometer</span>
+            </div>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Cobertura de Testing</h4>
+            <ul class="optimization-features">
+              <li>
+                Tests de integración que abren cada CB y verifican que se envía
+                la alerta WebSocket correcta (<code>DB_FAILURE</code>,
+                <code>REDIS_RECOVERED</code>, etc.).
+              </li>
+              <li>
+                Test end-to-end de resiliencia: confirma que
+                <code>@Cacheable</code> no lanza excepción con Redis CB abierto.
+              </li>
+              <li>
+                Test de failover JWT: verifica que con Redis caído la blacklist
+                cae a PostgreSQL sin interrupción.
+              </li>
+              <li>
+                Test de notificación a nueva conexión WebSocket: usuario que
+                conecta recibe el estado actual de CBs abiertos.
+              </li>
+            </ul>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Conclusión</h4>
+            <p>
+              Arquitectura diseñada para <strong>zero-downtime parcial</strong>:
+              cualquier servicio auxiliar puede caer sin producir errores al
+              usuario. La detección proactiva (health checks cada 3s) reduce el
+              tiempo medio de detección frente al enfoque reactivo tradicional,
+              y el WebSocket permite al frontend mostrar banners informativos en
+              vez de errores genéricos.
+            </p>
+          </div>
+        </div>
         <div class="optimizations-grid">
           <div class="optimization-card">
             <h3>Sistema de caché Inteligente</h3>
@@ -805,14 +1052,18 @@
             <h3>Tecnologías</h3>
             <ul class="skill-list">
               <li>Java (Spring Boot, Data, Security & Cloud)</li>
+              <li>TypeScript (Angular)</li>
               <li>JavaScript (Node.js, Express.js)</li>
               <li>PHP (Prestashop modules)</li>
               <li>HTML5 & CSS3</li>
               <li>MySQL, PostgreSQL & MongoDB</li>
+              <li>Redis</li>
+              <li>Kafka</li>
               <li>Git & GitHub</li>
               <li>Docker</li>
+              <li>Prometheus & Grafana</li>
               <li>OpenAPI/Swagger</li>
-              <li>Junit5 & Mockito</li>
+              <li>JUnit 5, Mockito & Testcontainers</li>
             </ul>
           </div>
 
