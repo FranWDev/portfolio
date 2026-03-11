@@ -427,77 +427,80 @@
             </div>
           </div>
 
-          <div class="project-card">
-            <h3>Smart Economato API (Proyecto Final FP)</h3>
-
-            <p>
-              Backend de gestión de inventario para economatos educativos,
-              construido con Spring Boot 4.0 y Java 25 (virtual threads, ZGC,
-              ScopedValue). Arquitectura hexagonal con CQRS: segregación
-              lectura/escritura mediante PostgreSQL Primary + Replica con
-              enrutamiento automático por AOP.
-            </p>
-            <p>
-              Lideré el desarrollo del equipo de 4 personas encargado del frontend en Angular, coordinando la implementación de funcionalidades clave y la integración con el backend.
-            </p>
-            <p>
-              Registro de stock inmutable con cadena de hashes SHA-256 (estilo
-              blockchain) para trazabilidad a prueba de manipulaciones, y
-              analítica predictiva de consumo con Holt-Winters Triple
-              Exponential Smoothing (forecasting a 14 días).
-            </p>
-            <p>
-              Arquitectura event-driven con patrón Transactional Outbox y Kafka
-              (modo KRaft) para entrega garantizada de eventos de auditoría.
-              Caché multicapa (Redis + Caffeine) con degradación elegante y
-              circuit breakers (Resilience4j) para PostgreSQL, Replica, Redis y
-              Kafka, con alertas en tiempo real al frontend vía WebSocket.
-            </p>
-            <p>
-              Seguridad con JWT (HMAC SHA-512), blacklist con fallback Redis→DB,
-              escalado temporal de roles y autorización a nivel de método.
-              Generación de PDFs con iText 7, exportación Excel con Apache POI,
-              internacionalización (i18n) y documentación interactiva con
-              Swagger/OpenAPI y Scalar.
-            </p>
-            <p>
-              Observabilidad completa con Prometheus, Grafana y Micrometer.
-              Dockerización de 7 servicios (PostgreSQL Primary/Replica, Redis,
-              Kafka KRaft, Spring Boot, Prometheus, Grafana). Suite de +540
-              tests: unitarios, integración con Testcontainers, concurrencia,
-              resiliencia end-to-end y circuit breaker.
-            </p>
-            <p>
-              <a
-                target="_blank"
-                href="https://github.com/FranWDev/smart-economato-API"
-                >Repositorio aquí</a
-              >
-            </p>
-
-            <div class="project-tags">
-              <span class="project-tag">Java 25</span>
-              <span class="project-tag">Spring Boot 4</span>
-              <span class="project-tag">CQRS</span>
-              <span class="project-tag">PostgreSQL (Primary/Replica)</span>
-              <span class="project-tag">Redis</span>
-              <span class="project-tag">Kafka (KRaft)</span>
-              <span class="project-tag">Resilience4j</span>
-              <span class="project-tag">JWT</span>
-              <span class="project-tag">WebSocket</span>
-              <span class="project-tag">Holt-Winters Forecasting</span>
-              <span class="project-tag">Transactional Outbox</span>
-              <span class="project-tag">iText 7 / Apache POI</span>
-              <span class="project-tag">Prometheus / Grafana</span>
-              <span class="project-tag">Swagger / Scalar</span>
-              <span class="project-tag">Docker</span>
-              <span class="project-tag"
-                >Testcontainers / JUnit 5 / Mockito</span
-              >
-              <span class="project-tag">MapStruct</span>
-            </div>
-          </div>
-
+          <div class="project-card">  
+  <h3>Smart Economato API (Proyecto Final FP)</h3>  
+  
+  <p>  
+    Plataforma de gestión de inventario predictiva para economatos  
+    educativos, con arquitectura de microservicios: backend transaccional  
+    en Spring Boot 4.0 / Java 25 (virtual threads, ZGC Generational,  
+    ScopedValue) y microservicio de forecasting en Python / FastAPI con  
+    Meta Prophet. Arquitectura hexagonal con CQRS: segregación  
+    lectura/escritura mediante PostgreSQL Primary + Replica con  
+    enrutamiento automático por AOP.  
+  </p>  
+  <p>  
+    Lideré el desarrollo del equipo de 4 personas encargado del frontend  
+    en Angular, coordinando la implementación de funcionalidades clave y  
+    la integración con el backend.  
+  </p>  
+  <p>  
+    Registro de stock inmutable con cadena de hashes SHA-256 (estilo  
+    blockchain) para trazabilidad a prueba de manipulaciones. Analítica  
+    predictiva de consumo con Meta Prophet (forecasting a 14 días)  
+    ejecutada en microservicio Python asíncrono, con Holt-Winters Triple  
+    Exponential Smoothing como fallback legacy en Java.  
+  </p>  
+  <p>  
+    Arquitectura event-driven con patrón Transactional Outbox y Kafka  
+    (modo KRaft) para entrega garantizada de eventos de auditoría.  
+    Caché multicapa (Redis + Caffeine) con degradación elegante y  
+    circuit breakers (Resilience4j) para PostgreSQL, Replica, Redis y  
+    Kafka, con alertas en tiempo real al frontend vía WebSocket.  
+  </p>  
+  <p>  
+    Seguridad con JWT (HMAC SHA-256), blacklist con fallback Redis→DB,  
+    escalado temporal de roles y autorización a nivel de método.  
+    Generación de PDFs con iText 8, exportación Excel con Apache POI,  
+    internacionalización (i18n) y documentación interactiva con  
+    Swagger/OpenAPI y Scalar.  
+  </p>  
+  <p>  
+    Observabilidad completa con Prometheus, Grafana y Micrometer.  
+    Dockerización de 8 servicios (PostgreSQL Primary/Replica, Redis,  
+    Kafka KRaft, Spring Boot, FastAPI Prophet, Prometheus, Grafana).  
+    Suite de +600 tests: unitarios, integración con Testcontainers,  
+    concurrencia, resiliencia end-to-end y circuit breaker.  
+  </p>  
+  <p>  
+    <a  
+      target="_blank"  
+      href="https://github.com/FranWDev/smart-economato-API"  
+      >Repositorio aquí</a  
+    >  
+  </p>  
+  
+  <div class="project-tags">  
+    <span class="project-tag">Java 25</span>  
+    <span class="project-tag">Spring Boot 4</span>  
+    <span class="project-tag">Python / FastAPI</span>  
+    <span class="project-tag">Meta Prophet</span>  
+    <span class="project-tag">CQRS</span>  
+    <span class="project-tag">PostgreSQL (Primary/Replica)</span>  
+    <span class="project-tag">Redis</span>  
+    <span class="project-tag">Kafka (KRaft)</span>  
+    <span class="project-tag">Resilience4j</span>  
+    <span class="project-tag">JWT</span>  
+    <span class="project-tag">WebSocket</span>  
+    <span class="project-tag">Transactional Outbox</span>  
+    <span class="project-tag">iText 8 / Apache POI</span>  
+    <span class="project-tag">Prometheus / Grafana</span>  
+    <span class="project-tag">Swagger / Scalar</span>  
+    <span class="project-tag">Docker</span>  
+    <span class="project-tag">Testcontainers / JUnit 5 / Mockito</span>  
+    <span class="project-tag">MapStruct</span>  
+  </div>  
+</div>
           <div class="project-card">
             <h3>Chat Seguro con Node.js</h3>
             <p>
