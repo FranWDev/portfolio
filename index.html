@@ -444,13 +444,17 @@
     en Angular, coordinando la implementación de funcionalidades clave y  
     la integración con el backend.  
   </p>  
-  <p>  
-    Registro de stock inmutable con cadena de hashes SHA-256 (estilo  
-    blockchain) para trazabilidad a prueba de manipulaciones. Analítica  
-    predictiva de consumo con Meta Prophet (forecasting a 14 días)  
-    ejecutada en microservicio Python asíncrono, con Holt-Winters Triple  
-    Exponential Smoothing como fallback legacy en Java.  
-  </p>  
+<p>  
+  Blockchain real para registro de stock inmutable con Proof of Work  
+  (dificultad configurable), Merkle Trees con verificación O(log n)  
+  y encadenamiento HMAC-SHA256. Cada bloque agrupa transacciones del  
+  mempool, calcula su Merkle root y se mina con nonce hasta satisfacer  
+  la dificultad. Inmutabilidad reforzada con triggers PostgreSQL que  
+  impiden UPDATE/DELETE a nivel de base de datos. Analítica predictiva  
+  de consumo con Meta Prophet (forecasting a 14 días configurable)  
+  ejecutada en microservicio Python asíncrono, con Holt-Winters Triple  
+  Exponential Smoothing como fallback en Java.  
+</p>
   <p>  
     Arquitectura event-driven con patrón Transactional Outbox y Kafka  
     (modo KRaft) para entrega garantizada de eventos de auditoría.  
@@ -467,9 +471,9 @@
   </p>  
   <p>  
     Observabilidad completa con Prometheus, Grafana y Micrometer.  
-    Dockerización de 8 servicios (PostgreSQL Primary/Replica, Redis,  
+    Dockerización de 10 servicios (PostgreSQL Primary/Replica, Redis,  
     Kafka KRaft, Spring Boot, FastAPI Prophet, Prometheus, Grafana).  
-    Suite de +600 tests: unitarios, integración con Testcontainers,  
+    Suite de 1000 tests: unitarios, integración con Testcontainers,  
     concurrencia, resiliencia end-to-end y circuit breaker.  
   </p>  
   <p>  
