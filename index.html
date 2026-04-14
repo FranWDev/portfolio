@@ -46,7 +46,7 @@
     <section id="hero" class="section">
       <div class="hero-content">
         <h1 class="hero-title">Francisco Airam Hernández Crosa</h1>
-        <p class="hero-subtitle">Junior Backend Developer</p>
+        <p class="hero-subtitle">Backend Developer</p>
         <p class="hero-description">
           Desarrollador enfocado en Spring Boot. Apasionado por la optimización
           de rendimiento y la construcción de sistemas modulares y mantenibles.
@@ -155,10 +155,12 @@
             profesional.
           </p>
           <p>
-            En mis tiempos libres, doy clases particulares de programación a
-            estudiantes de desarrollo de aplicaciones web (DAW) que abarcan
-            desde programación lógica con Java hasta los fundamentos del
-            desarrollo web.
+            Para maximizar la entrega de valor, aplico metodologías de <strong>AI-Augmented Software Engineering (CDD)</strong>. 
+            Entendiendo que <em>la IA te amplifica a ti, tanto tu velocidad como tus errores y huecos de conocimiento</em>, 
+            el pilar innegociable de mi flujo de trabajo es <strong>establecer la arquitectura y la base del código al 100%</strong>. 
+            Al garantizar un contexto inicial perfecto y sin fisuras, evito que la IA alucine o arrastre errores.
+            A partir de ahí, orquesto agentes para escalar el desarrollo, respaldados por Quality Gates automatizados.
+          </p>
           </p>
           <p style="color: #c9d1d9; margin-top: 1rem">
             📍 La Laguna, Santa Cruz de Tenerife<br />
@@ -445,11 +447,11 @@
     la integración con el backend.  
   </p>  
 <p>  
-  Blockchain real para registro de stock inmutable con Proof of Work  
-  (dificultad configurable), Merkle Trees con verificación O(log n)  
-  y encadenamiento HMAC-SHA256. Cada bloque agrupa transacciones del  
-  mempool, calcula su Merkle root y se mina con nonce hasta satisfacer  
-  la dificultad. Inmutabilidad reforzada con triggers PostgreSQL que  
+  Blockchain real para registro de stock inmutable, 
+  Merkle Trees con verificación O(log n)  y encadenamiento HMAC-SHA256.
+  Cada bloque agrupa transacciones del  
+  mempool, calcula su Merkle root y se sella en bloques encadenados (blockchain). 
+  Inmutabilidad reforzada con triggers PostgreSQL que  
   impiden UPDATE/DELETE a nivel de base de datos. Analítica predictiva  
   de consumo con Meta Prophet (forecasting a 14 días configurable)  
   ejecutada en microservicio Python asíncrono, con Holt-Winters Triple  
@@ -549,6 +551,49 @@
     <section id="optimizations" class="section">
       <div class="optimizations-container">
         <h2 class="section-title">Optimizations & Architecture</h2>
+        <div class="optimization-card">
+            <h3>AI-Augmented SDLC & Automated Quality Gates</h3>
+
+            <div class="optimization-intro">
+              <p>
+                Diseño de un flujo de trabajo (workflow) híbrido impulsado por Inteligencia Artificial. Dado que los LLMs son sistemas
+                <strong>probabilísticos, no determinísticos</strong>; generan la salida estadísticamente más probable, 
+                no necesariamente la más robusta o correcta, mi metodología exige una estricta intervención humana (Human-in-the-Loop). 
+                Yo diseño la base y prevengo vulnerabilidades, la IA escala el código, y un proceso automatizado valida la calidad final.
+              </p>
+            </div>
+
+            <div class="optimization-section">
+              <h4>El Flujo de Trabajo (Agentic Workflow)</h4>
+              <ul class="optimization-features">
+                <li>
+                  <strong>Foundation & Context Engineering (Manual):</strong> 
+                  Desarrollo minucioso del esqueleto del proyecto, configuraciones core, interfaces y arquitectura de dominio. 
+                  Esta base libre de errores es el ancla determinística que guía a la IA y previene su desviación probabilística.
+                </li>
+                <li>
+                  <strong>Delegación de Lógica Compleja:</strong> Uso de DevinAI integrado en el repositorio. 
+                  El agente consume mi diseño para programar hasta el 90% del sistema, implementando no solo infraestructura básica, sino flujos de negocio avanzados 
+                  (ej. el sistema de Ledger inmutable en Smart Economato).
+                </li>
+                <li>
+                  <strong>Automated PR Review (AI Quality Gate):</strong> 
+                  El único paso 100% automatizado. Un LLM-as-a-Judge evalúa cada Pull Request generada por los agentes. 
+                  Previene anti-patrones de Spring Boot (ej. N+1) y audita que la IA haya cubierto los <em>edge cases</em> críticos, 
+                  compensando su tendencia estocástica a programar solo el "happy path".
+                </li>
+              </ul>
+            </div>
+            <div class="optimization-tech">
+              <h4>Stack Técnico</h4>
+              <div class="tech-tags">
+                <span class="tech-tag">Agentic Workflows</span>
+                <span class="tech-tag">Context-Driven Development (CDD)</span>
+                <span class="tech-tag">LLM-as-a-Judge</span>
+                <span class="tech-tag">Prompt Engineering Avanzado</span>
+              </div>
+            </div>
+          </div>
         <div class="optimization-card">
           <h3>Arquitectura de Resiliencia Auto-Reparable</h3>
 
