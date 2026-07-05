@@ -185,3 +185,5 @@
 .timeline-content li:hover::before {
   content: '►';
 }
+
+/* Link pill styles → shared.css */

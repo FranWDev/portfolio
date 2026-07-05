@@ -12,7 +12,11 @@
 .contact-container h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  font-family: 'Courier New', monospace;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background: linear-gradient(135deg, #58a6ff 0%, #8ab4f8 50%, #ff7b72 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact-container p {
@@ -77,4 +81,26 @@
   fill: currentColor;
   position: relative;
   z-index: 1;
+}
+
+/* CV placeholder button (deshabilitado hasta tener el PDF) */
+.contact-link--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  border-color: rgba(88, 166, 255, 0.25);
+  background: rgba(88, 166, 255, 0.04);
+}
+
+.badge-soon {
+  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  background: rgba(255, 123, 114, 0.15);
+  color: #ff7b72;
+  border: 1px solid rgba(255, 123, 114, 0.4);
+  padding: 0.15rem 0.45rem;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  letter-spacing: 0.02em;
 }

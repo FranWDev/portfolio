@@ -3,14 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Francisco Airam Hernández Crosa - Portfolio</title>
+    <title>Francisco Airam Hernández Crosa - Backend Developer Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio de Francisco Airam Hernández Crosa, Desarrollador Backend especializado en Java 25, Spring Boot 4 y optimización de rendimiento en producción." />
+    <meta name="author" content="Francisco Airam Hernández Crosa" />
+    <meta property="og:title" content="Francisco Airam Hernández Crosa — Backend Developer" />
+    <meta property="og:description" content="-98% de latencia en endpoints críticos, -99% en procesos multihilo. Java 25 + Spring Boot 4 + AI-First." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Francisco Airam — Backend Developer" />
+    <meta name="twitter:description" content="Portfolio: Java 25, Spring Boot 4, optimización de rendimiento en producción." />
+
+    <!-- Favicon (añadir icono cuando esté disponible) -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+
+    <!-- Google Fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/components/nav.css" />
     <link rel="stylesheet" href="styles/components/scroll.css" />
+    <link rel="stylesheet" href="styles/section/shared.css" />
     <link rel="stylesheet" href="styles/section/about.css" />
     <link rel="stylesheet" href="styles/section/experience.css" />
     <link rel="stylesheet" href="styles/section/projects.css" />
+    <link rel="stylesheet" href="styles/section/modding.css" />
     <link rel="stylesheet" href="styles/section/skills.css" />
     <link rel="stylesheet" href="styles/section/contact.css" />
     <link rel="stylesheet" href="styles/section/hero.css" />
@@ -33,6 +52,7 @@
         data-title="Experiencia"
       ></div>
       <div class="nav-dot" data-section="projects" data-title="Proyectos"></div>
+      <div class="nav-dot" data-section="modding" data-title="Modding"></div>
       <div
         class="nav-dot"
         data-section="optimizations"
@@ -46,10 +66,9 @@
     <section id="hero" class="section">
       <div class="hero-content">
         <h1 class="hero-title">Francisco Airam Hernández Crosa</h1>
-        <p class="hero-subtitle">Backend Developer</p>
+        <p class="hero-subtitle">Desarrollador Backend · Java 25 + Spring Boot 4 · Optimización de rendimiento en producción</p>
         <p class="hero-description">
-          Desarrollador enfocado en Spring Boot. Apasionado por la optimización
-          de rendimiento y la construcción de sistemas modulares y mantenibles.
+          Experiencia real en entornos de producción: –98% de latencia en endpoints críticos, –99% en procesos de migración multihilo. Especializado en arquitecturas Java modernas, integración de IA y sistemas distribuidos.
         </p>
         <div class="social-links">
           <a
@@ -111,7 +130,7 @@
       </div>
 
       <div class="scroll-indicator">
-        <span style="font-size: 0.875rem">Scroll</span>
+        <span class="scroll-indicator-text">Scroll</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -134,56 +153,40 @@
         <div class="about-text">
           <h2>About me</h2>
           <p>
-            Desarrollador backend enfocado en Spring Boot y código limpio y
-            escalable. Actualmente colaboro como
-            <strong>Coordinador Digital</strong> de
-            <strong>Proyecto Dubini</strong>, una organización juvenil centrada
-            en el cambio climático y la sostenibilidad, donde gestiono la
-            plataforma digital y los problemas relacionados con TI.
+            Backend developer especializado en el ecosistema Java moderno (Java 25, Spring Boot 4, Virtual Threads) con experiencia real en optimización y modernización de sistemas en producción.
           </p>
           <p>
-            Me apasiona el desarrollo backend, la optimización del rendimiento y
-            la construcción de sistemas modulares y mantenibles. Siempre
-            curioso, siempre aprendiendo.
+            Actualmente en <strong>Atlantis Technology</strong> como <strong>Desarrollador Backend (Spring Boot)</strong>, modernizando sistemas legacy con impacto medible: –98% de latencia en endpoints críticos (2.2s → 35ms, reconocido por el cliente), –99% en procesos de migración multihilo (5h → 3min) y erradicación de N+1 en cientos de consultas. Paralelamente, como <strong>Coordinador Digital</strong> en la <strong>Asociación Juvenil Proyecto Dubini</strong>, diseñé la arquitectura de la infraestructura interna priorizando compilación nativa (GraalVM) para operar en instancias cloud de recursos mínimos.
           </p>
           <p>
-            Empecé a programar a los 13 años utilizando plugins-frameworks de
-            Minecraft Java. Mediante el despliegue de servidores basados en la
-            nube con un número significativo de usuarios simultáneos, aprendí
-            conceptos importantes como la depuración de errores, la gestión de
-            recursos y cómo administrar y mantener un servicio de forma
-            profesional.
+            En paralelo, desarrollo mods para Minecraft Forge como campo de práctica de conceptos avanzados de Java: Mixins, sistemas de estado persistente, integración con APIs de terceros y diseño event-driven.
           </p>
-          <p style="color: #c9d1d9; margin-top: 1rem">
+          <p class="about-location">
             📍 La Laguna, Santa Cruz de Tenerife<br />
           </p>
         </div>
 
         <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-number">99%</div>
-            <div class="stat-label">
-              Mejora de rendimiento de tareas pesadas
-            </div>
-          </div>
-          <div class="stat-card">
+          <a href="#opt-latency" class="stat-card">
             <div class="stat-number">-98%</div>
-            <div class="stat-label">Reducción de tiempo de despliege</div>
-          </div>
-          <div class="stat-card">
+            <div class="stat-label">
+              Reducción de latencia en endpoints críticos
+            </div>
+          </a>
+          <a href="#opt-multithread" class="stat-card">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Eficiencia en procesos multihilo de datos</div>
+          </a>
+          <a href="#opt-cache" class="stat-card">
             <div class="stat-number">-89.7%</div>
-            <div class="stat-label">Reducción de ancho de banda</div>
-          </div>
-          <div class="stat-card">
+            <div class="stat-label">Reducción de ancho de banda (Caché)</div>
+          </a>
+          <a href="#opt-deploy" class="stat-card">
             <div class="stat-number">-78%</div>
             <div class="stat-label">
               Reducción de tiempo de carga en cold-start
             </div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">Autonomía en desarrollo</div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -196,35 +199,24 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-content">
-              <h3>Becario - Desarrollador backend (Java)</h3>
+              <h3>Desarrollador backend (Spring Boot)</h3>
               <div class="timeline-meta">
-                <span>Atlantis Technology · Formación Profesional Dual</span>
-                <span>Enero 2026 - Actualidad</span>
+                <span>Atlantis Technology</span>
+                <span>Enero 2026 - Actualidad (7 meses)</span>
                 <span>Híbrido</span>
               </div>
               <ul>
                 <li>
-                  Modernización de la capa de persistencia en arquitectura
-                  monolítica en proyecto gubernamental legacy
+                  <strong>Modernización, optimización y migración de sistemas:</strong> Transformación tecnológica de más de 5 sistemas críticos, migrando de Java 8 a 21 (y Java 25) y Spring Boot 2.x a 4.x, garantizando la continuidad y estabilidad del servicio.
                 </li>
                 <li>
-                  Implementación de <strong>Criteria API</strong>,
-                  <strong>Batch Fetching</strong> y
-                  <strong>caché distribuida/L2</strong> para optimizar el
-                  throughput
+                  <strong>Optimización de Latencia y Complejidad:</strong> Reducción de la latencia de endpoints críticos hasta en un <strong>98% (de 2.2s a 35ms)</strong> (resultados formalmente reconocidos por el cliente), optimizando la complejidad algorítmica de O(N) a O(1) y erradicando problemas de N+1 en cientos de consultas con Criteria API y Batch Fetching.
                 </li>
                 <li>
-                  Refactorización avanzada de <strong>JPA/Hibernate</strong> y
-                  resolución de problemas <strong>N+1</strong>
+                  <strong>Procesos Multihilo de Datos:</strong> Reingeniería completa de procesos de migración, adaptación y anonimización de datos mediante técnicas avanzadas de multihilo, alcanzando una mejora de eficiencia del <strong>99% (reducción de 5 horas a 3 minutos)</strong>.
                 </li>
                 <li>
-                  Reducción de la complejidad de consultas de
-                  <strong>O(N) a O(1)</strong>, eliminando cuellos de botella en
-                  base de datos
-                </li>
-                <li>
-                  Disminución del <strong>98%</strong> en la latencia de
-                  endpoints críticos (<strong>2.2s → 35ms</strong>)
+                  <strong>Desarrollo AI-First:</strong> Incremento sustancial en la velocidad de entrega de software mediante flujos de trabajo AI-first, manteniendo estrictos estándares de calidad, testing y observabilidad para producción.
                 </li>
               </ul>
             </div>
@@ -233,106 +225,64 @@
             <div class="timeline-content">
               <h3>Coordinador Digital</h3>
               <div class="timeline-meta">
-                <span>Asociación Juvenil Proyecto dubini</span>
-                <span>Septiembre 2025 - Actualidad</span>
+                <span>Asociación Juvenil Proyecto Dubini</span>
+                <span>Septiembre 2025 - Actualidad (11 meses)</span>
               </div>
               <ul>
                 <li>
-                  Gestiono la plataforma digital y los problemas relacionados
-                  con TI
+                  <strong>Decisión de arquitectura:</strong> Spring Data JDBC sobre JPA/Hibernate por incompatibilidad de Hibernate con la compilación nativa AOT de GraalVM. Resultado: cold start &lt;5s, consumo &lt;128 MB RAM, desplegable en instancias cloud de bajo coste (free tier).
                 </li>
                 <li>
-                  Desarrollo y mantengo la infraestructura web de backend y
-                  frontend
+                  <strong>Infraestructura y Sistemas:</strong> Migración completa de gestión en Excel a aplicación a medida (Spring Boot + Angular 22 Zoneless), con Google OAuth 2.0 como único acceso interno e integración con Google Drive API v3 para gestión documental.
                 </li>
                 <li>
-                  Colaboro con equipos multidisciplinarios para implementar
-                  soluciones tecnológicas
+                  <strong>Plataforma de Blog &amp; Web:</strong> Arquitectura distribuida con Spring WebFlux, caché multinivel (Caffeine en memoria + persistencia en disco) con invalidación por eventos, reducción del 89.7% de ancho de banda frente a servicio sin caché.
                 </li>
                 <li>
-                  Colaboro con centros educativos para la implementación de soluciones tecnológicas, como un museo virtual con sistema de reservas.
+                  <strong>Museo Virtual:</strong> Experiencia interactiva estilo Google Street View con sistema de reservas para visita virtual del jardín-museo.
+                </li>
+                <li>
+                  <strong>Pipeline CI/CD:</strong> GitHub Actions para build, publicación de imagen Docker en Docker Hub y despliegue automático con compilación nativa GraalVM.
                 </li>
               </ul>
-
-              <div
-                style="
-                  margin-top: 1.5rem;
-                  padding: 1.5rem;
-                  background: rgba(88, 166, 255, 0.05);
-                  border-left: 3px solid #58a6ff;
-                  border-radius: 6px;
-                "
-              >
-                <h4 style="color: #8ab4f8; margin-bottom: 1rem">
-                  Características destacadas:
-                </h4>
-                <ul>
-                  <li>
-                    <strong>Plataforma de Blog</strong>: Desarrollo de una
-                    plataforma de blog end-to-end con Spring Boot, enfocada en
-                    eficiencia y sostenibilidad, desplegada en su propio dominio
-                    próximamente.
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-content">
               <h3>
-                Desarrollador Fullstack en Prestashop Legacy - Formación
+                Desarrollador Fullstack en Prestashop - Formación
                 Profesional Dual
               </h3>
               <div class="timeline-meta">
                 <span>Sagrera Canarias</span>
-                <span>Abril 2025 - Junio 2025</span>
-                <span>La Laguna</span>
+                <span>Abril 2025 - Junio 2025 (3 meses)</span>
+                <span>La Laguna (Presencial)</span>
               </div>
               <ul>
                 <li>
-                  Diseñé, desarrollé e implementé funcionalidades en producción
-                  con <strong>completa autonomía</strong>
+                  Diseño, desarrollo e implementación de nuevas funcionalidades en producción con completa autonomía y colaboración directa con equipos no técnicos.
                 </li>
                 <li>
-                  Optimicé procesos críticos con <strong>CTEs</strong>,
-                  reduciendo <strong>+5000 queries SQL → 5</strong>
+                  <strong>Optimización de Rendimiento:</strong> Mejora drástica del rendimiento de tareas pesadas en base de datos (<strong>1h → 15s</strong>) mediante el uso de CTEs (Common Table Expressions) y optimizaciones SQL, reduciendo +5000 consultas SQL a solo 5.
                 </li>
                 <li>
-                  Mejoré el rendimiento de tareas pesadas (<strong
-                    >1h → 15s</strong
-                  >)
+                  <strong>UX/UI & Usabilidad:</strong> Implementación de más de 20 mejoras visuales y de usabilidad móvil aumentando drásticamente la conversión en producción.
                 </li>
-                <li>
-                  Implementé <strong>20+ mejoras UX/UI</strong> aumentando
-                  usabilidad y rendimiento móvil
-                </li>
-                <li>Colaboré con equipos no técnicos</li>
               </ul>
 
-              <div
-                style="
-                  margin-top: 1.5rem;
-                  padding: 1.5rem;
-                  background: rgba(88, 166, 255, 0.05);
-                  border-left: 3px solid #58a6ff;
-                  border-radius: 6px;
-                "
-              >
-                <h4 style="color: #8ab4f8; margin-bottom: 1rem">
-                  Características destacadas:
+              <div class="highlight-box">
+                <h4 class="highlight-box-title">
+                  Características destacadas desarrolladas:
                 </h4>
                 <ul>
                   <li>
-                    <strong>Sistema de Reseñas</strong>: flujo de feedback
-                    post-compra con emails automáticos y tokens únicos
+                    <strong>Sistema de Reseñas:</strong> Flujo de feedback post-compra con emails automáticos y tokens únicos de validación.
                   </li>
                   <li>
-                    <strong>Programa de Socios</strong>: sistema de fidelización
-                    con registro cruzado tienda física/online
+                    <strong>Programa de Socios:</strong> Sistema completo de fidelización con registro cruzado de datos de usuarios entre tienda física y online.
                   </li>
                   <li>
-                    <strong>Recuperación de Carritos Abandonados</strong>:
-                    herramienta de backoffice con links personalizados
+                    <strong>Recuperación de Carritos Abandonados:</strong> Herramienta de backoffice con links personalizados y generación de descuentos dinámicos para captación de clientes.
                   </li>
                 </ul>
               </div>
@@ -348,191 +298,203 @@
         <h2 class="section-title">Projects</h2>
 
         <div class="projects-grid">
+          <!-- Smart Economato -->
+          <div class="project-card">  
+            <h3>Smart Economato (Ecosistema ERP de Gestión de Inventario Predictivo)</h3>  
+            <p>  
+              Plataforma empresarial de gestión de inventario para economatos de escuelas culinarias. Diseñado bajo un patrón de <strong>Monolito Modular con Arquitectura Hexagonal</strong> (Ports & Adapters) como núcleo principal (`inventory-service`) en **Spring Boot 4.0 & Java 25** (aprovechando hilos virtuales, ZGC Generational y ScopedValue). Integra servicios satélites políglotas: un agente conversacional de IA en **NestJS 11** que implementa el **Model Context Protocol (MCP)** con un Grafo de Memoria Semántica (SMG) y soporte multi-proveedor (OpenAI, Anthropic, DeepSeek, etc.), y un microservicio en **Python/FastAPI** con **Meta Prophet** para predicción de demanda de consumo a 14 días.
+            </p>  
+            <p>  
+              <strong>Hitos Técnicos Clave:</strong>
+            </p>
+            <ul>
+              <li><strong>Ledger de Stock Inmutable:</strong> Sistema blockchain real para registro de movimientos de stock con Merkle Trees (verificación de inmutabilidad O(log n)), firmas HMAC-SHA256 y triggers PostgreSQL a bajo nivel que bloquean sentencias UPDATE/DELETE.</li>
+              <li><strong>CQRS & Enrutamiento de Persistencia:</strong> Segregación de lectura y escritura (PostgreSQL Primary + Replica) con enrutamiento dinámico automático mediante un Aspecto AOP y `ScopedValue` en Java 25.</li>
+              <li><strong>Mensajería y Resiliencia:</strong> Envío fiable de eventos a Apache Kafka (modo KRaft) mediante el patrón Transactional Outbox. Circuit breakers configurados con Resilience4j para tolerar caídas de Redis, Kafka o réplicas.</li>
+              <li><strong>Frontend Moderno PWA:</strong> Progressive Web App en **Angular 21** con detección de cambios **Zoneless**, WebSockets (STOMP sobre SockJS) para notificaciones y alertas en tiempo real, soporte offline e internacionalización.</li>
+              <li><strong>Infraestructura & DevOps:</strong> Script de instalación en PowerShell (`install.ps1`) para autogenerar secretos, certificados SSL locales y configurar hosts locales. Orquestación multi-contenedor de 10 servicios con Docker Compose. Cobertura de tests unitarios y de integración con Testcontainers (PostgreSQL, Kafka, Redis) y JaCoCo.</li>
+            </ul>
+            <p style="margin-top: 1rem;">  
+              <a target="_blank" href="https://github.com/FranWDev/smart-economato-API">Repositorio Backend API</a> // 
+              <a target="_blank" href="https://github.com/user-ijavieh/smart-economato">Repositorio Frontend</a> // 
+              <a target="_blank" href="https://drive.google.com/drive/folders/1BKIk5exbKpMgT00KgKLYW_baRUo81oRp">Documentación Técnica (+200 págs.)</a>
+            </p>  
+            <div class="project-tags">  
+              <span class="project-tag">Java 25</span>  
+              <span class="project-tag">Spring Boot 4</span>  
+              <span class="project-tag">Angular 21 (Zoneless)</span>  
+              <span class="project-tag">Kafka (KRaft)</span>  
+              <span class="project-tag">NestJS (MCP AI)</span>  
+              <span class="project-tag">FastAPI / Prophet</span>  
+              <span class="project-tag">Blockchain & Merkle Trees</span>  
+              <span class="project-tag">CQRS Primary/Replica</span>  
+              <span class="project-tag">Testcontainers</span>  
+              <span class="project-tag">Prometheus / Grafana</span>  
+            </div>  
+          </div>
+
+          <!-- AJPD Gestión -->
+          <div class="project-card">
+            <h3>AJPD Gestión (Sistema de Gestión Interna de la Asociación)</h3>
+            <p>
+              Digitalización completa de la infraestructura de TI de la Asociación Juvenil Proyecto Dubini (AJPD), sustituyendo el flujo de trabajo manual basado en Excel por una aplicación de gestión robusta, eficiente y segura.
+            </p>
+            <p>
+              <strong>Arquitectura y Backend (Java 21 & Spring Boot 3.4.1):</strong>
+              Diseñado con un enfoque modular y optimizado para compilación AOT (**GraalVM Native Image**). Utiliza **Spring Data JDBC** para evitar la magia reflexiva y sobrecarga en runtime de JPA/Hibernate tradicional, garantizando total compatibilidad nativa y reduciendo el consumo a solo 128 MB de RAM. Cuenta con login mediante **Google OAuth2** y firmas JWT seguras.
+            </p>
+            <p>
+              <strong>Frontend e Interfaz (Angular v22.0.0 Zoneless):</strong>
+              Desarrollado con componentes standalone y cambio de estado Zoneless, optimizando el rendimiento. Utiliza vanilla CSS con transiciones de estado y micro-animaciones personalizadas, PWA para funcionamiento offline y RxJS para flujos de datos.
+            </p>
+            <p>
+              <strong>Características Destacadas de la UI:</strong>
+            </p>
+            <ul>
+              <li><strong>Búsqueda Inteligente:</strong> Filtro reactivo de miembros con Debounce (pooling con delay de 1s) para economizar consultas en base de datos.</li>
+              <li><strong>Gestión de Bajas Visual:</strong> Visualización atenuada y cambio de comportamiento automático ("Dar de baja" a "Eliminar") para ex-miembros.</li>
+              <li><strong>Línea de Tiempo Dinámica:</strong> Historial y evolución de cargos del miembro presentados mediante un timeline vertical interactivo.</li>
+              <li><strong>Gestión Documental Separada:</strong> Sub-modal CRUD que interactúa con la API de **Google Drive v3** para almacenar y eliminar DNI/fotos usando enlaces temporales firmados generados por el backend, e integración con **Supabase Storage** para la web pública.</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+              <a target="_blank" href="https://github.com/FranWDev/AJPD-Gestion-Backend">Repositorio Backend API</a> //
+              <a target="_blank" href="https://github.com/FranWDev/AJPD-Gestion-Frontend">Repositorio Frontend</a>
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Java 21</span>
+              <span class="project-tag">Spring Boot 3.4</span>
+              <span class="project-tag">Spring Data JDBC</span>
+              <span class="project-tag">Angular 22 (Zoneless)</span>
+              <span class="project-tag">GraalVM Native</span>
+              <span class="project-tag">Google Drive API v3</span>
+              <span class="project-tag">Supabase Storage</span>
+              <span class="project-tag">Google OAuth 2.0</span>
+            </div>
+          </div>
+
+          <!-- Blog Dubini -->
           <div class="project-card">
             <h3>Plataforma de Blog (Proyecto Dubini)</h3>
             <p>
-              Desarrollo end-to-end de una plataforma de publicaciones con
-              arquitectura distribuida. El sistema cuenta con un proveedor
-              frontend que sirve archivos estáticos y cachea los contenidos, y
-              un Backoffice para edición y administración de contenido.
-            </p>
-
-            <p>
-              La comunicación entre servicios es asincrónica mediante WebFlux y
-              está protegida con JWT.
-            </p>
-
-            <p>
-              Implementación de un sistema de caché inteligente con Caffeine
-              (memoria + persistente en disco), circuit breaker e invalidación
-              por evento. El servicio proveedor de frontend sirve contenido
-              directamente desde caché y continúa operativo incluso si el
-              servicio backoffice cae temporalmente.
-            </p>
-
-            <p>
-              Gracias a este caché de doble capa se redujo el consumo de ancho
-              de banda una cantidad considerable, permitiendo operar dentro del
-              plan gratuito del host sin comprometer la disponibilidad.
-            </p>
-
-            <p>
-              Despliegue automatizado mediante pipeline CI/CD, con compilación
-              nativa de servicios, construcción de imágenes Docker optimizadas y
-              despliegue en segundos, garantizando rapidez y eficiencia.
-            </p>
-
-            <p>
-              Incluye despliegue real en dominio propio, siguiendo buenas
-              prácticas de arquitectura y DevOps.
-            </p>
-
-            <p>
-              <a target="_blank" href="https://proyectodubini.onrender.com/"
-                >Visita la web</a
-              >
+              Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida. El sistema cuenta con un proveedor frontend que sirve archivos estáticos y cachea los contenidos, y un Backoffice para edición y administración de contenido.
             </p>
             <p>
-              <a
-                target="_blank"
-                href="https://github.com/FranWDev/AJPD-FrontendAPI"
-                >Repositorio frontend provider</a
-              >
-              //
-              <a
-                target="_blank"
-                href="https://github.com/FranWDev/AJPD-BackofficeAPI"
-                >Repositorio backoffice</a
-              >
+              La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT. Implementación de un sistema de caché de doble capa (Caffeine en memoria + persistente en disco), circuit breaker e invalidación por eventos. Gracias a este enfoque, el consumo de ancho de banda se redujo en un **89.7%**, operando fluidamente en entornos cloud limitados.
+            </p>
+            <p>
+              <a target="_blank" href="https://proyectodubini.onrender.com/">Visita la web</a> //
+              <a target="_blank" href="https://github.com/FranWDev/AJPD-FrontendAPI">Repositorio frontend provider</a> //
+              <a target="_blank" href="https://github.com/FranWDev/AJPD-BackofficeAPI">Repositorio backoffice</a>
             </p>
             <div class="project-tags">
               <span class="project-tag">Java</span>
               <span class="project-tag">Spring Boot</span>
               <span class="project-tag">Spring Security</span>
               <span class="project-tag">WebFlux</span>
-              <span class="project-tag">Spring Data</span>
-              <span class="project-tag">JWT</span>
-              <span class="project-tag">PostgreSQL</span>
-              <span class="project-tag">Render</span>
-              <span class="project-tag">Caching</span>
+              <span class="project-tag">Caffeine Cache</span>
               <span class="project-tag">Microservicios</span>
-              <span class="project-tag">Optimización</span>
               <span class="project-tag">Service Workers</span>
             </div>
           </div>
 
-          <div class="project-card">  
-  <h3>Smart Economato API (Proyecto Final FP)</h3>  
-  
-  <p>  
-    Plataforma de gestión de inventario predictiva para economatos  
-    educativos, con arquitectura de microservicios: backend transaccional  
-    en Spring Boot 4.0 / Java 25 (virtual threads, ZGC Generational,  
-    ScopedValue) y microservicio de forecasting en Python / FastAPI con  
-    Meta Prophet. Arquitectura hexagonal con CQRS: segregación  
-    lectura/escritura mediante PostgreSQL Primary + Replica con  
-    enrutamiento automático por AOP.  
-  </p>  
-  <p>  
-    Lideré el desarrollo del equipo de 4 personas encargado del frontend  
-    en Angular, coordinando la implementación de funcionalidades clave y  
-    la integración con el backend.  
-  </p>  
-<p>  
-  Blockchain real para registro de stock inmutable, 
-  Merkle Trees con verificación O(log n)  y encadenamiento HMAC-SHA256.
-  Cada bloque agrupa transacciones del  
-  mempool, calcula su Merkle root y se sella en bloques encadenados (blockchain). 
-  Inmutabilidad reforzada con triggers PostgreSQL que  
-  impiden UPDATE/DELETE a nivel de base de datos. Analítica predictiva  
-  de consumo con Meta Prophet (forecasting a 14 días configurable)  
-  ejecutada en microservicio Python asíncrono, con Holt-Winters Triple  
-  Exponential Smoothing como fallback en Java.  
-</p>
-  <p>  
-    Arquitectura event-driven con patrón Transactional Outbox y Kafka  
-    (modo KRaft) para entrega garantizada de eventos de auditoría.  
-    Caché multicapa (Redis + Caffeine) con degradación elegante y  
-    circuit breakers (Resilience4j) para PostgreSQL, Replica, Redis y  
-    Kafka, con alertas en tiempo real al frontend vía WebSocket.  
-  </p>  
-  <p>  
-    Seguridad con JWT (HMAC SHA-256), blacklist con fallback Redis→DB,  
-    escalado temporal de roles y autorización a nivel de método.  
-    Generación de PDFs con iText 8, exportación Excel con Apache POI,  
-    internacionalización (i18n) y documentación interactiva con  
-    Swagger/OpenAPI y Scalar.  
-  </p>  
-  <p>  
-    Observabilidad completa con Prometheus, Grafana y Micrometer.  
-    Dockerización de 10 servicios (PostgreSQL Primary/Replica, Redis,  
-    Kafka KRaft, Spring Boot, FastAPI Prophet, Prometheus, Grafana).  
-    Suite de 1000 tests: unitarios, integración con Testcontainers,  
-    concurrencia, resiliencia end-to-end y circuit breaker.  
-  </p>  
-  <p>  
-    <a  
-      target="_blank"  
-      href="https://github.com/FranWDev/smart-economato-API"  
-      >Repositorio aquí</a  
-    >  
-  </p>  
-  
-  <div class="project-tags">  
-    <span class="project-tag">Java 25</span>  
-    <span class="project-tag">Spring Boot 4</span>  
-    <span class="project-tag">Python / FastAPI</span>  
-    <span class="project-tag">Meta Prophet</span>  
-    <span class="project-tag">CQRS</span>  
-    <span class="project-tag">PostgreSQL (Primary/Replica)</span>  
-    <span class="project-tag">Redis</span>  
-    <span class="project-tag">Kafka (KRaft)</span>  
-    <span class="project-tag">Resilience4j</span>  
-    <span class="project-tag">JWT</span>  
-    <span class="project-tag">WebSocket</span>  
-    <span class="project-tag">Transactional Outbox</span>  
-    <span class="project-tag">iText 8 / Apache POI</span>  
-    <span class="project-tag">Prometheus / Grafana</span>  
-    <span class="project-tag">Swagger / Scalar</span>  
-    <span class="project-tag">Docker</span>  
-    <span class="project-tag">Testcontainers / JUnit 5 / Mockito</span>  
-    <span class="project-tag">MapStruct</span>  
-  </div>  
-</div>
+          <!-- Chat Seguro -->
           <div class="project-card">
             <h3>Chat Seguro con Node.js</h3>
             <p>
-              Proyecto de aprendizaje: plataforma de mensajería en tiempo real
-              desarrollada con Node.js, con autenticación JWT, roles
-              Admin/Usuario, hash de contraseñas con bcryptjs y rutas protegidas
-              mediante middleware. Endpoints RESTful en Express.js y conexión a
-              MySQL mediante connection pooling.
+              Plataforma de mensajería en tiempo real desarrollada con Node.js, con autenticación JWT, roles Admin/Usuario, hash de contraseñas con bcryptjs y rutas protegidas mediante middleware. Endpoints RESTful en Express.js y conexión a MySQL mediante connection pooling.
             </p>
             <p>
-              Comunicación en tiempo real con WebSockets usando Socket.io, con
-              persistencia básica de mensajes y seguimiento del estado en línea.
-              Se aplicaron buenas prácticas de seguridad como validación de
-              entradas con express-validator y manejo de errores asincrónico.
+              Comunicación en tiempo real con WebSockets usando Socket.io, con persistencia básica de mensajes y seguimiento del estado en línea. Se aplicaron buenas prácticas de seguridad como validación de entradas con express-validator y manejo de errores asincrónico.
             </p>
             <p>
-              <a
-                target="_blank"
-                href="https://github.com/FranWDev/backend-chat-system"
-                >Repositorio aquí</a
-              >
+              <a target="_blank" href="https://github.com/FranWDev/backend-chat-system">Repositorio aquí</a>
             </p>
             <div class="project-tags">
               <span class="project-tag">Node.js</span>
               <span class="project-tag">Express.js</span>
               <span class="project-tag">MySQL</span>
               <span class="project-tag">JWT</span>
-              <span class="project-tag">Bcryptjs</span>
-              <span class="project-tag">Crypto</span>
               <span class="project-tag">Socket.io</span>
-              <span class="project-tag">Express-validator</span>
-              <span class="project-tag">EJS</span>
-              <span class="project-tag">Dotenv</span>
-              <span class="project-tag">Nodemon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modding Section -->
+    <section id="modding" class="section">
+      <div class="modding-container">
+        <h2 class="section-title">Minecraft Modding (Java)</h2>
+        <p class="modding-container-intro">
+          Campo de práctica de conceptos avanzados de Java: Mixins para modificación de bytecode, integración con APIs de terceros, diseño de sistemas de estado persistente y arquitecturas event-driven bajo restricciones de rendimiento.
+        </p>
+        <div class="modding-grid">
+          <div class="mod-card">
+            <h3><a target="_blank" href="https://github.com/FranWDev/EpicScorch-Reforged" style="color: inherit; text-decoration: none;">Epic Scorch: Reforged</a></h3>
+            <span class="mod-subtitle">Minecraft 1.20.1 · Forge 47.2.20 · Epic Fight API · Mixins</span>
+            <p>
+              Bridge y expansión de combate táctico entre Epic Fight y Scorched Guns. Diseña un sistema híbrido de animación en el cual la cámara en primera persona mantiene la inmersión clásica del shooter mientras que la tercera persona aprovecha el motor de animaciones de Epic Fight.
+            </p>
+            <ul>
+              <li><strong>Consumo de Estamina por Recoil:</strong> Integración de armas de fuego en el motor de movimiento de Epic Fight.</li>
+              <li><strong>Restricciones de Movimiento:</strong> Bloqueos tácticos al disparar, apuntar o recargar mientras se corre, salta o esquiva.</li>
+              <li><strong>Configurabilidad:</strong> Archivos de configuración a bajo nivel para ajustar balance, retroceso y consumo.</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+              <a target="_blank" href="https://github.com/FranWDev/EpicScorch-Reforged">Ver Repositorio</a>
+            </p>
+            <div class="mod-tags">
+              <span class="mod-tag">Java</span>
+              <span class="mod-tag">Forge</span>
+              <span class="mod-tag">Mixins</span>
+              <span class="mod-tag">Animation Engines</span>
+              <span class="mod-tag">Game Design</span>
+            </div>
+          </div>
+
+          <div class="mod-card">
+            <h3><a target="_blank" href="https://github.com/FranWDev/Lootr-Teams" style="color: inherit; text-decoration: none;">LootrTeams Addon</a></h3>
+            <span class="mod-subtitle">Minecraft 1.20.1 · Forge 47.2.20 · FTB Teams Integration</span>
+            <p>
+              Mod de Minecraft que sincroniza el loot de cofres individuales (generados por Lootr) para que sea compartido por equipos de FTB Teams. Resuelve la desconexión del juego cooperativo en servidores masivos sin perder la seguridad de cofres.
+            </p>
+            <ul>
+              <li><strong>Loot Compartido por Equipos:</strong> El cofre abre el mismo inventario compartido e inalterable para todos los miembros del equipo.</li>
+              <li><strong>Legacy Migrator:</strong> Migración automatizada sin pérdida de datos para mundos en producción ya existentes.</li>
+              <li><strong>RAM Cache Optimizado:</strong> Estructura de caché para evitar consultas excesivas a disco.</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+              <a target="_blank" href="https://github.com/FranWDev/Lootr-Teams">Ver Repositorio</a>
+            </p>
+            <div class="mod-tags">
+              <span class="mod-tag">Java</span>
+              <span class="mod-tag">Forge</span>
+              <span class="mod-tag">FTB Teams API</span>
+              <span class="mod-tag">Caching</span>
+              <span class="mod-tag">Data Migration</span>
+            </div>
+          </div>
+
+          <div class="mod-card">
+            <h3><a target="_blank" href="https://github.com/FranWDev/KMC-soulslike-regen" style="color: inherit; text-decoration: none;">KMC Soulslike Regen</a></h3>
+            <span class="mod-subtitle">Minecraft 1.20.1 · Forge 47.2.20 · FTB Teams & Waystones</span>
+            <p>
+              Reemplazo completo de la regeneración natural de Minecraft por un sistema de fatiga acumulable de estilo Soulslike (UHC-style natural healing block).
+            </p>
+            <ul>
+              <li><strong>Fatigue Capacity (maxCap):</strong> El cansancio aumenta al curarse; al llegar al límite la curación se detiene por completo.</li>
+              <li><strong>Zonas de Descanso:</strong> Integración de Team Nexuses (zonas de equipo con regeneración por presencia) e Inns globales.</li>
+              <li><strong>Mecánicas Adicionales:</strong> Nivelación permanente por fatiga gastada, recuperación en fogatas, bonus de supervivencia y comandos CRUD de administración.</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+              <a target="_blank" href="https://github.com/FranWDev/KMC-soulslike-regen">Ver Repositorio</a>
+            </p>
+            <div class="mod-tags">
+              <span class="mod-tag">Java</span>
+              <span class="mod-tag">Forge</span>
+              <span class="mod-tag">Waystones API</span>
+              <span class="mod-tag">Level System</span>
+              <span class="mod-tag">Team Integration</span>
             </div>
           </div>
         </div>
@@ -543,7 +505,109 @@
     <section id="optimizations" class="section">
       <div class="optimizations-container">
         <h2 class="section-title">Optimizations & Architecture</h2>
-        <div class="optimization-card">
+
+        <div class="optimization-card" id="opt-latency">
+          <h3>Optimización de Latencia en Endpoints Críticos</h3>
+          <div class="optimization-intro">
+            <p>
+              Reducción drástica de tiempos de respuesta en endpoints gubernamentales y de negocio críticos mediante rediseño de persistencia, optimización algorítmica y erradicación de consultas ineficientes.
+            </p>
+          </div>
+          <div class="optimization-section">
+            <h4>Desafío Técnico</h4>
+            <p>
+              Consultas altamente costosas sobre esquemas legacy con problemas severos de N+1 y alta latencia de procesamiento, requiriendo la reestructuración completa del acceso a datos sin alterar la lógica de negocio.
+            </p>
+          </div>
+          <div class="optimization-section">
+            <h4>Solución Implementada (Resumen Técnico)</h4>
+            <ul>
+              <li><strong>Refactorización de JPA & Hibernate:</strong> Implementación de Criteria API y optimizaciones mediante Batch Fetching para resolver cuellos de botella de N+1 en cientos de consultas.</li>
+              <li><strong>Complejidad Algorítmica:</strong> Reingeniería de lógica de negocio para reducir la complejidad temporal de O(N) a O(1).</li>
+              <li><strong>Caché L2:</strong> Configuración e integración de caché distribuida de segundo nivel.</li>
+            </ul>
+          </div>
+          <div class="optimization-metrics">
+            <h4>Resultados y Métricas</h4>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <div class="metric-value">-98%</div>
+                <div class="metric-label">Reducción de Latencia</div>
+                <div class="metric-detail">2.2s → 35ms en producción</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">O(1)</div>
+                <div class="metric-label">Complejidad Algorítmica</div>
+                <div class="metric-detail">Reducido desde complejidad lineal O(N)</div>
+              </div>
+            </div>
+          </div>
+          <div class="optimization-section">
+            <h4>[INFO DETALLADA - PLACEHOLDER]</h4>
+            <p style="border: 2px dashed #58a6ff; padding: 1rem; border-radius: 6px; background: rgba(88, 166, 255, 0.05); color: #c9d1d9;">
+              Aquí se integrará la información específica detallada sobre esta optimización (JPA/Hibernate, Criteria API, problemas N+1 resueltos) que proporciones más adelante.
+            </p>
+          </div>
+          <div class="optimization-tech">
+            <h4>Stack Técnico</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">JPA / Hibernate</span>
+              <span class="tech-tag">Criteria API</span>
+              <span class="tech-tag">Batch Fetching</span>
+              <span class="tech-tag">Caché L2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="optimization-card" id="opt-multithread">
+          <h3>Procesos de Migración y Anonimización Multihilo</h3>
+          <div class="optimization-intro">
+            <p>
+              Optimización de tareas de ETL, adaptación y anonimización de datos masivos en paralelo mediante técnicas avanzadas de concurrencia en Java.
+            </p>
+          </div>
+          <div class="optimization-section">
+            <h4>Desafío Técnico</h4>
+            <p>
+              Procesamiento secuencial extremadamente lento de bases de datos masivas que tomaba horas para completarse, impactando directamente en la disponibilidad del servicio durante ventanas de mantenimiento.
+            </p>
+          </div>
+          <div class="optimization-section">
+            <h4>Solución Implementada (Resumen Técnico)</h4>
+            <ul>
+              <li><strong>Concurrencia Multihilo:</strong> Segmentación y procesamiento en paralelo de streams de datos mediante hilos virtuales de Java.</li>
+              <li><strong>Anonimización Eficiente:</strong> Algoritmos optimizados para anonimización y transformación de datos en memoria antes de persistir.</li>
+            </ul>
+          </div>
+          <div class="optimization-metrics">
+            <h4>Resultados y Métricas</h4>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <div class="metric-value">99%</div>
+                <div class="metric-label">Incremento de Eficiencia</div>
+                <div class="metric-detail">Tiempo de procesamiento reducido de 5 horas a 3 minutos</div>
+              </div>
+            </div>
+          </div>
+          <div class="optimization-section">
+            <h4>[INFO DETALLADA - PLACEHOLDER]</h4>
+            <p style="border: 2px dashed #58a6ff; padding: 1rem; border-radius: 6px; background: rgba(88, 166, 255, 0.05); color: #c9d1d9;">
+              Aquí se integrará la información específica detallada sobre esta optimización multihilo y concurrencia que proporciones más adelante.
+            </p>
+          </div>
+          <div class="optimization-tech">
+            <h4>Stack Técnico</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Java Concurrency</span>
+              <span class="tech-tag">Virtual Threads</span>
+              <span class="tech-tag">Multi-threading</span>
+              <span class="tech-tag">ETL / Data Migration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="optimization-card" id="opt-resilience">
           <h3>Arquitectura de Resiliencia Auto-Reparable</h3>
 
           <div class="optimization-intro">
@@ -729,7 +793,7 @@
           </div>
         </div>
         <div class="optimizations-grid">
-          <div class="optimization-card">
+          <div class="optimization-card" id="opt-cache">
             <h3>Sistema de caché Inteligente</h3>
 
             <div class="optimization-intro">
@@ -924,7 +988,7 @@
               </p>
             </div>
           </div>
-          <div class="optimization-card">
+          <div class="optimization-card" id="opt-deploy">
             <h3>Optimización de Deploy y Cold-Start</h3>
 
             <div class="optimization-intro">
@@ -1052,32 +1116,31 @@
           <div class="skill-category">
             <h3>Tecnologías</h3>
             <ul class="skill-list">
-              <li>Java (Spring Boot, Data, Security & Cloud)</li>
-              <li>TypeScript (Angular)</li>
-              <li>JavaScript (Node.js, Express.js)</li>
+              <li>Java 25 (Spring Boot 4, Security, AOP, WebFlux, Data)</li>
+              <li>Concurrencia y Virtual Threads</li>
+              <li>TypeScript (Angular 21) & JavaScript (Node.js)</li>
+              <li>Bases de Datos: PostgreSQL (CQRS Primary/Replica), Redis & MySQL</li>
+              <li>Mensajería y Eventos: Apache Kafka (KRaft)</li>
+              <li>Model Context Protocol (MCP) & APIs de IA</li>
+              <li>DevOps & Infra: Docker, Docker Compose, Nginx & GitHub Actions</li>
+              <li>Observabilidad: Prometheus, Grafana & Micrometer</li>
+              <li>Testing: JUnit 5, Mockito & Testcontainers</li>
+              <li>Compilación: GraalVM (Native compilation)</li>
+              <li>APIs: OpenAPI / Swagger, Scalar</li>
               <li>PHP (Prestashop modules)</li>
-              <li>HTML5 & CSS3</li>
-              <li>MySQL, PostgreSQL & MongoDB</li>
-              <li>Redis</li>
-              <li>Kafka</li>
-              <li>Git & GitHub</li>
-              <li>Docker</li>
-              <li>Prometheus & Grafana</li>
-              <li>OpenAPI/Swagger</li>
-              <li>JUnit 5, Mockito & Testcontainers</li>
             </ul>
           </div>
 
           <div class="skill-category">
             <h3>Habilidades Personales</h3>
             <ul class="skill-list">
-              <li>Autonomía / Proactividad</li>
+              <li>Autonomía y Proactividad</li>
+              <li>Desarrollo AI-First</li>
+              <li>Optimización a bajo nivel y latencia</li>
               <li>Curiosidad y aprendizaje continuo</li>
               <li>Comunicación técnica</li>
-              <li>Organización y planificación</li>
-              <li>Adaptabilidad</li>
-              <li>Trabajo en equipo</li>
-              <li>Resolución de problemas</li>
+              <li>Organización y planificación de arquitectura</li>
+              <li>Resolución de problemas complejos</li>
             </ul>
           </div>
 
@@ -1085,23 +1148,19 @@
             <h3>Educación e Idiomas</h3>
             <ul class="skill-list">
               <li>
-                Desarrollo de Aplicaciones Web (DAW)<br />
-                IES Domingo Pérez Minik (2024-2026)
+                <strong>Desarrollo de Aplicaciones Web (DAW)</strong><br />
+                IES Domingo Pérez Minik (2024-2026)<br />
+                <span class="education-honor">* Mención honorífica en expediente en la materia de desarrollo backend.</span>
               </li>
-              <li>
-                Bachillerato Científico-tecnológico IES San Benito (2022-2024)
+              <li class="skill-list-spaced">
+                <strong>Bachillerato Científico-tecnológico</strong><br />
+                IES San Benito (2022-2024)
               </li>
 
-              <li
-                style="
-                  margin-top: 1rem;
-                  border-top: 1px solid rgba(88, 166, 255, 0.2);
-                  padding-top: 1rem;
-                "
-              >
+              <li class="skill-list-language-separator">
                 Español - Nativo
               </li>
-              <li>Inglés - Certificación B2</li>
+              <li>Inglés - Nivel Intermedio</li>
             </ul>
           </div>
         </div>
@@ -1170,11 +1229,30 @@
             </svg>
             <span>Mail</span>
           </a>
+          <a
+            href="#"
+            class="contact-link contact-link--disabled"
+            aria-disabled="true"
+            title="El CV estará disponible cuando comience la búsqueda activa"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="octicon"
+            >
+              <path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 2h14v2H5v-2z"/>
+            </svg>
+            <span>Descargar CV <span class="badge-soon">Próximamente</span></span>
+          </a>
         </div>
       </div>
     </section>
     <script src="scripts/components/nav.dots.js"></script>
     <script src="scripts/components/scroll.js"></script>
+    <script src="scripts/animation/countup.js"></script>
     <script src="scripts/animation/tilt.js"></script>
     <script src="scripts/animation/typing.js"></script>
   </body>

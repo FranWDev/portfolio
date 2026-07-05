@@ -21,6 +21,7 @@
   gap: 0.5rem;
   color: #58a6ff;
   animation: bounce 2s infinite;
+  transition: opacity 0.4s ease;
 }
 
 .scroll-indicator svg {

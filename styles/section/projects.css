@@ -99,11 +99,7 @@
 }
 
 .project-tag {
-  background: linear-gradient(
-    135deg,
-    rgba(88, 166, 255, 0.2),
-    rgba(138, 180, 248, 0.2)
-  );
+  background: rgba(88, 166, 255, 0.15);
   color: #58a6ff;
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
@@ -113,11 +109,7 @@
 }
 
 .project-tag:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(88, 166, 255, 0.4),
-    rgba(138, 180, 248, 0.4)
-  );
+  background: rgba(88, 166, 255, 0.3);
   transform: scale(1.1);
 }
 
@@ -125,3 +117,34 @@
   content: "#";
   margin-right: 0.2rem;
 }
+
+.project-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card ul li {
+  color: #c9d1d9;
+  margin-bottom: 0.6rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.project-card ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+.project-card ul li strong {
+  color: #8ab4f8;
+}
+
+/* Link pill styles → shared.css */

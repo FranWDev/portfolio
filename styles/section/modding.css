@@ -1,0 +1,158 @@
+#modding {
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+}
+
+.modding-container {
+  max-width: 1200px;
+  z-index: 10;
+  position: relative;
+  width: 100%;
+}
+
+.modding-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mod-card {
+  background: rgba(22, 27, 34, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  /* Flex column so the repo link + tags are always pushed to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.mod-card::before {
+  content: "</>";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 4rem;
+  color: rgba(88, 166, 255, 0.03);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.mod-card:hover::before {
+  color: rgba(88, 166, 255, 0.1);
+  transform: rotate(15deg) scale(1.1);
+}
+
+.mod-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(88, 166, 255, 0.3);
+  border-color: #58a6ff;
+}
+
+.mod-card h3 {
+  font-size: 1.5rem;
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mod-subtitle {
+  font-size: 0.9rem;
+  color: #8ab4f8;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  display: block;
+}
+
+.mod-card p {
+  color: #8b949e;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  font-size: 0.95rem;
+}
+
+.mod-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  /* Flex grow to push repo link down */
+  flex: 1;
+}
+
+.mod-card ul li {
+  color: #c9d1d9;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.mod-card ul li::before {
+  content: "▫";
+  position: absolute;
+  left: 0;
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+.mod-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mod-tag {
+  background: rgba(88, 166, 255, 0.12);
+  color: #58a6ff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.mod-tag:hover {
+  background: rgba(88, 166, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.mod-tag::before {
+  content: "#";
+  margin-right: 0.15rem;
+}
+
+/* Modding section description paragraph */
+.modding-container > p {
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid rgba(88, 166, 255, 0.4);
+  background: rgba(88, 166, 255, 0.04);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Link pill styles → shared.css */
+
+/* Push the repo link paragraph to bottom */
+.mod-card > p:last-of-type {
+  margin-top: auto;
+  padding-top: 1rem;
+}
