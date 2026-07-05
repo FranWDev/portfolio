@@ -100,3 +100,17 @@
   cursor: pointer;
 }
 
+.stats-helper-text {
+  grid-column: span 2;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #8b949e;
+  margin-top: 1rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  border-top: 1px dashed rgba(88, 166, 255, 0.15);
+  padding-top: 1rem;
+}
+
+

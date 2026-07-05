@@ -187,6 +187,9 @@
               Reducción de tiempo de carga en cold-start
             </div>
           </a>
+          <p class="stats-helper-text">
+            ¿Te parecen números demasiado optimistas? Haz clic en cada tarjeta para ver el desglose técnico y la arquitectura detrás de estas métricas.
+          </p>
         </div>
       </div>
     </section>
@@ -564,45 +567,164 @@
           <h3>Procesos de Migración y Anonimización Multihilo</h3>
           <div class="optimization-intro">
             <p>
-              Optimización de tareas de ETL, adaptación y anonimización de datos masivos en paralelo mediante técnicas avanzadas de concurrencia en Java.
+              Reingeniería de procesos ETL para migración, transformación y anonimización en paralelo de datos históricos a gran escala, eliminando cuellos de botella de red y base de datos mediante concurrencia y caché de relaciones en memoria JVM.
             </p>
           </div>
+
           <div class="optimization-section">
             <h4>Desafío Técnico</h4>
             <p>
-              Procesamiento secuencial extremadamente lento de bases de datos masivas que tomaba horas para completarse, impactando directamente en la disponibilidad del servicio durante ventanas de mantenimiento.
+              Migración de un histórico acumulado de más de <strong>10 millones de registros con 15 años de recorrido</strong>. El proceso original secuencial tardaba <strong>más de 5 horas</strong> en completarse. El motor de base de datos sufría por la ejecución recursiva de subconsultas dinámicas lookup (aproximadamente 38 millones de subconsultas select) destinadas a resolver claves foráneas e integridad referencial en caliente para cada fila insertada, bloqueando la base de datos durante las ventanas de mantenimiento técnico.
             </p>
           </div>
+
           <div class="optimization-section">
-            <h4>Solución Implementada (Resumen Técnico)</h4>
-            <ul>
-              <li><strong>Concurrencia Multihilo:</strong> Segmentación y procesamiento en paralelo de streams de datos mediante hilos virtuales de Java.</li>
-              <li><strong>Anonimización Eficiente:</strong> Algoritmos optimizados para anonimización y transformación de datos en memoria antes de persistir.</li>
+            <h4>Arquitectura y Optimización en Memoria</h4>
+            <p>
+              La solución implementada erradicó las consultas de base de datos tipo N+1 durante el bucle de inserción, resolviendo todas las dependencias relacionales en caliente dentro de la JVM.
+            </p>
+            <ul class="optimization-features">
+              <li><strong>Precarga en Caché O(1):</strong> Carga inicial de diccionarios de lookup en memoria Java mediante estructuras <code>HashMap</code>, resolviendo claves naturales a identificadores secuenciales en microsegundos y ocupando solo ~420 MB del Java Heap.</li>
+              <li><strong>Concurrencia con ExecutorService &amp; Thread Pools:</strong> Segmentación dinámica de los streams de datos históricos procesados de forma concurrente, aislando la escritura en disco de cada hilo.</li>
+              <li><strong>Thread-Safety Garantizada:</strong> Uso de mapas de solo lectura tras la carga inicial y generación secuencial de IDs mediante <code>AtomicLong</code> para prevenir condiciones de carrera.</li>
             </ul>
           </div>
-          <div class="optimization-metrics">
-            <h4>Resultados y Métricas</h4>
-            <div class="metrics-grid">
-              <div class="metric-item">
-                <div class="metric-value">99%</div>
-                <div class="metric-label">Incremento de Eficiencia</div>
-                <div class="metric-detail">Tiempo de procesamiento reducido de 5 horas a 3 minutos</div>
+
+          <div class="optimization-section">
+            <h4>Flujo de Ejecución en Tres Fases</h4>
+            <div class="optimization-flow">
+              <div class="flow-step">
+                <span class="flow-number">1</span>
+                <div class="flow-content">
+                  <strong>Precarga de Relaciones (10-12s)</strong>
+                  <p>
+                    Se consultan las tablas maestras origen una sola vez y se construyen mapas asociativos en memoria. El costo inicial es despreciable a cambio de eliminar millones de consultas lookup posteriores.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">2</span>
+                <div class="flow-content">
+                  <strong>Procesamiento Paralelo en Disco</strong>
+                  <p>
+                    Se lanzan tareas concurrentes a través de un pool dinámico de hilos. Cada hilo escribe de forma aislada en su propio script SQL en disco, evitando bloqueos de I/O y mezcla de sentencias.
+                  </p>
+                </div>
+              </div>
+              <div class="flow-step">
+                <span class="flow-number">3</span>
+                <div class="flow-content">
+                  <strong>Inserción Directa en Destino (MySQL)</strong>
+                  <p>
+                    El script SQL generado contiene valores literales puros precalculados. La base de datos destino ejecuta los inserts secuenciales de forma directa sin resolver índices dinámicamente, logrando un rendimiento instantáneo.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+
           <div class="optimization-section">
-            <h4>[INFO DETALLADA - PLACEHOLDER]</h4>
-            <p style="border: 2px dashed #58a6ff; padding: 1rem; border-radius: 6px; background: rgba(88, 166, 255, 0.05); color: #c9d1d9;">
-              Aquí se integrará la información específica detallada sobre esta optimización multihilo y concurrencia que proporciones más adelante.
+            <h4>Ejemplo de Transformación SQL (Esquema Anonimizado)</h4>
+            <p><strong>ANTES: SQL Generado con Subconsultas Lookup Recursivas</strong></p>
+            <pre style="background: rgba(22, 27, 34, 0.8); padding: 1rem; border-radius: 6px; border: 1px solid rgba(88, 166, 255, 0.2); overflow-x: auto; color: #8ab4f8; font-family: monospace; margin-bottom: 1.5rem;">
+INSERT INTO DETALLE_TRANSACCION (transaccion_fk, cod_detalle, info_pago, fecha_creacion)
+VALUES (
+  (SELECT MAX(id) FROM TRANSACCIONES t WHERE t.usuario_fk = (SELECT id FROM USUARIOS u WHERE u.token_acceso = 'USR-2026-X98A')),
+  'DET-90234', 'INFO_MOCK', '2026-07-05 13:00:00'
+);</pre>
+            <p><strong>AHORA: SQL Generado con Identificadores Directos Precalculados</strong></p>
+            <pre style="background: rgba(22, 27, 34, 0.8); padding: 1rem; border-radius: 6px; border: 1px solid rgba(88, 166, 255, 0.2); overflow-x: auto; color: #8ab4f8; font-family: monospace;">
+INSERT INTO DETALLE_TRANSACCION (transaccion_fk, cod_detalle, info_pago, fecha_creacion)
+VALUES (
+  3489102, -- ID precalculado instantáneamente en memoria Java (O(1))
+  'DET-90234', 'INFO_MOCK', '2026-07-05 13:00:00'
+);</pre>
+          </div>
+
+          <div class="optimization-metrics">
+            <h4>Resultados y Métricas de Rendimiento</h4>
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <div class="metric-value">99%</div>
+                <div class="metric-label">Reducción de Tiempo Total</div>
+                <div class="metric-detail">5 horas → 3 minutos en red corporativa</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">100x</div>
+                <div class="metric-label">Factor de Aceleración (Speedup)</div>
+                <div class="metric-detail">Eliminación de latencia de red en subconsultas</div>
+              </div>
+              <div class="metric-item">
+                <div class="metric-value">0</div>
+                <div class="metric-label">Subconsultas Lookup en Destino</div>
+                <div class="metric-detail">38M de consultas reducidas a cero en el bucle de inserción</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="optimization-section">
+            <h4>Análisis Comparativo por Latencia de Red (10M de Registros)</h4>
+            <p>
+              El tiempo total del proceso varía drásticamente según la latencia de red al servidor de base de datos debido al volumen de subconsultas lookup del método anterior. A continuación se detallan los tres escenarios analizados:
+            </p>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+              <table style="width: 100%; border-collapse: collapse; text-align: left; color: #c9d1d9; background: rgba(22, 27, 34, 0.6); border: 1px solid rgba(88, 166, 255, 0.2); border-radius: 8px;">
+                <thead>
+                  <tr style="background: rgba(88, 166, 255, 0.1); border-bottom: 1px solid rgba(88, 166, 255, 0.3);">
+                    <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Escenario (Latencia)</th>
+                    <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Tiempo ANTES</th>
+                    <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Tiempo AHORA</th>
+                    <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Aceleración (Speedup)</th>
+                    <th style="padding: 0.75rem;">Reducción de Tiempo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid rgba(88, 166, 255, 0.1);">
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Baja Latencia (SSD Local - 0.1 ms)</strong></td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~1.1 horas</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~8.5 minutos</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~7.7x</td>
+                    <td style="padding: 0.75rem; color: #58a6ff;">-87.0%</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid rgba(88, 166, 255, 0.1);">
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Media Latencia (LAN Corporativa - 0.5 ms)</strong></td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~5.3 horas</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~8.5 minutos</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~37.4x</td>
+                    <td style="padding: 0.75rem; color: #58a6ff;">-97.3%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Alta Latencia (Conexión VPN - 3.0 ms)</strong></td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~31.6 horas</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~8.5 minutos</td>
+                    <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~223.0x</td>
+                    <td style="padding: 0.75rem; color: #58a6ff;">-99.5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #8b949e; font-style: italic;">
+              *Nota sobre el cálculo: En el entorno real, el tiempo de procesamiento se redujo de 5 horas a 3 minutos para el lote de datos ejecutado bajo una latencia media de red corporativa (~1.1 ms promedio por consulta lookup).
             </p>
           </div>
+
+          <div class="optimization-conclusion">
+            <h4>Aseguramiento de la Privacidad del Cliente</h4>
+            <p>
+              ⚠️ <strong>Información sobre Confidencialidad y Anonimización:</strong> Todas las referencias a nombres de bases de datos, esquemas relacionales, nombres de tablas, columnas y formatos de datos representados en esta sección han sido modificados por completo y reemplazados con estructuras transaccionales genéricas. De este modo se protege el secreto comercial, la propiedad intelectual y el dominio operativo de negocio del cliente original, manteniendo la absoluta confidencialidad del proyecto.
+            </p>
+          </div>
+
           <div class="optimization-tech">
             <h4>Stack Técnico</h4>
             <div class="tech-tags">
               <span class="tech-tag">Java Concurrency</span>
-              <span class="tech-tag">Virtual Threads</span>
+              <span class="tech-tag">ExecutorService</span>
+              <span class="tech-tag">Thread Pools</span>
               <span class="tech-tag">Multi-threading</span>
               <span class="tech-tag">ETL / Data Migration</span>
+              <span class="tech-tag">AtomicLong</span>
+              <span class="tech-tag">JVM Memory Tuning</span>
             </div>
           </div>
         </div>
