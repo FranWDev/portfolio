@@ -509,59 +509,148 @@
       <div class="optimizations-container">
         <h2 class="section-title">Optimizations & Architecture</h2>
 
-        <div class="optimization-card" id="opt-latency">
-          <h3>Optimización de Latencia en Endpoints Críticos</h3>
-          <div class="optimization-intro">
-            <p>
-              Reducción drástica de tiempos de respuesta en endpoints gubernamentales y de negocio críticos mediante rediseño de persistencia, optimización algorítmica y erradicación de consultas ineficientes.
-            </p>
-          </div>
-          <div class="optimization-section">
-            <h4>Desafío Técnico</h4>
-            <p>
-              Consultas altamente costosas sobre esquemas legacy con problemas severos de N+1 y alta latencia de procesamiento, requiriendo la reestructuración completa del acceso a datos sin alterar la lógica de negocio.
-            </p>
-          </div>
-          <div class="optimization-section">
-            <h4>Solución Implementada (Resumen Técnico)</h4>
-            <ul>
-              <li><strong>Refactorización de JPA & Hibernate:</strong> Implementación de Criteria API y optimizaciones mediante Batch Fetching para resolver cuellos de botella de N+1 en cientos de consultas.</li>
-              <li><strong>Complejidad Algorítmica:</strong> Reingeniería de lógica de negocio para reducir la complejidad temporal de O(N) a O(1).</li>
-              <li><strong>Caché L2:</strong> Configuración e integración de caché distribuida de segundo nivel.</li>
-            </ul>
-          </div>
-          <div class="optimization-metrics">
-            <h4>Resultados y Métricas</h4>
-            <div class="metrics-grid">
-              <div class="metric-item">
-                <div class="metric-value">-98%</div>
-                <div class="metric-label">Reducción de Latencia</div>
-                <div class="metric-detail">2.2s → 35ms en producción</div>
-              </div>
-              <div class="metric-item">
-                <div class="metric-value">O(1)</div>
-                <div class="metric-label">Complejidad Algorítmica</div>
-                <div class="metric-detail">Reducido desde complejidad lineal O(N)</div>
-              </div>
-            </div>
-          </div>
-          <div class="optimization-section">
-            <h4>[INFO DETALLADA - PLACEHOLDER]</h4>
-            <p style="border: 2px dashed #58a6ff; padding: 1rem; border-radius: 6px; background: rgba(88, 166, 255, 0.05); color: #c9d1d9;">
-              Aquí se integrará la información específica detallada sobre esta optimización (JPA/Hibernate, Criteria API, problemas N+1 resueltos) que proporciones más adelante.
-            </p>
-          </div>
-          <div class="optimization-tech">
-            <h4>Stack Técnico</h4>
-            <div class="tech-tags">
-              <span class="tech-tag">Spring Boot</span>
-              <span class="tech-tag">JPA / Hibernate</span>
-              <span class="tech-tag">Criteria API</span>
-              <span class="tech-tag">Batch Fetching</span>
-              <span class="tech-tag">Caché L2</span>
-            </div>
-          </div>
+       <div class="optimization-card" id="opt-latency">
+  <h3>Refactorización Multicapa y Optimización de Rendimiento ORM</h3>
+  <div class="optimization-intro">
+    <p>
+      Reingeniería integral del acceso a datos que abarca las capas de entidades, persistencia y servicios. El desarrollo estuvo orientado a eliminar duplicidades de código bajo principios DRY, mitigar cuellos de botella estructurales producidos por estrategias de carga ineficientes y optimizar la complejidad algorítmica de las consultas.
+    </p>
+  </div>
+
+  <div class="optimization-section">
+    <h4>Desafío Técnico</h4>
+    <p>
+      La aplicación presentaba una degradación crítica del rendimiento con tiempos de respuesta superiores a los <strong>2 segundos</strong> en sus endpoints principales. El origen del problema radicaba en la sobrecarga en la transferencia de datos debido al comportamiento <em>Eager Loading</em> implícito en las relaciones <code>@ManyToOne</code>, la proliferación del problema de consultas <strong>N+1</strong>, y una ineficiente estrategia de paginación procesada en memoria (mediante el uso de <code>subList</code> de Java), lo que ponía en riesgo la estabilidad del ecosistema al escalar el volumen de datos.
+    </p>
+  </div>
+
+  <div class="optimization-section">
+    <h4>Estrategia de Refactorización y Arquitectura de Persistencia</h4>
+    <p>
+      La solución implementada reestructuró las tres capas de la aplicación, abstrayendo la lógica redundante y delegando la carga pesada de datos directamente al motor de la base de datos de manera eficiente.
+    </p>
+    <ul class="optimization-features">
+      <li><strong>Carga Perezosa (FetchType.LAZY):</strong> Modificación de las relaciones estructurales en la capa de entidades para evitar la recuperación innecesaria de objetos adjuntos en memoria de forma por defecto.</li>
+      <li><strong>Resolución Eficiente de N+1:</strong> Implementación guiada de <code>JOIN FETCH</code> y <code>EntityGraphs</code> en la capa de persistencia, reduciendo los accesos recursivos al motor relacional.</li>
+      <li><strong>Anotación Transaccional Optimizada:</strong> Uso estricto de <code>@Transactional(readOnly = true)</code> en métodos de consulta para optimizar los flujos de lectura y desactivar por completo el proceso de <em>dirty checking</em> de Hibernate.</li>
+      <li><strong>Centralización con Enfoque DRY:</strong> Implementación de métodos genéricos de filtrado en repositorios personalizados, logrando la eliminación absoluta de duplicidades en la lógica de negocio.</li>
+    </ul>
+  </div>
+
+  <div class="optimization-section">
+    <h4>Flujo de Ejecución y Paginado de Alta Eficiencia</h4>
+    <div class="optimization-flow">
+      <div class="flow-step">
+        <span class="flow-number">1</span>
+        <div class="flow-content">
+          <strong>ID Projection Nativa (Base de Datos)</strong>
+          <p>
+            Se delega la paginación nativa al motor de la BD mediante <code>Pageable</code>. El sistema filtra e identifica primero únicamente los IDs de los registros correspondientes al segmento solicitado, reduciendo drásticamente la transferencia inicial de datos.
+          </p>
         </div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-number">2</span>
+        <div class="flow-content">
+          <strong>Batch Fetching Coleccionable</strong>
+          <p>
+            Una vez obtenidos los identificadores únicos, se recuperan los datos completos de las entidades en lotes agrupados (Batch Fetching), reordenando los resultados directamente en memoria para garantizar una consistencia absoluta.
+          </p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <span class="flow-number">3</span>
+        <div class="flow-content">
+          <strong>Gestión L2 Cache e Integración Hibernate-Jackson</strong>
+          <p>
+            Las consultas repetitivas de datos maestros o estáticos se resuelven en milisegundos mediante una Caché de Segundo Nivel (L2). Para la salida, se incorporó <code>Hibernate5Module</code>, permitiendo serializar proxies perezosos como <code>null</code> sin lanzar excepciones de runtime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="optimization-metrics">
+    <h4>Resultados y Métricas de Rendimiento</h4>
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-value">x64</div>
+        <div class="metric-label">Aceleración en Procesos Críticos</div>
+        <div class="metric-detail">Latencia de búsqueda de expedientes reducida de 2.24s a ~35ms.</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">O(1)</div>
+        <div class="metric-label">Complejidad Algorítmica</div>
+        <div class="metric-detail">Reducción de O(N+1) consultas a un número constante por petición.</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">-98%</div>
+        <div class="metric-label">Reducción de Lag en Navegación</div>
+        <div class="metric-detail">Endpoints con latencias medias (200-500ms) estabilizados por debajo de 40ms.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="optimization-section">
+    <h4>Análisis Comparativo de Tiempos de Respuesta</h4>
+    <p>
+      El impacto de la reingeniería multicapa se evidencia en la drástica reducción de los tiempos de respuesta y en la previsibilidad de la carga en todo el ecosistema de la aplicación:
+    </p>
+    <div style="overflow-x: auto; margin-top: 1rem;">
+      <table style="width: 100%; border-collapse: collapse; text-align: left; color: #c9d1d9; background: rgba(22, 27, 34, 0.6); border: 1px solid rgba(88, 166, 255, 0.2); border-radius: 8px;">
+        <thead>
+          <tr style="background: rgba(88, 166, 255, 0.1); border-bottom: 1px solid rgba(88, 166, 255, 0.3);">
+            <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Segmento de Endpoint / Operación</th>
+            <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Latencia ANTES</th>
+            <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Latencia AHORA</th>
+            <th style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">Factor Impacto (Speedup)</th>
+            <th style="padding: 0.75rem;">Estado de Fluidez</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(88, 166, 255, 0.1);">
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Búsqueda Crítica (Expedientes)</strong></td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">1.18s - 2.24s</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">35ms - 50ms</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~x42.0</td>
+            <td style="padding: 0.75rem; color: #58a6ff;">Instantánea</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(88, 166, 255, 0.1);">
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Búsqueda Media (Registros)</strong></td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">0.8s - 1.03s</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">20ms - 50ms</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~x10.0</td>
+            <td style="padding: 0.75rem; color: #58a6ff;">Estabilizada</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);"><strong>Procesos Rápidos (Pre-optimizados)</strong></td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">48ms</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">18ms</td>
+            <td style="padding: 0.75rem; border-right: 1px solid rgba(88, 166, 255, 0.2);">~x2.6</td>
+            <td style="padding: 0.75rem; color: #58a6ff;">Optimización Máxima</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #8b949e; font-style: italic;">
+      *Nota sobre la consistencia: Incluso en procesos que ya contaban con un rendimiento óptimo (&lt;100ms), se logró una reducción adicional del 50% en el tiempo de respuesta, garantizando una experiencia de usuario predecible y homogénea.
+    </p>
+  </div>
+
+  <div class="optimization-tech">
+    <h4>Stack Técnico</h4>
+    <div class="tech-tags">
+      <span class="tech-tag">Spring Data JPA</span>
+      <span class="tech-tag">Hibernate (L2 Cache)</span>
+      <span class="tech-tag">Jackson (Hibernate5Module)</span>
+      <span class="tech-tag">ID Projection</span>
+      <span class="tech-tag">Batch Fetching</span>
+      <span class="tech-tag">EntityGraphs</span>
+      <span class="tech-tag">DRY Architecture</span>
+      <span class="tech-tag">Query Optimization</span>
+    </div>
+  </div>
+</div>
 
         <div class="optimization-card" id="opt-multithread">
           <h3>Procesos de Migración y Anonimización Multihilo</h3>
