@@ -316,6 +316,7 @@
               <li><strong>Mensajería y Resiliencia:</strong> Envío fiable de eventos a Apache Kafka (modo KRaft) mediante el patrón Transactional Outbox. Circuit breakers configurados con Resilience4j para tolerar caídas de Redis, Kafka o réplicas.</li>
               <li><strong>Frontend Moderno PWA:</strong> Progressive Web App en **Angular 21** con detección de cambios **Zoneless**, WebSockets (STOMP sobre SockJS) para notificaciones y alertas en tiempo real, soporte offline e internacionalización.</li>
               <li><strong>Infraestructura & DevOps:</strong> Script de instalación en PowerShell (`install.ps1`) para autogenerar secretos, certificados SSL locales y configurar hosts locales. Orquestación multi-contenedor de 10 servicios con Docker Compose. Cobertura de tests unitarios y de integración con Testcontainers (PostgreSQL, Kafka, Redis) y JaCoCo.</li>
+              <p>La arquitectura está intencionadamente sobredimensionada para el caso de uso real. Cada patrón elegido (Hexagonal, CQRS, Kafka, MCP) tiene una justificación técnica y documenta cómo se aplica en un contexto cohesionado. Es un ejercicio de arquitectura, no de productividad mínima.</p>
             </ul>
             <p style="margin-top: 1rem;">  
               <a target="_blank" href="https://github.com/FranWDev/smart-economato-API">Repositorio Backend API</a> // 
