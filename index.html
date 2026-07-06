@@ -305,7 +305,7 @@
           <div class="project-card">  
             <h3>Smart Economato (Ecosistema ERP de Gestión de Inventario Predictivo)</h3>  
             <p>  
-              Plataforma empresarial de gestión de inventario para economatos de escuelas culinarias. Diseñado bajo un patrón de <strong>Monolito Modular con Arquitectura Hexagonal</strong> (Ports & Adapters) como núcleo principal (`inventory-service`) en **Spring Boot 4.0 & Java 25** (aprovechando hilos virtuales, ZGC Generational y ScopedValue). Integra servicios satélites políglotas: un agente conversacional de IA en **NestJS 11** que implementa el **Model Context Protocol (MCP)** con un Grafo de Memoria Semántica (SMG) y soporte multi-proveedor (OpenAI, Anthropic, DeepSeek, etc.), y un microservicio en **Python/FastAPI** con **Meta Prophet** para predicción de demanda de consumo a 14 días.
+              Plataforma empresarial de gestión de inventario para economatos de escuelas culinarias. Diseñado bajo un patrón de <strong>Monolito Modular con Arquitectura Hexagonal</strong> (Ports & Adapters) como núcleo principal (`inventory-service`) en Spring Boot 4.0 & Java 25 (aprovechando hilos virtuales, ZGC Generational y ScopedValue). Integra servicios satélites políglotas: un agente conversacional de IA en NestJS 11 que implementa el Model Context Protocol (MCP) con un Grafo de Memoria Semántica (SMG) y soporte multi-proveedor (OpenAI, Anthropic, DeepSeek, etc.), y un microservicio en Python/FastAPI con Meta Prophet para predicción de demanda de consumo a 14 días.
             </p>  
             <p>  
               <strong>Hitos Técnicos Clave:</strong>
@@ -314,7 +314,7 @@
               <li><strong>Ledger de Stock Inmutable:</strong> Sistema de encadenamiento criptográfico para registro de movimientos de stock, firmas HMAC-SHA256 y triggers PostgreSQL a bajo nivel que bloquean sentencias UPDATE/DELETE.</li>
               <li><strong>CQRS & Enrutamiento de Persistencia:</strong> Segregación de lectura y escritura (PostgreSQL Primary + Replica) con enrutamiento dinámico automático mediante un Aspecto AOP y `ScopedValue` en Java 25.</li>
               <li><strong>Mensajería y Resiliencia:</strong> Envío fiable de eventos a Apache Kafka (modo KRaft) mediante el patrón Transactional Outbox. Circuit breakers configurados con Resilience4j para tolerar caídas de Redis, Kafka o réplicas.</li>
-              <li><strong>Frontend Moderno PWA:</strong> Progressive Web App en **Angular 21** con detección de cambios **Zoneless**, WebSockets (STOMP sobre SockJS) para notificaciones y alertas en tiempo real, soporte offline e internacionalización.</li>
+              <li><strong>Frontend Moderno PWA:</strong> Progressive Web App en Angular 21 con detección de cambios Zoneless, WebSockets (STOMP sobre SockJS) para notificaciones y alertas en tiempo real, soporte offline e internacionalización.</li>
               <li><strong>Infraestructura & DevOps:</strong> Script de instalación en PowerShell (`install.ps1`) para autogenerar secretos, certificados SSL locales y configurar hosts locales. Orquestación multi-contenedor de 10 servicios con Docker Compose. Cobertura de tests unitarios y de integración con Testcontainers (PostgreSQL, Kafka, Redis) y JaCoCo.</li>
               <p>La arquitectura está intencionadamente sobredimensionada para el caso de uso real. Cada patrón elegido (Hexagonal, CQRS, Kafka, MCP) tiene una justificación técnica y documenta cómo se aplica en un contexto cohesionado. Es un ejercicio de arquitectura, no de productividad mínima.</p>
             </ul>
@@ -344,7 +344,7 @@
             </p>
             <p>
               <strong>Arquitectura y Backend (Java 21 & Spring Boot 3.4.1):</strong>
-              Diseñado con un enfoque modular y optimizado para compilación AOT (**GraalVM Native Image**). Utiliza **Spring Data JDBC** para evitar la magia reflexiva y sobrecarga en runtime de JPA/Hibernate tradicional, garantizando total compatibilidad nativa y reduciendo el consumo a solo 128 MB de RAM. Cuenta con login mediante **Google OAuth2** y firmas JWT seguras.
+              Diseñado con un enfoque modular y optimizado para compilación AOT (GraalVM Native Image). Utiliza Spring Data JDBC para evitar la magia reflexiva y sobrecarga en runtime de JPA/Hibernate tradicional, garantizando total compatibilidad nativa y reduciendo el consumo a solo 128 MB de RAM. Cuenta con login mediante Google OAuth2 y firmas JWT seguras.
             </p>
             <p>
               <strong>Frontend e Interfaz (Angular v22.0.0 Zoneless):</strong>
@@ -357,7 +357,7 @@
               <li><strong>Búsqueda Inteligente:</strong> Filtro reactivo de miembros con Debounce (pooling con delay de 1s) para economizar consultas en base de datos.</li>
               <li><strong>Gestión de Bajas Visual:</strong> Visualización atenuada y cambio de comportamiento automático ("Dar de baja" a "Eliminar") para ex-miembros.</li>
               <li><strong>Línea de Tiempo Dinámica:</strong> Historial y evolución de cargos del miembro presentados mediante un timeline vertical interactivo.</li>
-              <li><strong>Gestión Documental Separada:</strong> Sub-modal CRUD que interactúa con la API de **Google Drive v3** para almacenar y eliminar DNI/fotos usando enlaces temporales firmados generados por el backend, e integración con **Supabase Storage** para la web pública.</li>
+              <li><strong>Gestión Documental Separada:</strong> Sub-modal CRUD que interactúa con la API de Google Drive v3 para almacenar y eliminar DNI/fotos usando enlaces temporales firmados generados por el backend, e integración con Supabase Storage para la web pública.</li>
             </ul>
             <p style="margin-top: 1rem;">
               <a target="_blank" href="https://github.com/FranWDev/AJPD-Gestion-Backend">Repositorio Backend API</a> //
@@ -382,7 +382,7 @@
               Desarrollo end-to-end de una plataforma de publicaciones con arquitectura distribuida. El sistema cuenta con un proveedor frontend que sirve archivos estáticos y cachea los contenidos, y un Backoffice para edición y administración de contenido.
             </p>
             <p>
-              La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT. Implementación de un sistema de caché de doble capa (Caffeine en memoria + persistente en disco), circuit breaker e invalidación por eventos. Gracias a este enfoque, el consumo de ancho de banda se redujo en un **89.7%**, operando fluidamente en entornos cloud limitados.
+              La comunicación entre servicios es asincrónica mediante WebFlux y está protegida con JWT. Implementación de un sistema de caché de doble capa (Caffeine en memoria + persistente en disco), circuit breaker e invalidación por eventos. Gracias a este enfoque, el consumo de ancho de banda se redujo en un 89.7%, operando fluidamente en entornos cloud limitados.
             </p>
             <p>
               <a target="_blank" href="https://proyectodubini.onrender.com/">Visita la web</a> //
@@ -633,7 +633,7 @@
       </table>
     </div>
     <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #8b949e; font-style: italic;">
-      *Nota sobre la consistencia: Incluso en procesos que ya contaban con un rendimiento óptimo (&lt;100ms), se logró una reducción adicional del 50% en el tiempo de respuesta, garantizando una experiencia de usuario predecible y homogénea.
+      Nota sobre la consistencia: Incluso en procesos que ya contaban con un rendimiento óptimo (&lt;100ms), se logró una reducción adicional del 50% en el tiempo de respuesta, garantizando una experiencia de usuario predecible y homogénea.
     </p>
   </div>
 
@@ -793,7 +793,7 @@ VALUES (
               </table>
             </div>
             <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #8b949e; font-style: italic;">
-              *Nota sobre el cálculo: En el entorno real, el tiempo de procesamiento se redujo de 5 horas a 3 minutos para el lote de datos ejecutado bajo una latencia media de red corporativa (~1.1 ms promedio por consulta lookup).
+              Nota sobre el cálculo: En el entorno real, el tiempo de procesamiento se redujo de 5 horas a 3 minutos para el lote de datos ejecutado bajo una latencia media de red corporativa (~1.1 ms promedio por consulta lookup).
             </p>
           </div>
 
@@ -923,7 +923,7 @@ VALUES (
                   <p>
                     Cada 10-15s se testea la recuperación del servicio caído. Si
                     responde, se cierra el CB y se envía
-                    <code>*_RECOVERED</code> al frontend.
+                    <code>_RECOVERED</code> al frontend.
                   </p>
                 </div>
               </div>
@@ -1361,7 +1361,7 @@ VALUES (
               <li>
                 <strong>Desarrollo de Aplicaciones Web (DAW)</strong><br />
                 IES Domingo Pérez Minik (2024-2026)<br />
-                <span class="education-honor">* Mención honorífica en expediente en la materia de desarrollo backend.</span>
+                <span class="education-honor"> Mención honorífica en expediente en la materia de desarrollo backend.</span>
               </li>
               <li class="skill-list-spaced">
                 <strong>Bachillerato Científico-tecnológico</strong><br />
