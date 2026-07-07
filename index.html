@@ -302,7 +302,7 @@
 
         <div class="projects-grid">
           <!-- Smart Economato -->
-          <div class="project-card">  
+          <div id="economato" class="project-card">  
             <h3>Smart Economato (Ecosistema ERP de Gestión de Inventario Predictivo)</h3>  
             <p>  
               Plataforma empresarial de gestión de inventario para economatos de escuelas culinarias. Diseñado bajo un patrón de <strong>Monolito Modular con Arquitectura Hexagonal</strong> (Ports & Adapters) como núcleo principal (`inventory-service`) en Spring Boot 4.0 & Java 25 (aprovechando hilos virtuales, ZGC Generational y ScopedValue). Integra servicios satélites políglotas: un agente conversacional de IA en NestJS 11 que implementa el Model Context Protocol (MCP) con un Grafo de Memoria Semántica (SMG) y soporte multi-proveedor (OpenAI, Anthropic, DeepSeek, etc.), y un microservicio en Python/FastAPI con Meta Prophet para predicción de demanda de consumo a 14 días.
@@ -337,7 +337,7 @@
           </div>
 
           <!-- AJPD Gestión -->
-          <div class="project-card">
+          <div id="dubini" class="project-card">
             <h3>AJPD Gestión (Sistema de Gestión Interna de la Asociación)</h3>
             <p>
               Digitalización completa de la infraestructura de TI de la Asociación Juvenil Proyecto Dubini (AJPD), sustituyendo el flujo de trabajo manual basado en Excel por una aplicación de gestión robusta, eficiente y segura.
@@ -530,7 +530,7 @@
       El sistema implementa una reestructuración de las capas de persistencia, servicios y entidades de la aplicación, abstrayendo la lógica redundante y delegando la carga pesada de datos directamente al motor de la base de datos de manera eficiente.
     </p>
     <ul class="optimization-features">
-      <li><strong>Carga Perezosa (FetchType.LAZY):</strong> Modificación de las relaciones estructurales en la capa de entidades para evitar la recuperación innecesaria de objetos adjuntos en memoria de forma por defecto.</li>
+      <li><strong>Carga Perezosa:</strong> Modificación de las relaciones estructurales en la capa de entidades para evitar la recuperación innecesaria de objetos adjuntos en memoria de forma por defecto.</li>
       <li><strong>Resolución Eficiente de N+1:</strong> Implementación guiada de <code>JOIN FETCH</code> y <code>EntityGraphs</code> en la capa de persistencia, reduciendo los accesos recursivos al motor relacional.</li>
       <li><strong>Anotación Transaccional Optimizada:</strong> Uso estricto de <code>@Transactional(readOnly = true)</code> en métodos de consulta para optimizar los flujos de lectura en gran medida y reducir de forma significativa el proceso de <em>dirty checking</em> de Hibernate en operaciones de lectura.</li>
       <li><strong>Centralización con Enfoque DRY:</strong> Implementación de métodos genéricos de filtrado en repositorios personalizados, logrando la eliminación de la mayor parte de la lógica duplicada.</li>
@@ -545,7 +545,7 @@
         <div class="flow-content">
           <strong>ID Projection Nativa (Base de Datos)</strong>
           <p>
-            Se delega la paginación nativa al motor de la BD mediante <code>Pageable</code>. El sistema filtra e identifica primero únicamente los IDs de los registros correspondientes al segmento solicitado, reduciendo la transferencia inicial de datos.
+            Se delega la paginación nativa al motor de la BD. El sistema filtra e identifica primero únicamente los IDs de los registros correspondientes al segmento solicitado, reduciendo la transferencia inicial de datos.
           </p>
         </div>
       </div>
@@ -554,7 +554,7 @@
         <div class="flow-content">
           <strong>Batch Fetching Coleccionable</strong>
           <p>
-            Una vez obtenidos los identificadores únicos, se recuperan los datos completos de las entidades en lotes agrupados (Batch Fetching), reordenando los resultados directamente en memoria para garantizar la consistencia del orden de resultados.
+            Una vez obtenidos los identificadores únicos, se recuperan los datos completos de las entidades en lotes agrupados, reordenando los resultados directamente en memoria para garantizar la consistencia del orden de resultados.
           </p>
         </div>
       </div>
@@ -563,7 +563,7 @@
         <div class="flow-content">
           <strong>Gestión L2 Cache e Integración Hibernate-Jackson</strong>
           <p>
-            Las consultas repetitivas de datos maestros o estáticos obtienen una respuesta en decenas de milisegundos mediante una Caché de Segundo Nivel (L2). Para la salida, se incorporó <code>Hibernate5Module</code>, permitiendo serializar proxies perezosos como <code>null</code> sin lanzar excepciones de runtime.
+            Las consultas repetitivas de datos maestros o estáticos obtienen una respuesta en decenas de milisegundos mediante una Caché de Segundo Nivel (L2).
           </p>
         </div>
       </div>
@@ -581,7 +581,7 @@
       <div class="metric-item">
         <div class="metric-value">O(1)</div>
         <div class="metric-label">Complejidad Algorítmica</div>
-        <div class="metric-detail">Reducción de O(N+1) consultas a un número constante por petición.</div>
+        <div class="metric-detail">Reducción de N+1 consultas a un número constante por petición.</div>
       </div>
       <div class="metric-item">
         <div class="metric-value">-98%</div>
@@ -673,9 +673,9 @@
               La solución implementada redujo las consultas de base de datos tipo N+1 durante el bucle de inserción, resolviendo todas las dependencias relacionales en caliente dentro de la JVM.
             </p>
             <ul class="optimization-features">
-              <li><strong>Precarga en Caché O(1):</strong> Carga inicial de diccionarios de lookup en memoria Java mediante estructuras <code>HashMap</code>, resolviendo claves naturales a identificadores secuenciales en microsegundos y ocupando solo ~420 MB del Java Heap.</li>
-              <li><strong>Concurrencia con ExecutorService &amp; Thread Pools:</strong> Segmentación dinámica de los streams de datos históricos procesados de forma concurrente, aislando la escritura en disco de cada hilo.</li>
-              <li><strong>Thread-Safety Garantizada:</strong> Uso de mapas de solo lectura tras la carga inicial y generación secuencial de IDs mediante <code>AtomicLong</code> para prevenir condiciones de carrera.</li>
+              <li><strong>Precarga en Caché O(1):</strong> Carga inicial de diccionarios de lookup en memoria Java, resolviendo claves naturales a identificadores secuenciales en microsegundos y ocupando solo ~420 MB del Java Heap.</li>
+              <li><strong>Concurrencia con &amp; Thread Pools:</strong> Segmentación dinámica de los streams de datos históricos procesados de forma concurrente, aislando la escritura en disco de cada hilo.</li>
+              <li><strong>Thread-Safety Garantizada:</strong> Uso de mapas de solo lectura tras la carga inicial y generación secuencial atómica de IDs para prevenir condiciones de carrera.</li>
             </ul>
           </div>
 
@@ -703,7 +703,7 @@
               <div class="flow-step">
                 <span class="flow-number">3</span>
                 <div class="flow-content">
-                  <strong>Inserción Directa en Destino (MySQL)</strong>
+                  <strong>Inserción Directa en Destino</strong>
                   <p>
                     El script SQL generado contiene valores literales puros precalculados. La base de datos destino ejecuta los inserts secuenciales de forma directa sin resolver índices dinámicamente, logrando una respuesta en decenas de milisegundos.
                   </p>
@@ -812,8 +812,6 @@ VALUES (
               <span class="tech-tag">Thread Pools</span>
               <span class="tech-tag">Multi-threading</span>
               <span class="tech-tag">ETL / Data Migration</span>
-              <span class="tech-tag">AtomicLong</span>
-              <span class="tech-tag">JVM Memory Tuning</span>
             </div>
           </div>
         </div>
